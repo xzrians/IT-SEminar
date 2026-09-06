@@ -9,16 +9,19 @@
       </p>
     </div>
 
-    <!-- 3 Curriculum Switcher Tabs -->
-    <div class="ops-tabs mb-6" style="grid-template-columns: repeat(3, 1fr);">
+    <!-- 4 Curriculum Switcher Tabs -->
+    <div class="ops-tabs mb-6" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
       <button class="ops-tab active" id="curr-tab-btn-1" onclick="switchCurrTab(1)">
-        <i data-lucide="layers"></i> <span>1. Ringkasan 2 Modul</span>
+        <i data-lucide="layers"></i> <span>1. Ringkasan Modul</span>
       </button>
       <button class="ops-tab" id="curr-tab-btn-2" onclick="switchCurrTab(2)">
         <i data-lucide="presentation"></i> <span>2. Rangka 16 Slaid</span>
       </button>
       <button class="ops-tab" id="curr-tab-btn-3" onclick="switchCurrTab(3)">
-        <i data-lucide="pencil-ruler"></i> <span>3. 4 Aktiviti & PPKI</span>
+        <i data-lucide="pencil-ruler"></i> <span>3. 5 Aktiviti & PPKI</span>
+      </button>
+      <button class="ops-tab" id="curr-tab-btn-4" onclick="switchCurrTab(4)">
+        <i data-lucide="book-marked"></i> <span>4. Master Playbook & Skrip</span>
       </button>
     </div>
 
@@ -188,5 +191,133 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
+
+    <!-- PANE 4: Master Playbook, Verbatim Scripts & Contingency -->
+    <div class="curr-pane" id="curr-pane-4" style="display: none;">
+      <!-- Playbook Header Card -->
+      <div class="glass-card mb-6" style="padding: 24px; border-color: rgba(0, 242, 254, 0.3); background: radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.08) 0%, rgba(19, 27, 46, 0.8) 100%);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+          <div>
+            <span class="crew-role-badge highlight" style="background: rgba(0, 242, 254, 0.2); color: var(--accent-cyan);"><i data-lucide="book-open"></i> PANDUAN OPERASI MASTER</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: #fff; margin-top: 6px;">{{ site.data.curriculum.playbook_guide.title }}</h3>
+          </div>
+          <a href="{{ '/slides/' | relative_url }}" target="_blank" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 8px 16px; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 600; background: linear-gradient(135deg, var(--accent-primary), var(--accent-purple)); color: #fff;">
+            <i data-lucide="presentation"></i> <span>Buka Slaid Skrin Penuh (16:9)</span>
+          </a>
+        </div>
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; max-width: 900px;">
+          {{ site.data.curriculum.playbook_guide.subtitle }}
+        </p>
+      </div>
+
+      <!-- 4 Kuadran Emas Kertas Mahjong Section -->
+      <div class="glass-card mb-6" style="padding: 24px; border-color: rgba(168, 85, 247, 0.3);">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+          <div class="card-icon" style="margin-bottom: 0; width: 40px; height: 40px; background: rgba(168, 85, 247, 0.2); color: var(--accent-purple);">
+            <i data-lucide="layout-grid"></i>
+          </div>
+          <div>
+            <h4 style="font-family: var(--font-heading); font-size: 1.2rem; color: #fff;">Format Poster: 4 Kotak Emas (The 4 Golden Quadrants)</h4>
+            <span style="color: var(--text-muted); font-size: 0.85rem;">Format wajib lakaran kertas mahjong bagi 7 syarikat teknologi meja kluster:</span>
+          </div>
+        </div>
+
+        <div class="tables-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+          {% for q in site.data.curriculum.playbook_guide.golden_quadrants %}
+          <div class="glass-card" style="padding: 18px; border-color: rgba(255,255,255,0.08); background: rgba(13, 18, 31, 0.6);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span class="badge badge-{{ q.color }}" style="font-size: 0.72rem; font-weight: 700;">{{ q.box }}</span>
+              <i data-lucide="{{ q.icon }}" style="width: 18px; height: 18px; color: var(--accent-{{ q.color }});"></i>
+            </div>
+            <h5 style="font-family: var(--font-heading); font-size: 1.05rem; color: #fff; margin-bottom: 6px;">{{ q.title }}</h5>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">{{ q.desc }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Detailed Session-by-Session Playbook & Verbatim Scripts -->
+      <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 24px;">
+        {% for s in site.data.curriculum.playbook_guide.sessions %}
+        <div class="glass-card" style="padding: 24px; border-color: rgba(255, 255, 255, 0.1);">
+          <!-- Header -->
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; border-bottom: 1px solid var(--border-glass); padding-bottom: 14px;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                <span class="badge badge-{{ s.tag_color }}" style="font-size: 0.75rem;">{{ s.tag }}</span>
+                <span class="pax-count"><i data-lucide="clock"></i> {{ s.time }}</span>
+              </div>
+              <h4 style="font-family: var(--font-heading); font-size: 1.3rem; color: #fff;">{{ s.title }}</h4>
+              <span style="font-size: 0.85rem; color: var(--text-muted);"><i data-lucide="user-check"></i> PIC: {{ s.pic }}</span>
+            </div>
+            <div>
+              <span style="font-size: 0.82rem; color: var(--accent-cyan); font-weight: 600;"><i data-lucide="box"></i> Alatan:</span>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px;">
+                {% for mat in s.materials %}
+                <span class="badge" style="background: rgba(255,255,255,0.05); font-size: 0.72rem;">{{ mat }}</span>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Run of Show Table -->
+          <div style="margin-bottom: 20px;">
+            <strong style="font-size: 0.88rem; color: var(--accent-cyan); display: flex; align-items: center; gap: 6px; margin-bottom: 10px;">
+              <i data-lucide="list-ordered"></i> Aliran Pelaksanaan Minit-demi-Minit:
+            </strong>
+            <div style="overflow-x: auto;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+                <thead>
+                  <tr style="background: rgba(255,255,255,0.04); border-bottom: 1px solid var(--border-glass); text-align: left;">
+                    <th style="padding: 10px 12px; width: 110px; color: var(--text-muted);">Masa</th>
+                    <th style="padding: 10px 12px; width: 160px; color: #fff;">Fasa</th>
+                    <th style="padding: 10px 12px; color: #cbd5e1;">Tindakan Pentas</th>
+                    <th style="padding: 10px 12px; color: #cbd5e1;">Tindakan Meja</th>
+                    <th style="padding: 10px 12px; width: 150px; color: var(--text-muted);">Teknikal / AV</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for r in s.run_of_show %}
+                  <tr style="border-bottom: 1px solid rgba(255,255,255,0.04);">
+                    <td style="padding: 10px 12px; font-weight: 700; color: var(--accent-cyan); white-space: nowrap;">{{ r.time }}</td>
+                    <td style="padding: 10px 12px; font-weight: 600; color: #fff;">{{ r.phase }}</td>
+                    <td style="padding: 10px 12px; color: #94a3b8; line-height: 1.4;">{{ r.stage }}</td>
+                    <td style="padding: 10px 12px; color: #94a3b8; line-height: 1.4;">{{ r.table }}</td>
+                    <td style="padding: 10px 12px; color: var(--text-muted); font-size: 0.8rem;">{{ r.av }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Verbatim Script Box -->
+          <div style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: var(--radius-sm); padding: 16px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <i data-lucide="mic" style="color: var(--accent-primary); width: 18px; height: 18px;"></i>
+              <strong style="color: #fff; font-size: 0.9rem;">Skrip Sebenar (Verbatim Dialogue) &bull; {{ s.verbatim_script.role }}:</strong>
+            </div>
+            <p style="font-style: italic; color: #cbd5e1; font-size: 0.92rem; line-height: 1.6;">
+              "{{ s.verbatim_script.text }}"
+            </p>
+          </div>
+
+          <!-- Split: PPKI Role & Contingency Plan -->
+          <div class="crew-split-grid" style="gap: 16px;">
+            <div style="background: rgba(244, 63, 94, 0.06); border: 1px solid rgba(244, 63, 94, 0.25); border-radius: var(--radius-sm); padding: 14px;">
+              <strong style="color: var(--accent-rose); font-size: 0.85rem; display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                <i data-lucide="heart"></i> Panduan Inklusif Murid PPKI:
+              </strong>
+              <p style="font-size: 0.85rem; color: #fecdd3; line-height: 1.5;">{{ s.ppki_role }}</p>
+            </div>
+            <div style="background: rgba(245, 158, 11, 0.06); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: var(--radius-sm); padding: 14px;">
+              <strong style="color: var(--accent-amber); font-size: 0.85rem; display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                <i data-lucide="alert-circle"></i> Pelan Kontingensi & Tindakan Luar Jangka:
+              </strong>
+              <p style="font-size: 0.85rem; color: #fde68a; line-height: 1.5;">{{ s.contingency }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
