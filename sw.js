@@ -4,7 +4,7 @@
  * Strategy: Network-First with Cache Fallback for HTML & Forced Fresh Reloads
  */
 
-const CACHE_NAME = 'nextgen-pwa-v1.1.0';
+const CACHE_NAME = 'nextgen-pwa-v1.1.1';
 
 const PRECACHE_ASSETS = [
   './',

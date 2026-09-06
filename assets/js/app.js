@@ -296,9 +296,9 @@ function switchHub(hubId, shouldScroll = true) {
     activeDeskBtn.classList.add('active');
   }
 
-  // 4. Smooth scroll to top on switch if requested
+  // 4. Instant scroll to top on switch to prevent awkward jump/dead space
   if (shouldScroll) {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   }
 
   // 5. Update browser history hash without reload
