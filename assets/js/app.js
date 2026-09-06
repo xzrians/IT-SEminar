@@ -12,10 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Restore checklist state from localStorage
   initChecklist();
 
-  // 3. Scroll Spy for active navigation highlighting
-  initScrollSpy();
+  // 3. Initialize Mobile App Shell Hubs
+  initAppShellHubs();
 
-  // 4. Setup mobile navigation listener
+  // 4. Initialize PWA Service Worker & Network Monitor
+  initPwaServiceWorker();
+
+  // 5. Setup mobile navigation listener
   const mobileBtn = document.getElementById('mobileMenuBtn');
   const navMenu = document.getElementById('navMenu');
   if (mobileBtn && navMenu) {
@@ -246,6 +249,172 @@ function jumpToTimelineSlot(slotId) {
   }, 2000);
 }
 
+/**
+ * Mobile App Shell: Map URL Hash to Hub
+ */
+function getHubFromHash(hash) {
+  if (!hash) return 'home';
+  const clean = hash.replace('#', '').toLowerCase();
+  if (['home', 'tab-home', 'hub-home', 'asdaf', 'stats'].includes(clean)) return 'home';
+  if (['timeline', 'tab-timeline', 'hub-timeline', 'jadual', 'modul'].includes(clean)) return 'timeline';
+  if (['people', 'tab-people', 'hub-people', 'meja', 'kru', 'kuiz'].includes(clean)) return 'people';
+  if (['ops', 'tab-ops', 'hub-ops', 'bajet', 'operasi', 'checklist'].includes(clean)) return 'ops';
+  return 'home';
+}
+
+/**
+ * Mobile App Shell: Switch Active Hub (home, timeline, people, ops)
+ */
+function switchHub(hubId, shouldScroll = true) {
+  const hubs = ['home', 'timeline', 'people', 'ops'];
+  if (!hubs.includes(hubId)) hubId = 'home';
+
+  // 1. Update Hub Panes
+  document.querySelectorAll('.hub-pane').forEach(pane => {
+    pane.classList.remove('active');
+  });
+  const targetPane = document.getElementById(`hub-${hubId}`);
+  if (targetPane) {
+    targetPane.classList.add('active');
+  }
+
+  // 2. Update Bottom Nav Buttons
+  document.querySelectorAll('.bottom-nav-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  const activeBottomBtn = document.getElementById(`btn-nav-${hubId}`);
+  if (activeBottomBtn) {
+    activeBottomBtn.classList.add('active');
+  }
+
+  // 3. Update Desktop Nav Links
+  document.querySelectorAll('#navMenu .nav-link').forEach(link => {
+    link.classList.remove('active');
+  });
+  const activeDeskBtn = document.getElementById(`desk-nav-${hubId}`);
+  if (activeDeskBtn) {
+    activeDeskBtn.classList.add('active');
+  }
+
+  // 4. Smooth scroll to top on switch if requested
+  if (shouldScroll) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // 5. Update browser history hash without reload
+  if (history.replaceState) {
+    history.replaceState(null, null, `#hub-${hubId}`);
+  }
+
+  // 6. Refresh Lucide Icons in newly visible pane
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
+/**
+ * Initialize App Shell Hubs & Hash Routing
+ */
+function initAppShellHubs() {
+  const initialHash = window.location.hash;
+  const initialHub = getHubFromHash(initialHash);
+  switchHub(initialHub, false);
+
+  // Listen to hash changes (back/forward button)
+  window.addEventListener('hashchange', () => {
+    const hub = getHubFromHash(window.location.hash);
+    switchHub(hub, false);
+  });
+}
+
+/**
+ * Progressive Web App (PWA): Service Worker & Network Monitor
+ */
+let deferredInstallPrompt = null;
+
+function initPwaServiceWorker() {
+  // 1. Register Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(registration => {
+          console.log('[PWA] Service Worker registered successfully, scope:', registration.scope);
+        })
+        .catch(error => {
+          console.warn('[PWA] Service Worker registration failed:', error);
+        });
+    });
+  }
+
+  // 2. Monitor Online / Offline Network Status
+  const statusPill = document.getElementById('networkStatusPill');
+  const statusText = document.getElementById('networkStatusText');
+  const offlineBanner = document.getElementById('offlineBanner');
+
+  function updateNetworkStatus() {
+    if (navigator.onLine) {
+      if (statusPill) {
+        statusPill.classList.remove('offline');
+        statusPill.classList.add('online');
+      }
+      if (statusText) statusText.textContent = 'Online';
+      if (offlineBanner) offlineBanner.style.display = 'none';
+    } else {
+      if (statusPill) {
+        statusPill.classList.remove('online');
+        statusPill.classList.add('offline');
+      }
+      if (statusText) statusText.textContent = 'Offline';
+      if (offlineBanner) offlineBanner.style.display = 'block';
+      if (window.lucide) window.lucide.createIcons();
+    }
+  }
+
+  window.addEventListener('online', updateNetworkStatus);
+  window.addEventListener('offline', updateNetworkStatus);
+  updateNetworkStatus();
+
+  // 3. Capture PWA Install Prompt
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    const installBtn = document.getElementById('btnInstallPwa');
+    if (installBtn) {
+      installBtn.style.display = 'inline-flex';
+      if (window.lucide) window.lucide.createIcons();
+    }
+  });
+
+  window.addEventListener('appinstalled', () => {
+    deferredInstallPrompt = null;
+    const installBtn = document.getElementById('btnInstallPwa');
+    if (installBtn) installBtn.style.display = 'none';
+    console.log('[PWA] NextGen 2026 application installed successfully.');
+  });
+}
+
+function promptPwaInstall() {
+  if (!deferredInstallPrompt) return;
+  deferredInstallPrompt.prompt();
+  deferredInstallPrompt.userChoice.then(choiceResult => {
+    if (choiceResult.outcome === 'accepted') {
+      console.log('[PWA] User accepted installation prompt');
+    } else {
+      console.log('[PWA] User dismissed installation prompt');
+    }
+    deferredInstallPrompt = null;
+    const installBtn = document.getElementById('btnInstallPwa');
+    if (installBtn) installBtn.style.display = 'none';
+  });
+}
+
+function dismissOfflineBanner() {
+  const offlineBanner = document.getElementById('offlineBanner');
+  if (offlineBanner) {
+    offlineBanner.style.display = 'none';
+  }
+}
+
 // Attach functions to global window object
 window.toggleNav = toggleNav;
 window.switchBudgetVariant = switchBudgetVariant;
@@ -255,3 +424,7 @@ window.toggleQuiz = toggleQuiz;
 window.toggleTaskCheck = toggleTaskCheck;
 window.filterTimeline = filterTimeline;
 window.jumpToTimelineSlot = jumpToTimelineSlot;
+window.switchHub = switchHub;
+window.promptPwaInstall = promptPwaInstall;
+window.dismissOfflineBanner = dismissOfflineBanner;
+

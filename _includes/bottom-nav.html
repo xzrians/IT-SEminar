@@ -1,0 +1,52 @@
+<!-- Mobile-First Bottom Navigation Bar (Fixed for Viewports < 768px) -->
+<nav class="bottom-app-nav" id="bottomAppNav" aria-label="Navigasi Mudah Alih Utama">
+  <div class="bottom-nav-inner">
+    <button 
+      type="button" 
+      class="bottom-nav-btn active" 
+      id="btn-nav-home" 
+      onclick="switchHub('home')"
+      aria-label="Hab Utama">
+      <div class="nav-btn-icon">
+        <i data-lucide="home"></i>
+      </div>
+      <span class="nav-btn-text">Utama</span>
+    </button>
+
+    <button 
+      type="button" 
+      class="bottom-nav-btn" 
+      id="btn-nav-timeline" 
+      onclick="switchHub('timeline')"
+      aria-label="Atur Cara & Silibus">
+      <div class="nav-btn-icon">
+        <i data-lucide="calendar-clock"></i>
+      </div>
+      <span class="nav-btn-text">Jadual</span>
+    </button>
+
+    <button 
+      type="button" 
+      class="bottom-nav-btn" 
+      id="btn-nav-people" 
+      onclick="switchHub('people')"
+      aria-label="7 Meja & 13 Kru">
+      <div class="nav-btn-icon">
+        <i data-lucide="users"></i>
+      </div>
+      <span class="nav-btn-text">Meja/Kru</span>
+    </button>
+
+    <button 
+      type="button" 
+      class="bottom-nav-btn" 
+      id="btn-nav-ops" 
+      onclick="switchHub('ops')"
+      aria-label="Logistik, Bajet & Checklist">
+      <div class="nav-btn-icon">
+        <i data-lucide="check-square"></i>
+      </div>
+      <span class="nav-btn-text">Logistik</span>
+    </button>
+  </div>
+</nav>

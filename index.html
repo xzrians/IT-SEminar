@@ -4,24 +4,29 @@ title: "Pelan Operasi & Pelaksanaan Bengkel UTM x ASDAF 2026"
 description: "Hab Pengurusan Bengkel Celik Digital & AI: 47 Pelajar ASDAF, 13 Kru UTM, Siling Bajet RM800 & Kuiz Sifar Gajet."
 ---
 
-{% include hero.html %}
+<!-- Hab 1: Utama (Profil, Metrik KPI & ASDAF) -->
+<div class="hub-pane active" id="hub-home" data-hub="home">
+  {% include hero.html %}
+  {% include stats.html %}
+  {% include asdaf.html %}
+</div>
 
-{% include stats.html %}
+<!-- Hab 2: Jadual (Atur Cara Minit-ke-Minit, Silibus & 16 Slaid) -->
+<div class="hub-pane" id="hub-timeline" data-hub="timeline">
+  {% include timeline.html %}
+  {% include curriculum.html %}
+</div>
 
-{% include asdaf.html %}
+<!-- Hab 3: Meja & Kru (7 Meja, Inklusiviti PPKI, 13 Kru & Kuiz Sifar Gajet) -->
+<div class="hub-pane" id="hub-people" data-hub="people">
+  {% include tables.html %}
+  {% include crew.html %}
+  {% include quiz.html %}
+</div>
 
-{% include timeline.html %}
-
-{% include curriculum.html %}
-
-{% include tables.html %}
-
-{% include crew.html %}
-
-{% include quiz.html %}
-
-{% include budget.html %}
-
-{% include operations.html %}
-
-{% include checklist.html %}
+<!-- Hab 4: Logistik (Bajet RM800, Makanan 71 Pax, Utilities & Checklist) -->
+<div class="hub-pane" id="hub-ops" data-hub="ops">
+  {% include budget.html %}
+  {% include operations.html %}
+  {% include checklist.html %}
+</div>

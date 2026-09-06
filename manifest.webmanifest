@@ -1,0 +1,26 @@
+{
+  "name": "NextGen Tech Summit 2026 | Panduan Fasilitator & Operasi",
+  "short_name": "NextGen 2026",
+  "description": "Hab Pengurusan Bengkel Celik Digital & AI: ASDAF Bukit Persekutuan, 47 Pelajar, 13 Kru UTM & Sifar Telefon.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07090e",
+  "theme_color": "#07090e",
+  "orientation": "portrait-primary",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "assets/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

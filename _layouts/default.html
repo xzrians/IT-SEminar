@@ -2,15 +2,23 @@
 <html lang="ms">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
   
+  <!-- PWA & Mobile Web App Meta -->
+  <meta name="theme-color" content="#07090e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NextGen 2026">
+  <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/icons/icon.svg' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/icons/icon.svg' | relative_url }}">
+
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ page.title | default: site.title }}">
   <meta property="og:description" content="{{ page.description | default: site.description }}">
-  <meta name="theme-color" content="#07090e">
 
   <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,10 +47,12 @@
     });
   </script>
 
-  <!-- Main Stylesheet (Jekyll relative_url handles baseurl automatically) -->
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
 </head>
 <body>
+  {% include offline-banner.html %}
+
   {% include navbar.html %}
 
   <main id="main-content">
@@ -50,6 +60,8 @@
   </main>
 
   {% include footer.html %}
+
+  {% include bottom-nav.html %}
 
   <!-- Core Interactive Script -->
   <script src="{{ '/assets/js/app.js' | relative_url }}"></script>

@@ -1,4 +1,4 @@
-<!-- Sticky Master Navigation -->
+<!-- Sticky Master Navigation with PWA Status & Hub Navigation -->
 <div class="navbar-wrapper">
   <div class="container">
     <nav class="navbar">
@@ -12,26 +12,43 @@
         </div>
       </a>
 
+      <!-- Desktop Hub Navigation Bar -->
       <div class="nav-menu" id="navMenu">
-        <a href="#asdaf" class="nav-link"><i data-lucide="shield"></i> ASDAF</a>
-        <a href="#jadual" class="nav-link"><i data-lucide="calendar"></i> Jadual</a>
-        <a href="#modul" class="nav-link"><i data-lucide="book-open"></i> Modul & Slaid</a>
-        <a href="#meja" class="nav-link"><i data-lucide="layout-grid"></i> 7 Meja</a>
-        <a href="#kru" class="nav-link"><i data-lucide="users"></i> 13 Kru</a>
-        <a href="#kuiz" class="nav-link"><i data-lucide="zap"></i> Kuiz</a>
-        <a href="#bajet" class="nav-link"><i data-lucide="pie-chart"></i> Bajet</a>
-        <a href="#operasi" class="nav-link"><i data-lucide="package-check"></i> Operasi</a>
-        <a href="#checklist" class="nav-link"><i data-lucide="check-square"></i> Checklist</a>
-        <a href="https://github.com/xzrians/IT-SEminar/blob/main/GUIDELINE.md" target="_blank" class="nav-link" style="color: var(--accent-cyan);"><i data-lucide="help-circle"></i> Panduan Wiki</a>
+        <button type="button" class="nav-link active" id="desk-nav-home" onclick="switchHub('home')">
+          <i data-lucide="home"></i> <span>Utama</span>
+        </button>
+        <button type="button" class="nav-link" id="desk-nav-timeline" onclick="switchHub('timeline')">
+          <i data-lucide="calendar-clock"></i> <span>Jadual & Modul</span>
+        </button>
+        <button type="button" class="nav-link" id="desk-nav-people" onclick="switchHub('people')">
+          <i data-lucide="users"></i> <span>7 Meja & Kru</span>
+        </button>
+        <button type="button" class="nav-link" id="desk-nav-ops" onclick="switchHub('ops')">
+          <i data-lucide="check-square"></i> <span>Logistik & Ops</span>
+        </button>
+        <a href="https://github.com/xzrians/IT-SEminar/blob/main/GUIDELINE.md" target="_blank" class="nav-link wiki-link" style="color: var(--accent-cyan);">
+          <i data-lucide="help-circle"></i> <span>Wiki</span>
+        </a>
       </div>
 
-      <div style="display: flex; gap: 10px; align-items: center;">
-        <button class="btn-print" onclick="window.print()" title="Cetak Pelan Operasi">
-          <i data-lucide="printer"></i>
-          <span>Cetak PDF</span>
+      <!-- Action Items: Network Status, PWA Install & Print -->
+      <div class="nav-actions">
+        <!-- Live Online / Offline Status Pill -->
+        <div class="network-status-pill online" id="networkStatusPill" title="Status Sambungan">
+          <span class="status-dot"></span>
+          <span class="status-text" id="networkStatusText">Online</span>
+        </div>
+
+        <!-- PWA Install Button (Appears when install prompt available) -->
+        <button class="btn-install-pwa" id="btnInstallPwa" style="display: none;" onclick="promptPwaInstall()" title="Pasang ke Skrin Utama">
+          <i data-lucide="download"></i>
+          <span>Pasang</span>
         </button>
-        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation" onclick="toggleNav()">
-          <i data-lucide="menu"></i>
+
+        <!-- Print Document -->
+        <button class="btn-print" onclick="window.print()" title="Cetak Pelan Operasi (PDF)">
+          <i data-lucide="printer"></i>
+          <span class="print-text">PDF</span>
         </button>
       </div>
     </nav>

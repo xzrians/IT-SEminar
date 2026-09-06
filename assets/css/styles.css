@@ -1579,4 +1579,228 @@ body {
   .section-padding {
     padding: 30px 0 !important;
   }
+
+  .hub-pane {
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  .bottom-app-nav, .offline-banner, .btn-install-pwa, .network-status-pill {
+    display: none !important;
+  }
 }
+
+/* ==========================================================================
+   Mobile-First App Shell (4 Core Hubs) & Bottom Navigation Bar
+   ========================================================================== */
+
+/* Hub Panes */
+.hub-pane {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.hub-pane.active {
+  display: block;
+  opacity: 1;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Navbar Actions & Status Pills */
+.nav-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.network-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--border-glass);
+  transition: all 0.3s ease;
+}
+
+.network-status-pill.online {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #6ee7b7;
+}
+
+.network-status-pill.online .status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.network-status-pill.offline {
+  background: rgba(244, 63, 94, 0.16);
+  border-color: rgba(244, 63, 94, 0.45);
+  color: #fda4af;
+}
+
+.network-status-pill.offline .status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f43f5e;
+  box-shadow: 0 0 8px #f43f5e;
+}
+
+.btn-install-pwa {
+  background: var(--grad-brand);
+  border: none;
+  color: #07090e;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 10px rgba(0, 242, 254, 0.3);
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+}
+
+.btn-install-pwa:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.5);
+}
+
+/* Offline Banner */
+.offline-banner {
+  background: linear-gradient(135deg, #be123c 0%, #e11d48 100%);
+  color: #fff;
+  padding: 10px 0;
+  font-size: 0.88rem;
+  position: sticky;
+  top: 0;
+  z-index: 1002;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.offline-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.offline-icon-badge {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.offline-text {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.btn-dismiss-offline {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+
+/* Bottom Navigation Bar for Mobile */
+.bottom-app-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(7, 9, 14, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-glass);
+  padding: 8px 12px;
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.5);
+}
+
+.bottom-nav-inner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.bottom-nav-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  min-width: 64px;
+  font-family: var(--font-body);
+}
+
+.bottom-nav-btn .nav-btn-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.bottom-nav-btn .nav-btn-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.bottom-nav-btn.active {
+  color: var(--accent-cyan);
+}
+
+.bottom-nav-btn.active .nav-btn-icon {
+  color: var(--accent-cyan);
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.6));
+}
+
+.bottom-nav-btn.active .nav-btn-text {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Mobile Viewport Adjustments */
+@media (max-width: 768px) {
+  .bottom-app-nav {
+    display: block;
+  }
+
+  body {
+    padding-bottom: calc(75px + env(safe-area-inset-bottom));
+  }
+
+  .nav-menu {
+    display: none !important;
+  }
+}
+
