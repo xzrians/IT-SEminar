@@ -1,31 +1,38 @@
 ceiling: "RM 800.00"
-pax_count: "66 Orang Pax (47 Pelajar ASDAF + 6 Staf ASDAF + 13 Pelajar UTM)"
-formula: "47 Pelajar + 6 Staf + 13 Pelajar UTM = 66 Pax"
+pax_count: "66 Orang Pax Asas + 5 Pax Penampan (Buffer) = 71 Pax Jamuan"
+formula: "47 Pelajar + 6 Staf + 13 Pelajar UTM = 66 Pax (+ 5 Lebihan = 71 Pax)"
+food_pax: 71
 
 pax_breakdown:
   students: 47
   staff: 6
   utm_students: 13
-  total: 66
+  buffer: 5
+  total_base: 66
+  total_food: 71
+
+food_sources:
+  primary: "Kantin Sekolah / Asrama ASDAF (Makanan segar, tiada caj hantar, sokong asrama)"
+  alternative: "Pembekal Luar / Bakeri Borong (Roti jenama Gardenia/Mighty White + Air Kotak Dutch Lady/Yeo's)"
 
 variants:
   - id: 1
     name: "Varian 1: Super-Lean"
-    total: 270.00
+    total: 290.00
     tag: "Kos Minimum"
     tag_color: "blue"
     status: "Alternatif Paling Jimat"
-    balance: 530.00
-    description: "Fokus kepada modul penting, doorgift asas dan sarapan ringkas untuk 66 pax (47 Pelajar + 6 Staf + 13 Pelajar UTM). Sesuai jika makan tengah hari disediakan oleh pihak dewan makan ASDAF."
+    balance: 510.00
+    description: "Fokus kepada modul penting, doorgift asas dan sarapan ringkas untuk 71 pax (66 Pax + 5 Lebihan) melalui opsyen Kantin / Luar. Sesuai jika makan tengah hari disediakan oleh pihak dewan makan ASDAF."
     items:
-      - item: "Sarapan Ringkas (Roti Bun + Air Kotak) [47 Pelajar + 6 Staf + 13 UTM]"
-        qty: "66 pax"
+      - item: "Sarapan Ringkas (Roti Bun + Air Kotak) [66 Pax + 5 Lebihan = 71 Pax]"
+        qty: "71 pax"
         unit_price: 2.00
-        total: 132.00
-      - item: "Alat Tulis & Kertas Manila (7 Meja Kluster)"
+        total: 142.00
+      - item: "Bahan Aktiviti 7 Meja (25 Mahjong, 25 Marker, 10 Sticky, Tape, Gunting)"
         qty: "1 set"
-        unit_price: 35.00
-        total: 35.00
+        unit_price: 45.00
+        total: 45.00
       - item: "Hadiah Kuiz Showdown (5 Token Pemenang)"
         qty: "5 set"
         unit_price: 10.00
@@ -34,7 +41,7 @@ variants:
         qty: "1 unit"
         unit_price: 35.00
         total: 35.00
-      - item: "Kontingensi / Kecemasan"
+      - item: "Kontingensi, Beg Sampah & Kecemasan"
         qty: "-"
         unit_price: 18.00
         total: 18.00
@@ -47,21 +54,21 @@ variants:
     status: "Nilai Terbaik (Best Value)"
     balance: 280.00
     recommended: true
-    description: "Kombinasi optimum: Sarapan lengkap 66 pax (47 Pelajar + 6 Staf + 13 Pelajar UTM), pek alat tulis 7 meja, goodie bag kustom untuk 47 pelajar, hadiah kuiz, dan plak penghargaan rasmi."
+    description: "Kombinasi optimum: Sarapan 71 pax (66 Pax + 5 Lebihan) via Kantin/Luar, bahan aktiviti lengkap 7 meja, goodies bag untuk 47 pelajar, hadiah kuiz berimpak, dan plak penghargaan rasmi."
     items:
-      - item: "Sarapan Pagi (Karipap/Kuih + Roti + Air Kotak) [47 Pelajar + 6 Staf + 13 UTM]"
-        qty: "66 pax"
-        unit_price: 3.00
-        total: 198.00
-      - item: "Pek Modul & Alat Tulis 7 Meja (Marker, Manila, Pelekat)"
+      - item: "Sarapan Pagi (Roti Bun + Air Kotak 250ml) [66 Pax + 5 Lebihan = 71 Pax]"
+        qty: "71 pax"
+        unit_price: 2.50
+        total: 177.50
+      - item: "Bahan Aktiviti Lengkap 7 Meja (25 Mahjong, 25 Marker, 10 Sticky, 2 Tape, 7 Gunting, 7 Gam)"
         qty: "7 meja"
-        unit_price: 8.00
-        total: 56.00
-      - item: "Goodie Bag Pelajar ASDAF (Pen, Buku Nota Poket, Snek)"
+        unit_price: 10.00
+        total: 70.00
+      - item: "Goodies Bag Lengkap Pelajar ASDAF (Beg Kraf, Pen Stylus, Mini Note, Snek) [47 Pelajar]"
         qty: "47 pek"
         unit_price: 2.50
         total: 117.50
-      - item: "Hadiah Kuiz Showdown (5 Pemenang Token IT/Alat Tulis)"
+      - item: "Hadiah Kuiz Showdown (5 Hadiah Bermanfaat: Flash Drive, Lampu LED, Botol Air, dll)"
         qty: "5 hadiah"
         unit_price: 15.00
         total: 75.00
@@ -69,14 +76,14 @@ variants:
         qty: "1 set"
         unit_price: 45.00
         total: 45.00
-      - item: "Sijil Penyertaan Rasmi Pelajar (Kertas Sijil Emboss)"
-        qty: "50 keping"
+      - item: "Sijil Penyertaan Rasmi Pelajar (Kertas Emboss) + Pek Edaran Tak Hadir"
+        qty: "55 keping"
         unit_price: 0.50
-        total: 25.00
-      - item: "Lain-lain & Kontingensi"
+        total: 27.50
+      - item: "Kontingensi, Bateri AV & Plastik Sampah"
         qty: "-"
-        unit_price: 3.50
-        total: 3.50
+        unit_price: 7.50
+        total: 7.50
 
   - id: 3
     name: "Varian 3: Pakej Lengkap + Makan Tengah Hari"
@@ -85,21 +92,21 @@ variants:
     tag_color: "purple"
     status: "Had Maksimum RM 800"
     balance: 0.00
-    description: "Merangkumi penyediaan Sarapan Pagi dan Makan Tengah Hari (Nasi Berlauk) untuk 66 pax (47 Pelajar + 6 Staf + 13 Pelajar UTM), sijil penuh, cenderahati ASDAF, dan hadiah kuiz."
+    description: "Merangkumi penyediaan Sarapan Pagi dan Makan Tengah Hari Nasi Berlauk untuk 71 pax (66 Pax + 5 Lebihan) via Kantin/Katering, bahan aktiviti lengkap, sijil, cenderahati ASDAF, dan hadiah kuiz."
     items:
-      - item: "Sarapan Pagi (Kuih 2 biji + Air Minuman) [47 Pelajar + 6 Staf + 13 UTM]"
-        qty: "66 pax"
-        unit_price: 2.50
-        total: 165.00
-      - item: "Makan Tengah Hari (Nasi Berlauk + Air Minum) [47 Pelajar + 6 Staf + 13 UTM]"
-        qty: "66 pek"
+      - item: "Sarapan Pagi (Roti Bun + Air Kotak 250ml) [66 Pax + 5 Lebihan = 71 Pax]"
+        qty: "71 pax"
+        unit_price: 2.00
+        total: 142.00
+      - item: "Makan Tengah Hari (Nasi Berlauk + Air Minum) [66 Pax + 5 Lebihan = 71 Pax]"
+        qty: "71 pek"
         unit_price: 6.50
-        total: 429.00
-      - item: "Bahan Aktiviti 7 Meja (Kertas Mahjong, Pen Marker)"
+        total: 461.50
+      - item: "Bahan Aktiviti Lengkap 7 Meja (25 Mahjong, 25 Marker, Sticky, Tape, Gunting)"
         qty: "7 meja"
-        unit_price: 6.00
-        total: 42.00
-      - item: "Hadiah Kuiz Showdown (5 Set Hadiah Berkualiti)"
+        unit_price: 8.00
+        total: 56.00
+      - item: "Hadiah Kuiz Showdown (5 Pemenang Hadiah Bermanfaat)"
         qty: "5 set"
         unit_price: 15.00
         total: 75.00
@@ -107,11 +114,11 @@ variants:
         qty: "1 set"
         unit_price: 45.00
         total: 45.00
-      - item: "Sijil Penyertaan 47 Pelajar + Sijil Penghargaan Staf"
+      - item: "Sijil Penyertaan & Edaran Pelajar Tak Hadir (Emboss)"
         qty: "55 keping"
-        unit_price: 0.60
-        total: 33.00
+        unit_price: 0.30
+        total: 16.50
       - item: "Kontingensi & Logistik Kecemasan"
         qty: "-"
-        unit_price: 11.00
-        total: 11.00
+        unit_price: 4.00
+        total: 4.00
