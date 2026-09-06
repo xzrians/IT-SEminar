@@ -5,8 +5,27 @@
       <span class="section-tag"><i data-lucide="pie-chart"></i> Siling Peruntukan: RM 800.00</span>
       <h2 class="section-title">3 Varian Bajet Eksekutif (66 Pax)</h2>
       <p class="section-subtitle">
-        Pelan belanjawan fleksibel merangkumi 47 pelajar, 6 staf ASDAF, dan 13 kru UTM. Klik mana-mana varian di bawah untuk melihat pecahan terperinci:
+        Pelan belanjawan fleksibel berasaskan kiraan rasmi: <strong>{{ site.data.budget.formula }}</strong>. Klik mana-mana varian di bawah untuk melihat pecahan terperinci:
       </p>
+    </div>
+
+    <!-- Formula & Pax Breakdown Banner -->
+    <div class="glass-card" style="padding: 18px 24px; margin-bottom: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div class="brand-icon" style="width: 38px; height: 38px; font-size: 1.1rem; flex-shrink: 0;">
+          <i data-lucide="users"></i>
+        </div>
+        <div>
+          <strong style="font-size: 1.05rem; display: block;">Asas Pengiraan Pax Jamuan:</strong>
+          <span style="color: var(--accent-cyan); font-size: 0.9rem; font-weight: 600;">{{ site.data.budget.formula }}</span>
+        </div>
+      </div>
+      <div class="demo-pills" style="margin: 0;">
+        <span class="pill"><i data-lucide="graduation-cap"></i> <strong>{{ site.data.budget.pax_breakdown.students }}</strong> Pelajar ASDAF</span>
+        <span class="pill warden"><i data-lucide="shield-check"></i> <strong>{{ site.data.budget.pax_breakdown.staff }}</strong> Staf ASDAF</span>
+        <span class="pill" style="border-color: rgba(99, 102, 241, 0.4); background: rgba(99, 102, 241, 0.12);"><i data-lucide="user-check"></i> <strong>{{ site.data.budget.pax_breakdown.utm_students }}</strong> Pelajar UTM</span>
+        <span class="pill highlight"><i data-lucide="check-circle-2"></i> <strong>{{ site.data.budget.pax_breakdown.total }} Orang Pax</strong></span>
+      </div>
     </div>
 
     <!-- 3 Tabs -->

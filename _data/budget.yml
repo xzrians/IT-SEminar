@@ -1,5 +1,12 @@
 ceiling: "RM 800.00"
-pax_count: "66 orang (47 Pelajar + 6 Staf ASDAF + 13 Kru UTM)"
+pax_count: "66 Orang Pax (47 Pelajar ASDAF + 6 Staf ASDAF + 13 Pelajar UTM)"
+formula: "47 Pelajar + 6 Staf + 13 Pelajar UTM = 66 Pax"
+
+pax_breakdown:
+  students: 47
+  staff: 6
+  utm_students: 13
+  total: 66
 
 variants:
   - id: 1
@@ -9,13 +16,13 @@ variants:
     tag_color: "blue"
     status: "Alternatif Paling Jimat"
     balance: 530.00
-    description: "Fokus kepada modul penting, doorgift asas dan sarapan ringkas. Sesuai jika ASDAF menyediakan makan tengah hari sendiri dari dewan makan asrama."
+    description: "Fokus kepada modul penting, doorgift asas dan sarapan ringkas untuk 66 pax (47 Pelajar + 6 Staf + 13 Pelajar UTM). Sesuai jika makan tengah hari disediakan oleh pihak dewan makan ASDAF."
     items:
-      - item: "Sarapan Ringkas (Roti bun + Air Kotak 250ml)"
+      - item: "Sarapan Ringkas (Roti Bun + Air Kotak) [47 Pelajar + 6 Staf + 13 UTM]"
         qty: "66 pax"
         unit_price: 2.00
         total: 132.00
-      - item: "Alat Tulis & Kertas Manila (7 Meja)"
+      - item: "Alat Tulis & Kertas Manila (7 Meja Kluster)"
         qty: "1 set"
         unit_price: 35.00
         total: 35.00
@@ -23,7 +30,7 @@ variants:
         qty: "5 set"
         unit_price: 10.00
         total: 50.00
-      - item: "Plak Penghargaan ASDAF (Akrilik)"
+      - item: "Plak Penghargaan ASDAF (Akrilik Rasmi)"
         qty: "1 unit"
         unit_price: 35.00
         total: 35.00
@@ -40,9 +47,9 @@ variants:
     status: "Nilai Terbaik (Best Value)"
     balance: 280.00
     recommended: true
-    description: "Kombinasi optimum: Sarapan lengkap, pek alat tulis setiap meja, doorgift kustom untuk setiap 47 pelajar, hadiah kuiz berkualiti, dan plak penghargaan eksklusif."
+    description: "Kombinasi optimum: Sarapan lengkap 66 pax (47 Pelajar + 6 Staf + 13 Pelajar UTM), pek alat tulis 7 meja, goodie bag kustom untuk 47 pelajar, hadiah kuiz, dan plak penghargaan rasmi."
     items:
-      - item: "Sarapan Pagi (Karipap/Kuih + Roti + Air Kotak)"
+      - item: "Sarapan Pagi (Karipap/Kuih + Roti + Air Kotak) [47 Pelajar + 6 Staf + 13 UTM]"
         qty: "66 pax"
         unit_price: 3.00
         total: 198.00
@@ -50,7 +57,7 @@ variants:
         qty: "7 meja"
         unit_price: 8.00
         total: 56.00
-      - item: "Goodie Bag Pelajar ASDAF (Pen, Buku Nota Poket, Wafer)"
+      - item: "Goodie Bag Pelajar ASDAF (Pen, Buku Nota Poket, Snek)"
         qty: "47 pek"
         unit_price: 2.50
         total: 117.50
@@ -78,13 +85,13 @@ variants:
     tag_color: "purple"
     status: "Had Maksimum RM 800"
     balance: 0.00
-    description: "Merangkumi penyediaan katering Makan Tengah Hari (Nasi Ayam/Lauk) untuk 66 orang, sarapan pagi, sijil penuh, cenderahati ASDAF, dan hadiah kuiz."
+    description: "Merangkumi penyediaan Sarapan Pagi dan Makan Tengah Hari (Nasi Berlauk) untuk 66 pax (47 Pelajar + 6 Staf + 13 Pelajar UTM), sijil penuh, cenderahati ASDAF, dan hadiah kuiz."
     items:
-      - item: "Sarapan Pagi (Kuih 2 biji + Air Minuman)"
+      - item: "Sarapan Pagi (Kuih 2 biji + Air Minuman) [47 Pelajar + 6 Staf + 13 UTM]"
         qty: "66 pax"
         unit_price: 2.50
         total: 165.00
-      - item: "Makan Tengah Hari (Nasi Berlauk + Air Minum 66 Pax)"
+      - item: "Makan Tengah Hari (Nasi Berlauk + Air Minum) [47 Pelajar + 6 Staf + 13 UTM]"
         qty: "66 pek"
         unit_price: 6.50
         total: 429.00

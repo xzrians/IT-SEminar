@@ -205,22 +205,24 @@ Setiap meja membina startup teknologi remaja menggunakan 1 kertas Mahjong:
 
 ## 8. Anggaran Bajet: 3 Varian (Siling Modal RM 800.00)
 
-| Item | Varian 1: Super-Lean | Varian 2: Balanced (Disyorkan) ⭐ | Varian 3: Full-Pack (+Makan Tengah Hari) |
+> 👥 **Asas Pengiraan Pax Jamuan:** **66 Orang Pax** (47 Pelajar ASDAF + 6 Staf ASDAF + 13 Pelajar UTM)
+
+| Perkara | Varian 1: Super-Lean | Varian 2: Seimbang (Disyorkan) ⭐ | Varian 3: Pakej Lengkap (+Makan T/Hari) |
 | :--- | :---: | :---: | :---: |
-| **Snek Rehat Pagi** | RM 155 (Roti bun + kordial) | RM 220 (Roti bakery + kuih + air) | RM 100 (Roti bun + biskut + air) |
-| **Makan Tengah Hari** | *Tiada* | *Tiada* | **RM 360 (Nasi Ayam bajet 60 pax)** |
-| **Bahan Aktiviti (7 Meja)** | RM 75 (Mahjong, marker, sticky) | RM 85 (Alatan lengkap + gunting) | RM 90 (Alatan lengkap + mounting tape) |
-| **Hadiah & Hamper** | RM 0 (Gelaran pentas sahaja) | **RM 90 (3 Hamper + 5 Token kuiz)** | **RM 120 (7 Hamper Meja + Token kuiz)** |
-| **Sijil & Banner Bunting** | RM 0 (E-sijil) | **RM 45 (Sijil fizikal 47 murid)** | **RM 75 (Sijil fizikal + Bunting 2x5 kaki)** |
-| **Cenderamata Khas ASDAF** | RM 15 (Bingkai A4 Eco-Shop) | RM 20 (Bingkai kaca kemas) | RM 20 (Bingkai premium rasmi UTM) |
-| **Percetakan Juri & Rencam** | RM 5 (Print hitam putih) | RM 10 (Print kemas juri) | RM 0 (Termasuk dalam banner) |
-| **Kontigensi & Sampah** | RM 20 (Plastik sampah, bateri) | RM 50 (Bateri mic, pembersihan) | RM 35 (Plastik sampah, kecemasan) |
-| **JUMLAH KOS** | **RM 270.00** | **RM 520.00** | **RM 800.00** |
+| **Sarapan Pagi (66 Pax)** | **RM 132** (Roti bun + air kotak @ RM2) | **RM 198** (Karipap/kuih + roti + air @ RM3) | **RM 165** (Kuih 2 biji + air @ RM2.50) |
+| **Makan Tengah Hari (66 Pax)** | *Tiada* | *Tiada* | **RM 429** (Nasi ayam/lauk 66 pek @ RM6.50) |
+| **Bahan Aktiviti 7 Meja** | **RM 35** (Manila, marker, sticker) | **RM 56** (Pek modul lengkap 7 meja) | **RM 42** (Kertas mahjong + marker) |
+| **Doorgift / Goodie Bag** | *Tiada* | **RM 117.50** (47 Pelajar @ RM2.50) | *Tiada* |
+| **Hadiah Kuiz Showdown** | **RM 50** (5 Token pemenang pantas) | **RM 75** (5 Hadiah berkualiti) | **RM 75** (5 Hadiah berkualiti) |
+| **Plak Penghargaan ASDAF** | **RM 35** (Plak akrilik rasmi) | **RM 45** (Plak rasmi pengetua ASDAF) | **RM 45** (Plak rasmi pengetua ASDAF) |
+| **Sijil Penyertaan** | *E-Sijil percuma* | **RM 25** (50 Keping emboss rasmi) | **RM 33** (55 Keping pelajar & staf) |
+| **Kontingensi & Rencam** | **RM 18** | **RM 3.50** | **RM 11** |
+| **JUMLAH KESELURUHAN** | **RM 270.00** | **RM 520.00** | **RM 800.00** |
 | **BAKI DANA SIMPANAN** | **+ RM 530.00** *(Simpanan)* | **+ RM 280.00** *(Simpanan)* | **RM 0.00** *(100% Dimanfaatkan)* |
 
 > 💡 **Syor Pasukan:**
-> - Jika ASDAF sediakan makan tengah hari: **Pilih Varian 2 (RM 520)** — Ada hamper, ada sijil bercetak, dan ada baki tabung RM 280.
-> - Jika ASDAF tidak sediakan makan tengah hari: **Pilih Varian 3 (RM 800)** — Anak-anak pulang dengan perut kenyang makan nasi bersama fasilitator UTM.
+> - Jika ASDAF sediakan makan tengah hari dari asrama: **Pilih Varian 2 (RM 520)** — Ada goodie bag untuk 47 pelajar, sijil fizikal rasmi, hadiah kuiz, dan simpanan tunai baki RM 280.
+> - Jika ASDAF perlukan penyediaan makan tengah hari: **Pilih Varian 3 (RM 800)** — Menaja sepenuhnya makan tengah hari 66 orang (pelajar, staf dan kru).
 
 ---
 
