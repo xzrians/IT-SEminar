@@ -1192,6 +1192,12 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .slide-meta-split {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Print Stylesheet for Physical Briefing Day */
 @media print {
   body {

@@ -18,6 +18,7 @@ Selamat datang, AI Agent. Dokumen ini bertujuan untuk memberi panduan segera ten
 | **Bajet, Siling RM800, Varian Kos, Formula Pax Jamuan (66+5=71)** | `_data/budget.yml` | YAML |
 | **Pek Dokumen Tak Hadir, Makanan Kantin/Luar, Goodies, Utiliti (Mahjong dll.)** | `_data/operations.yml` | YAML |
 | **Jadual Atur Cara, Waktu Minit-ke-Minit, PIC Sesi** | `_data/timeline.yml` | YAML |
+| **Silibus Modul, 16 Slaid Pembentangan, 4 Aktiviti Meja & PPKI** | `_data/curriculum.yml` | YAML |
 | **7 Meja Kluster, Agihan Murid T1–T5, Murid PPKI, Mentor** | `_data/tables.yml` | YAML |
 | **Soalan Kuiz Pantas (5 Soalan Tanpa Gajet), Jawapan, Hadiah** | `_data/quiz.yml` | YAML |
 | **Senarai 13 Kru UTM & Skop Tanggungjawab** | `_data/crew.yml` | YAML |

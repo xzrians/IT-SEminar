@@ -161,9 +161,41 @@ function switchOpsTab(tabId) {
   }
 }
 
+/**
+ * Curriculum Tab Switcher (Modul, Slaid, Aktiviti)
+ */
+function switchCurrTab(tabId) {
+  // Update Buttons
+  const buttons = document.querySelectorAll('#modul .ops-tab');
+  buttons.forEach(btn => btn.classList.remove('active'));
+
+  const activeBtn = document.getElementById(`curr-tab-btn-${tabId}`);
+  if (activeBtn) {
+    activeBtn.classList.add('active');
+  }
+
+  // Update Panes
+  const panes = document.querySelectorAll('.curr-pane');
+  panes.forEach(pane => {
+    pane.style.display = 'none';
+    pane.classList.remove('active');
+  });
+
+  const activePane = document.getElementById(`curr-pane-${tabId}`);
+  if (activePane) {
+    activePane.style.display = 'block';
+    activePane.classList.add('active');
+  }
+
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
 // Attach functions to global window object
 window.toggleNav = toggleNav;
 window.switchBudgetVariant = switchBudgetVariant;
 window.switchOpsTab = switchOpsTab;
+window.switchCurrTab = switchCurrTab;
 window.toggleQuiz = toggleQuiz;
 window.toggleTaskCheck = toggleTaskCheck;

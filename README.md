@@ -135,60 +135,76 @@ Setiap fasilitator duduk bersama kumpulan masing-masing sepanjang program:
 
 ---
 
-## 6. Modul Aktiviti Ringkas & Playbook
+## 6. Silibus Modul, Rangka 16 Slaid & 4 Aktiviti Praktikal
 
-### A. Icebreakers (09:00 – 09:15 AM | 15 Minit)
-1. **Teen Tech Charades (8 min):** Wakil meja lakonkan aksi tanpa suara (45 saat), ahli meja teka (+10 mata):
-   - *Prompt lakonan:* (1) ChatGPT, (2) TikTok Scroll/FYP, (3) Hacker, (4) Drone Penghantar, (5) Gamer Kalah Main ML, (6) Selfie Filter, (7) Robot AI, (8) Kena Phishing/Scam.
-2. **Emoji Tech Decoder (7 min):** Teka istilah teknologi di skrin projektor:
-   - 🔒 + 💻 = **Cyber Security**
-   - ☁️ + 💾 = **Cloud Storage**
-   - 👁️ + 🎭 + 🤖 = **Deepfake**
-   - 🎧 + 📊 + 🎁 = **Spotify Wrapped**
-
----
-
-### B. Kuiz: "Siapa Cepat, Dia Menang!" (09:35 – 10:00 AM | 25 Minit)
-*100% Tanpa Telefon. Soalan dipaparkan di projektor. Emcee kira: "3, 2, 1... ANGKAT TANGAN!". Jawapan betul = +20 mata meja & snek segera.*
-
-- **Soalan 1 (Generative AI):** ChatGPT reka fakta palsu dengan nada yakin dipanggil apa?  
-  👉 **Jawapan: B) AI Hallucination (Halusinasi AI)**  
-  *Penerangan: AI meramal perkataan secara statistik, bukan fakta mutlak.*
-- **Soalan 2 (Algoritma Media Sosial):** Kenapa feed TikTok/Reels penuh video sama lepas kita tengok 30 saat?  
-  👉 **Jawapan: C) Algoritma cadangan rekod 'watch-time' & minat korang**  
-  *Penerangan: Platform mahu kekalkan pengguna selama mungkin (Filter Bubble).*
-- **Soalan 3 (Cyber Scam):** Mesej WhatsApp kata menang RM3,000 TnG & minta klik link bit.ly dalam 10 minit?  
-  👉 **Jawapan: C) Jangan klik; sekat nombor & abaikan/laporkan**  
-  *Penerangan: Taktik 'Urgency' + janji wang adalah asas Phishing Scam.*
-- **Soalan 4 (Deepfake):** Video muka/suara artis terkenal tapi bibir kaku ajak labur skim kaya?  
-  👉 **Jawapan: A) Deepfake (Synthetic AI Media)**  
-  *Penerangan: Dihasilkan model AI Deep Learning yang melatih imej/suara.*
-- **Soalan 5 (Digital Footprint):** Amir padam gambar sensitif di medsos selepas 1 jam, adakah ia hilang 100%?  
-  👉 **Jawapan: B) Tidak, orang lain mungkin dah screenshot & ada dalam log server**  
-  *Penerangan: 'The Internet Never Forgets'—jejak digital adalah kekal.*
+### A. Rangka 2 Modul Teras
+1. **Modul 1: Celik AI & Inspirasi Kerjaya Remaja (09:20 – 10:20 | 60 Minit)**
+   - *Fokus:* Asas AI, perbezaan komputer vs AI, demonstrasi langsung di skrin besar, pendedahan 5 kerjaya masa depan bernilai tinggi untuk anak ASDAF.
+   - *Hasil Pembelajaran:* Pelajar faham bagaimana AI menjana teks/imej/suara dan bagaimana mereka boleh membina masa depan dalam bidang teknologi.
+2. **Modul 2: Keselamatan Siber & Bengkel Startup Inovasi (10:45 – 11:45 | 60 Minit)**
+   - *Fokus:* Pertahanan menentang scam/phishing WhatsApp/Telegram, Formula Emas 3T (Tidak Pasti, Tidak Kongsi, Tidak Klik), kata laluan kebal (*passphrase*), etika jejak digital, dan mereka cipta prototaip di kertas mahjong.
+   - *Hasil Pembelajaran:* Pelajar celik keselamatan siber serta mampu bekerjasama menyelesaikan masalah asrama/komuniti.
 
 ---
 
-### C. Hands-on Startup Sprint: "The AI Pitch Challenge" (10:45 – 11:30 AM | 45 Minit)
-Setiap meja membina startup teknologi remaja menggunakan 1 kertas Mahjong:
-- **Format Poster Mahjong:**
-  1. *Nama Startup & Tagline:* (Cth: "ScamShield: Lindungi Poket Anda")
-  2. *Masalah Remaja / Komuniti:* Apa masalah yang nak diselesaikan?
-  3. *Ciri AI Utama:* Bagaimana AI membantu? (Camera vision, smart chatbot, scanner dsb.)
-  4. *Lakaran UI Aplikasi (Post-it notes):* 2–3 skrin telefon ringkas.
-  5. *Slogan Promosi.*
+### B. Rangka Pembentangan Skrin Utama (Slide Deck Outline - 16 Slaid)
+
+| Slaid | Tajuk Paparan Slaid | Visual Utama | Nota & Panduan Penceramah (Speaker Notes) |
+| :---: | :--- | :--- | :--- |
+| **1** | Selamat Datang ke NextGen Tech Summit 2026! | Logo animasi UTM x ASDAF, visual neon futuristik | Buka dengan salam semangat. Panggil adik-adik dengan mesra, nyatakan ini adalah ekspedisi meneroka dunia masa depan. |
+| **2** | Siapakah Kami? Abang & Kakak Komputeran UTM | Gambar santai 13 kru, peta perjalanan dari kampus ke ASDAF | Perkenalkan peranan mahasiswa sebagai rakan mentor yang sedia menyokong impian mereka. |
+| **3** | Apa Itu AI? Robot Jahat atau Pembantu Pintar? | Perbandingan robot filem fiksyen vs AI sebenar (Siri, Maps, YT) | Buka minda: AI bukan robot jahat, tetapi program matematik yang belajar mengecam corak data manusia. |
+| **4** | Ujian Mata AI: Kucing vs Anjing | 10,000 data gambar -> Algoritma kenal pasti misai/telinga | Interaktif: Minta dewan teka bagaimana komputer membezakan anak anjing muffin dan anak kucing. |
+| **5** | **Live Demo 1:** Mengarang Pantun Bersama AI | Antara muka ChatGPT/Gemini di projektor | Minta wakil Meja 1 sebut nama tempat. Penceramah taip prompt dan jana pantun 4 kerat secara langsung! |
+| **6** | **Live Demo 2:** Imaginasi Visual Menjadi Gambar | Penjana Imej AI (Canva Magic Media / Bing Creator) | Minta idea liar: *"Harimau Malaya pakai baju sukan UTM main bola di angkasa"*. Hasil 4K terpapar dalam 5 saat! |
+| **7** | AI Sebagai Guru Tuisyen Peribadi | Infografik belajar Matematik, BI, dan jadual SPM | Tegaskan integriti: AI bukan untuk menipu kerja rumah, tetapi tutor peribadi yang sabar mengajar. |
+| **8** | 5 Kerjaya Hebat Masa Depan Anak ASDAF | Game Dev, Pakar AI, Siber, Dron Pertanian, Web Dev | Bakat teknologi tidak kenal latar belakang. Siapa rajin belajar, peluang biasiswa & kerjaya gaji tinggi menanti. |
+| **9** | Dunia Gelap Internet: Scam & Pancingan Data | Tangkapan layar WhatsApp palsu menang RM10,000 | Tunjuk bukti mesej scam. Terangkan taktik licik penipu mencuri wang dan data peribadi. |
+| **10** | Formula Emas 3T: Senjata Melawan Scammer | Grafik 3T: **TIDAK PASTI, TIDAK KONGSI, TIDAK KLIK** | Ajak seluruh dewan melaungkan slogan 3T beramai-ramai. Kenalkan talian kecemasan **NSRC 997**. |
+| **11** | Rahsia Kata Laluan Kebal (Password vs Passphrase) | Perbandingan: `kucing123` (2 saat) vs `HarimauLompatPagar99!` | Ajar teknik menggabungkan 3 perkataan rawak menjadi ayat rahsia yang kebal daripada penggodam. |
+| **12** | Jejak Digital & Maruah: Internet Tidak Pernah Lupa | Ilustrasi tapak kaki bercahaya, aib medsos kekal | Peringatan mesra menjaga aib diri di TikTok/IG kerana catatan lampau boleh dijejaki penemuduga kerja. |
+| **13** | Masa Menjadi Pencipta: Bengkel Startup Sprint | Gambar alatan mahjong, marker, sticky notes 7 meja | Umumkan fasa aktiviti praktikal: Setiap meja kini adalah syarikat teknologi muda! |
+| **14** | Format Poster Kertas Mahjong (4 Kuadran Emas) | 1. Nama & Logo 2. Masalah 3. Solusi AI 4. Manfaat | Mentor meja membantu pelajar membahagikan kertas mahjong kepada 4 kotak maklumat yang kemas. |
+| **15** | Fast-Answer Tech Showdown: 3, 2, 1... Angkat Tangan! | Layar pertarungan arcade, papan markah 7 meja | Pemanas kuiz: Tangan atas meja! Siapa paling laju dan tepat terus dapat hadiah token di hadapan. |
+| **16** | Masa Depan Bermula Hari Ini! Terima Kasih ASDAF | Ucapan penghargaan, sesi bergambar & serahan plak | Kata penutup inspirasi: *"Kalian peneraju teknologi masa depan negara. Terus melangkah dengan megah!"* |
 
 ---
 
-### D. Startup Pitch Showcase & Anugerah (11:30 – 12:00 PM)
-- 7 meja hantar wakil (2–3 minit di pentas).
-- Tiada istilah "kalah"—semua meja menerima **Gelaran Kehormat**:
-  1. 🦄 *The Unicorn Award* (Inovasi Paling Unik)
-  2. 🎨 *Best Visual Design* (Poster Paling Kreatif)
-  3. 🎤 *Venture Pitch Masters* (Penyampaian Pentas Paling Berkeyakinan)
-  4. 🛡️ *Cyber Ethics & Social Impact* (Penyelesaian Masalah Sosial Terbaik)
-  5. ⚙️ *Technical Feasibility Award* (Idea Paling Praktikal & Boleh Dibina)
-  6. ⚡ *Fast-Answer Quiz Champion* (Juara Kuiz Pantas)
+### C. 4 Aktiviti Praktikal Tanpa Gajet
+
+#### 1. Aktiviti 1: Ice-Breaking "Tech Bingo" (09:00 – 09:20 | 20 Minit)
+- **Bahan:** 47 Keping Lembaran Tech Bingo A5 + Pen/Pensel.
+- **Mekanik:** Lembaran mengandungi 9 kotak kriteria (cth: *"Tahu maksud AI"*, *"Suka main Roblox/ML"*, *"Pernah dengar ChatGPT"*, *"Tahu hotline 997"*). Murid bergerak di meja atau menyapa kru UTM untuk mendapatkan tandatangan.
+- **Peranan Mentor:** Bantu mencairkan rasa malu murid junior dan bimbing 4 murid PPKI menanda kotak dengan ceria.
+
+#### 2. Aktiviti 2: Demonstrasi "Human Prompt Engineer" (09:50 – 10:10 | 20 Minit)
+- **Bahan:** Projektor skrin besar + Komputer riba penceramah.
+- **Mekanik:** Setiap meja berbincang selama 2 minit untuk mencipta 1 ayat *prompt* imaginasi yang menggabungkan elemen tempatan dan teknologi. Wakil meja membacakan prompt melalui mikrofon untuk dijana oleh AI penceramah di skrin besar.
+
+#### 3. Aktiviti 3: Startup Sprint Kertas Mahjong (11:00 – 11:45 | 45 Minit)
+- **Bahan Setiap Meja:** 1 Kertas Mahjong + 3 Marker Berwarna + 1 Pad Sticky Notes Neon + 1 Gunting Tumpul + 1 Gam Stick + Pelekat Dot Undian.
+- **Agihan 7 Tema Unik Mengikut Meja:**
+  - **Meja 1 (Junior Lelaki + PPKI):** *Robot Pembersih Asrama Pintar* (Mesin automatik sapu dorm & sembur wangian).
+  - **Meja 2 (Junior Lelaki):** *Loceng & Jadual Solat/Prep Pintar* (Penggera waktu berlampu LED).
+  - **Meja 3 (Senior Lelaki):** *Dron Pengesan Keselamatan Pedalaman* (Dron pantau keselamatan kawasan dusun/hutan).
+  - **Meja 4 (Junior Perempuan + PPKI):** *Gelang Pengesan Keselamatan Remaja* (Siren & amaran GPS jika dalam bahaya).
+  - **Meja 5 (Menengah Rendah Perempuan + PPKI):** *Kamera Penterjemah Bahasa Temiar/Semai ke BM* (Aplikasi imbas suara ibunda).
+  - **Meja 6 (Menengah Atas Perempuan + PPKI):** *Aplikasi Sahabat Minda Remaja Asrama* (Ruang luahan stres peperiksaan tanpa nama).
+  - **Meja 7 (Senior SPM Perempuan):** *Portal Pintar Kerjaya & Biasiswa TVET/IT* (Panduan hala tuju pasca-SPM).
+- **Mekanik Penilaian:** *Peer Voting Gallery Walk* — Setiap pelajar diberi 2 pelekat dot undian untuk menampal pada poster meja kegemaran mereka.
+
+#### 4. Aktiviti 4: Fast-Answer Tech Showdown (11:45 – 12:15 | 30 Minit)
+- **Bahan:** Skrin Projektor Dewan, Papan Skor Markah, 5 Set Hadiah Pemenang Pantas.
+- **Mekanik:** 5 Soalan dipaparkan satu demi satu. Kiraan detik: *"3, 2, 1... ANGKAT TANGAN!"*. Meja terpantas diberi peluang menjawab di mikrofon. Jawapan betul menerima token hadiah segera!
+
+---
+
+### D. Garis Panduan Bimbingan Khusus untuk 4 Murid PPKI (Pendidikan Khas)
+*Ditempatkan di Meja 1, Meja 4, Meja 5, dan Meja 6 dengan bimbingan mentor rapat:*
+1. **Peranan Kinestetik Nyata:** Berikan mereka tugas sentuhan fizikal seperti memilih warna sticky notes, memegang marker kegemaran, menggunting templat gambar alat, dan menampal pelekat undian pada poster mahjong.
+2. **Bahasa Mudah & Analogi Harian:** Elakkan teori rumit; terangkan konsep melalui contoh mudah (cth: *"Alat ini macam peti sejuk ajaib yang tahu bila makanan dah habis"*).
+3. **Pujian Positif Spontan (*Positive Reinforcement*):** Sentiasa beri dorongan kata-kata semangat *"Bagus adik!"*, *"Cantik lukisan ini!"* untuk membina keyakinan diri.
+4. **Sokongan Rapat Tanpa Mengasingkan:** Mentor meja duduk bersebelahan sambil memastikan rakan meja sebaya lain turut mesra menyantuni mereka.
 
 ---
 

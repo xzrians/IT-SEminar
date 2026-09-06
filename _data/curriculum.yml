@@ -1,0 +1,231 @@
+# Kurikulum Bengkel: Rangka Pembentangan, Topik & Aktiviti Praktikal
+# NextGen Tech Summit 2026 | UTM x ASDAF PERKIM
+
+modules:
+  - id: 1
+    code: "MODUL-01"
+    title: "Dunia Kecerdasan Buatan (AI) & Inspirasi Kerjaya Masa Depan"
+    time: "09:20 - 10:20 (60 Minit)"
+    trainer: "Lead Trainer AI & Fasilitator UTM"
+    focus: "Mendedahkan asas AI, demonstrasi langsung di skrin besar, dan membuka mata remaja terhadap peluang kerjaya digital tanpa perlu latar belakang kaya."
+    learning_outcomes:
+      - "Memahami perbezaan antara komputer biasa dengan sistem AI pintar."
+      - "Melihat bagaimana AI menjana teks, gambar dan suara secara masa nyata."
+      - "Mengetahui 5 laluan kerjaya teknologi bernilai tinggi yang boleh diceburi lepasan SPM/universiti."
+
+  - id: 2
+    code: "MODUL-02"
+    title: "Keselamatan Siber (Cyber Resilience) & Bengkel Startup Inovasi"
+    time: "10:45 - 11:45 (60 Minit)"
+    trainer: "Trainer 2 & 7 Mentor Meja"
+    focus: "Melindungi remaja daripada perangkap penipuan dalam talian (scam/phishing), etika jejak digital, serta mereka cipta solusi inovasi menggunakan kertas mahjong."
+    learning_outcomes:
+      - "Mengenal pasti taktik scam WhatsApp/Telegram dan formula pertahanan 3T (Tidak Pasti, Tidak Kongsi, Tidak Klik)."
+      - "Mencipta kata laluan kebal menggunakan konsep Frasa Laluan (Passphrase)."
+      - "Bekerjasama dalam 7 meja kluster untuk mereka cipta prototaip idea inovasi komuniti di atas kertas mahjong."
+
+presentation_slides:
+  deck_title: "NextGen Tech Summit: Menembusi Sempadan Digital"
+  total_slides: 16
+  slides:
+    - slide_no: 1
+      title: "Selamat Datang ke NextGen Tech Summit 2026!"
+      section: "Pembukaan"
+      visual: "Logo animasi UTM x ASDAF, visual futuristik neon ceria, gelombang suara lofi."
+      speaker_notes: "Beri salam semangat, panggil adik-adik dengan mesra. Maklumkan bahawa hari ini bukan kuliah bosan, tetapi ekspedisi meneroka dunia masa depan bersama abang & kakak UTM."
+    
+    - slide_no: 2
+      title: "Siapakah Kami? Abang & Kakak Fakulti Komputeran UTM"
+      section: "Pengenalan"
+      visual: "Gambar santai 13 kru UTM, peta perjalanan dari kampus Skudai/KL ke Bukit Persekutuan."
+      speaker_notes: "Perkenalkan setiap peranan secara santai. Tekankan bahawa mahasiswa universiti datang sebagai rakan mentor untuk menyokong impian mereka."
+
+    - slide_no: 3
+      title: "Apakah Itu AI Sebenarnya? Robot Jahat atau Pembantu Pintar?"
+      section: "Modul 1: Asas AI"
+      visual: "Perbandingan imej: Robot fiksyen filem vs AI sebenar dalam telefon pintar (Siri, Google Maps, YouTube recommendation)."
+      speaker_notes: "Tanya audiens: 'Bila dengar perkataan AI, apa yang terlintas? Terminator?'. Jelaskan AI sebenarnya adalah program matematik yang belajar mengecam corak data manusia."
+
+    - slide_no: 4
+      title: "Bagaimana AI Berfikir? Ujian Mata AI: Kucing vs Anjing"
+      section: "Modul 1: Asas AI"
+      visual: "Rajah mudah: 10,000 gambar kucing dimasukkan ke komputer -> AI kenal pasti bentuk telinga, misai, mata -> AI boleh teka gambar baru."
+      speaker_notes: "Aktiviti interaktif pentas: Tunjuk gambar anak kucing dan anjing muffin. Minta pelajar angkat tangan teka bagaimana komputer membezakannya."
+
+    - slide_no: 5
+      title: "Demonstrasi Langsung 1: Mengarang Cerita & Pantun Bersama AI"
+      section: "Modul 1: Demo Interaktif"
+      visual: "Skrin projektor memaparkan antara muka ChatGPT / Gemini. Kotak promt terbuka."
+      speaker_notes: "Minta seorang wakil pelajar di Meja 1 sebut nama tempat kegemaran mereka (cth: 'Bukit Persekutuan'). Penceramah taip prompt: 'Tulis pantun 4 kerat tentang semangat anak ASDAF Bukit Persekutuan'. Papar hasil serta-merta."
+
+    - slide_no: 6
+      title: "Demonstrasi Langsung 2: Imaginasi Visual Menjadi Gambar Digital"
+      section: "Modul 1: Demo Interaktif"
+      visual: "Penjana imej AI (cth: Canva Magic Media / DALL-E / Bing Creator). Input teks -> Hasil gambar seni 4K."
+      speaker_notes: "Minta wakil Meja 4 sebutkan gabungan imaginasi liar: 'Harimau Malaya memakai baju sukan UTM bermain bola sepak di angkasa lepas'. Tunjukkan gambar terjana dalam 5 saat! Dewan teruja."
+
+    - slide_no: 7
+      title: "AI Boleh Bantu Kerja Sekolah: Jadual Belajar & Tutor Peribadi"
+      section: "Modul 1: Aplikasi Harian"
+      visual: "Grafik infografik: Menggunakan AI untuk terangkan formula Matematik sukar, betulkan tatabahasa Bahasa Inggeris, dan buat jadual SPM."
+      speaker_notes: "Tekankan prinsip integriti: AI bukan untuk menipu kerja rumah, tetapi sebagai guru tuisyen peribadi yang sabar menjawab soalan berulang kali."
+
+    - slide_no: 8
+      title: "Kerjaya Hebat Masa Depan: Di Mana Tempat Anak ASDAF?"
+      section: "Modul 1: Kerjaya & Impian"
+      visual: "5 Ikon Kerjaya: 1. Pereka Permainan Digital (Game Dev) 2. Pakar AI 3. Penganalisis Keselamatan Siber 4. Jurutera Dron Pertanian 5. Pembangun Aplikasi Web."
+      speaker_notes: "Motivasi khas: Bakat teknologi tidak mengira anak bandar atau anak asrama pedalaman. Siapa rajin belajar logik dan celik IT, dunia luas menanti biasiswa dan tawaran kerjaya bergaji tinggi."
+
+    - slide_no: 9
+      title: "Dunia Gelap Internet: Scam, Phishing & Jerat Media Sosial"
+      section: "Modul 2: Keselamatan Siber"
+      visual: "Tangkapan layar mesej WhatsApp palsu: 'Tahniah! Anda memenangi RM10,000 dari Shopee, sila klik pautan ini sekarang'."
+      speaker_notes: "Tanya: 'Siapa pernah terima mesej macam ni?'. Jelaskan ini adalah pancingan data (phishing) yang berniat mencuri akaun dan duit keluarga."
+
+    - slide_no: 10
+      title: "Formula Emas 3T: Senjata Utama Melawan Scammer"
+      section: "Modul 2: Keselamatan Siber"
+      visual: "Grafik Besar T-T-T: 1. TIDAK PASTI 2. TIDAK KONGSI 3. TIDAK KLIK. Lencana NSRC Hotline 997."
+      speaker_notes: "Ajak semua dewan sebut beramai-ramai: 'TIDAK PASTI, TIDAK KONGSI, TIDAK KLIK!'. Hafal talian Pusat Respons Scam Kebangsaan 997."
+
+    - slide_no: 11
+      title: "Rahsia Kata Laluan Kebal: Password vs Passphrase"
+      section: "Modul 2: Keselamatan Siber"
+      visual: "Perbandingan: 'kucing123' (mudah digodam dalam 2 saat) vs 'HarimauLompatPagar99!' (perlu 10,000 tahun untuk dipecahkan)."
+      speaker_notes: "Ajar teknik gabung 3 perkataan rawak menjadi ayat rahsia yang mudah diingat pemilik tetapi mustahil diteka oleh penggodam."
+
+    - slide_no: 12
+      title: "Jejak Digital & Maruah Diri: Internet Tidak Pernah Lupa"
+      section: "Modul 2: Etika Digital"
+      visual: "Ilustrasi cap kaki digital bercahaya. Catatan media sosial, komen toksik, gambar peribadi yang tersebar."
+      speaker_notes: "Peringatan empati: Jaga aib dan maruah diri di TikTok/Instagram. Apa yang dimuat naik hari ini boleh dilihat oleh majikan atau penemuduga universiti 5 tahun lagi."
+
+    - slide_no: 13
+      title: "Masa untuk Menjadi Pencipta: Bengkel Startup Sprint Kertas Mahjong"
+      section: "Modul 2: Latihan Kumpulan"
+      visual: "Gambar susun atur 7 meja kluster, gulungan kertas mahjong, marker pelbagai warna, pelekat sticky notes."
+      speaker_notes: "Umumkan aktiviti kemuncak: Meja korang kini adalah syarikat teknologi! Cipta 1 idea inovasi untuk bantu asrama/sekolah anda."
+
+    - slide_no: 14
+      title: "Format Pembentangan Poster: 4 Kotak Emas"
+      section: "Modul 2: Panduan Poster"
+      visual: "Rajah susun atur kertas mahjong: 1. Nama Inovasi & Logo 2. Masalah Yang Dihadapi 3. Bagaimana Teknologi AI Berfungsi 4. Kebaikan Kepada Komuniti."
+      speaker_notes: "Fasilitator meja bersedia membantu pelajar membahagikan kertas mahjong kepada 4 kuadran ringkas dan menarik."
+
+    - slide_no: 15
+      title: "Bersiap Sedia: Fast-Answer Tech Showdown Kuiz Pantas!"
+      section: "Kuiz Dewan"
+      visual: "Layar pertarungan arcade retro, kiraan detik '3... 2... 1... ANGKAT TANGAN!'. Gambar hadiah misteri."
+      speaker_notes: "Pemanas suasana kuiz: Tangan atas meja, mata pada skrin! Siapa terpantas dan tepat, terus sapu hadiah di hadapan pentas."
+
+    - slide_no: 16
+      title: "Masa Depan Bermula Hari Ini! Terima Kasih ASDAF"
+      section: "Penutup"
+      visual: "Ucapan penghargaan rasmi UTM kepada ASDAF PERKIM, sesi bergambar & serahan cenderamata."
+      speaker_notes: "Kata-kata penutup inspirasi: 'Korang adalah generasi peneraju teknologi negara. Jangan pernah rasa rendah diri, buktikan kemampuan anak ASDAF!'."
+
+workshop_activities:
+  - id: "AKT-01"
+    name: "Ice-Breaking: Tech Bingo & Human Radar"
+    time_slot: "09:00 - 09:20 (20 Minit)"
+    phase: "Pembukaan & Suai Kenal"
+    target: "Semua 47 Pelajar ASDAF + 13 Kru UTM"
+    materials:
+      - "47 Keping Lembaran Kertas Tech Bingo (Saiz A5)"
+      - "Pen/Pensel untuk setiap murid"
+    mechanics:
+      - "Setiap murid menerima lembaran Tech Bingo yang mengandungi 9 kotak kriteria (cth: 'Pernah tengok robot', 'Tahu maksud AI', 'Suka main game', 'Boleh lukis logo komputer', 'Tahu nombor 997')."
+      - "Murid perlu bergerak santai di meja atau bertegur sapa dengan fasilitator UTM untuk mendapatkan tandatangan dalam kotak yang sepadan."
+      - "Murid pertama yang melengkapkan 1 baris melintang/menegak menjerit 'NEXTGEN BINGO!' dan menerima lencana pujian awal."
+    mentor_role: "Membantu pelajar pemalu di meja untuk bertegur sapa dan membimbing 4 murid PPKI menanda kotak yang sesuai dengan senyuman."
+
+  - id: "AKT-02"
+    name: "Demonstrasi Interaktif: Human Prompt Engineer"
+    time_slot: "09:50 - 10:10 (20 Minit)"
+    phase: "Semasa Modul 1 (Pentas & Meja)"
+    target: "Wakil daripada 7 Meja Kluster"
+    materials:
+      - "Komputer Riba Utama & Projektor Skrin Dewan"
+      - "Aplikasi Penjana AI Langsung (ChatGPT & Image AI Generator)"
+    mechanics:
+      - "Penceramah membuka cabaran: 'Jadikan imaginasi korang realiti di skrin besar!'."
+      - "Setiap meja berbincang selama 2 minit bersama mentor untuk mencipta 1 ayat prompt kreatif yang menggabungkan elemen budaya tempatan dan teknologi futuristik."
+      - "Wakil meja bangun dan membaca prompt mereka dengan mikrofon wayarles. Penceramah menaip arahan dan skrin memaparkan hasil imej janaan AI secara langsung."
+      - "Dewan mengundi hasil prompt yang paling kreatif dengan sorakan meja."
+    mentor_role: "Membantu anak-anak di meja menyusun perkataan Bahasa Melayu atau Inggeris yang kaya dengan daya imaginasi."
+
+  - id: "AKT-03"
+    name: "Startup Sprint: Cipta Inovasi Digital Kertas Mahjong"
+    time_slot: "11:00 - 11:45 (45 Minit)"
+    phase: "Kemuncak Modul 2 (Aktiviti Meja)"
+    target: "7 Kumpulan Meja Kluster (6-7 Murid per Meja)"
+    materials:
+      - "1 Keping Kertas Mahjong Putih per meja (Simpanan sedia ada)"
+      - "3 Batang Marker Pen (Hitam, Biru, Merah)"
+      - "1 Pad Sticky Notes Neon"
+      - "1 Unit Gunting Keselamatan & Gam Stick"
+      - "2 Helaian Pelekat Bulat Warna (Voting Dot Stickers)"
+    table_themes:
+      - table_id: 1
+        name: "Meja 1 (Junior Lelaki + PPKI)"
+        theme: "Robot Pembersih Asrama Pintar"
+        desc: "Lakaran mesin yang boleh menyapu dorm, mengutip sampah secara automatik, dan menyembur wangian."
+      - table_id: 2
+        name: "Meja 2 (Junior Lelaki)"
+        theme: "Sistem Penggera Jadual & Loceng Asrama Pintar"
+        desc: "Alat peringatan waktu subuh, waktu riadah petang dan jadual prep malam dengan lampu LED berirama."
+      - table_id: 3
+        name: "Meja 3 (Senior Lelaki)"
+        theme: "Dron Keselamatan Pedalaman & Pengesan Haiwan"
+        desc: "Dron berkuasa solar yang membantu mengesan haiwan liar atau penceroboh di kawasan dusun dan hutan."
+      - table_id: 4
+        name: "Meja 4 (Junior Perempuan + PPKI)"
+        theme: "Gelang Pengesan Keselamatan Remaja"
+        desc: "Gelang tangan dengan butang kecemasan yang menghantar amaran GPS dan lampu siren jika berada dalam bahaya."
+      - table_id: 5
+        name: "Meja 5 (Menengah Rendah Perempuan + PPKI)"
+        theme: "Kamera Penterjemah Bahasa Temiar/Semai ke Bahasa Melayu"
+        desc: "Aplikasi AI yang mendengar percakapan bahasa ibunda suku kaum dan menterjemah teks secara langsung."
+      - table_id: 6
+        name: "Meja 6 (Menengah Atas Perempuan + PPKI)"
+        theme: "Aplikasi Sahabat Minda & Luahan Perasaan Asrama"
+        desc: "Ruang digital selamat tanpa nama untuk remaja berkongsi stres peperiksaan dan menerima kata-kata semangat motivasi."
+      - table_id: 7
+        name: "Meja 7 (Senior SPM Perempuan)"
+        theme: "Portal Kerjaya & Biasiswa TVET/IT Masa Depan"
+        desc: "Sistem pintar yang memadankan minat pelajar dengan senarai kolej, biasiswa zakat, dan kemasukan universiti."
+    mechanics:
+      - "Langkah 1 (15 Minit): Percambahan idea di atas sticky notes neon dan lekatkan pada kertas mahjong."
+      - "Langkah 2 (15 Minit): Melukis prototaip/gambar alat, mewarnakan tajuk poster, dan membahagi peranan pembentangan."
+      - "Langkah 3 (10 Minit): Pameran Galeri (Gallery Walk) & Peer Voting. Setiap pelajar diberi 2 pelekat dot undian untuk mengundi idea rakan meja lain."
+      - "Langkah 4 (5 Minit): Pengumuman 3 meja dengan undian tertinggi untuk menerima trofi sorakan."
+    mentor_role: "Memandu masa minit-ke-minit, memastikan tiada murid dipinggirkan, dan memberi murid PPKI peranan memegang marker/menampal pelekat."
+
+  - id: "AKT-04"
+    name: "Fast-Answer Tech Showdown (Kuiz Tanpa Telefon)"
+    time_slot: "11:45 - 12:15 (30 Minit)"
+    phase: "Penilaian & Peneguhan Modul"
+    target: "Seluruh Dewan (Wakil 7 Meja)"
+    materials:
+      - "Layar Projektor Skrin Utama (Paparan Soalan & Pilihan)"
+      - "Papan Skor Markah Dewan"
+      - "5 Hadiah Pemenang Pantas"
+    mechanics:
+      - "Emcee membaca soalan di skrin besar."
+      - "Kiraan detik: 'TIGA... DUA... SATU... ANGKAT TANGAN!'."
+      - "Mentor meja menyokong pelajar untuk pantas mengangkat tangan. Murid pertama yang dikesan oleh emcee berpeluang menjawab menggunakan mikrofon wayarles."
+      - "Jawapan betul dianugerahkan token hadiah segera dan markah dicatat di papan skor dewan."
+    mentor_role: "Memberi dorongan keberanian kepada murid meja masing-masing untuk angkat tangan tanpa takut salah."
+
+ppki_inclusion_guidelines:
+  title: "Panduan Bimbingan Mesra Murid Pendidikan Khas (PPKI)"
+  target_students: "4 Orang Pelajar PPKI (Di Meja 1, Meja 4, Meja 5, dan Meja 6)"
+  strategies:
+    - strategy: "Peranan Fizikal & Kinestetik Nyata"
+      desc: "Beri mereka tugas seperti memegang pen marker warna kegemaran, memilih warna sticky notes, menggunting lembaran gambar, dan menampal pelekat undian pada poster."
+    - strategy: "Bahasa Mudah & Arahan Satu Demi Satu"
+      desc: "Elakkan istilah teori yang rumit. Terangkan konsep melalui analogi harian seperti 'alat ini macam peti sejuk pintar yang tahu apa makanan ada di dalam'."
+    - strategy: "Pujian Positif Spontan (Positive Reinforcement)"
+      desc: "Ucapkan 'Bagus adik!', 'Hebat lukisan ini!' untuk membina keyakinan diri dan perasaan dihargai sepanjang program."
+    - strategy: "Sokongan Rapat Tanpa Mengasingkan"
+      desc: "Mentor meja duduk bersebelahan murid PPKI sambil memastikan rakan meja sebaya lain turut menyantuni dan melibatkan mereka dalam perbincangan."
