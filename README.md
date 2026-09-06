@@ -1,6 +1,6 @@
 # 🚀 NextGen Tech Summit: Master Event & Facilitator Playbook (All-in-One)
 
-> 🌐 **Laman Web Rasmi (GitHub Pages):** [https://xzrians.github.io/IT-SEminar/](https://xzrians.github.io/IT-SEminar/)  
+> 🌐 **Laman Web Rasmi (GitHub Pages):** [https://xzrians.github.io/ITSeminar/](https://xzrians.github.io/ITSeminar/)  
 > 📖 **Panduan Kemas Kini Wiki (Untuk Manusia & AI):** Rujuk [GUIDELINE.md](file:///c:/Users/lezas/OneDrive/UTM/Courses/seminar/GUIDELINE.md) & [AGENTS.md](file:///c:/Users/lezas/OneDrive/UTM/Courses/seminar/AGENTS.md)  
 > *Buku Panduan Lengkap Program: Menggabungkan profil institusi ASDAF, jadual masa, agihan 13 krew UTM, skrip emcee, 5 soalan kuiz pantas, modul aktiviti, dan 3 varian bajet dalam satu dokumen.*
 
