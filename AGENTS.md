@@ -1,4 +1,4 @@
-# Panduan AI Agent: Struktur & Peraturan Pengemaskinian Wiki NextGen Tech Summit
+# Panduan AI Agent: Struktur & Peraturan Pengemaskinian Wiki NextGen Celik Digital
 
 Selamat datang, AI Agent. Dokumen ini bertujuan untuk memberi panduan segera tentang seni bina repositori ini supaya anda boleh terus mengemas kini maklumat tanpa perlu membuang masa menganalisis fail-fail yang tidak berkaitan.
 

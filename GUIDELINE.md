@@ -1,4 +1,4 @@
-# 📖 Panduan Kemas Kini Wiki (NextGen Tech Summit 2026)
+# 📖 Panduan Kemas Kini Wiki (NextGen Celik Digital 2026)
 *Buku Panduan Rasmi untuk Pengguna & Pembangun AI Agent*
 
 Laman wiki ini dijana menggunakan **Jekyll Static Site Generator (SSG)** dan di-deploy secara automatik ke **GitHub Pages** menggunakan **GitHub Actions**.

@@ -1,4 +1,4 @@
-# 🚀 NextGen Tech Summit: Master Event & Facilitator Playbook (All-in-One)
+# 🚀 NextGen Celik Digital: Master Event & Facilitator Playbook (All-in-One)
 
 > 🌐 **Laman Web Rasmi (GitHub Pages):** [https://xzrians.github.io/ITSeminar/](https://xzrians.github.io/ITSeminar/)  
 > 📖 **Panduan Kemas Kini Wiki (Untuk Manusia & AI):** Rujuk [GUIDELINE.md](file:///c:/Users/lezas/OneDrive/UTM/Courses/seminar/GUIDELINE.md) & [AGENTS.md](file:///c:/Users/lezas/OneDrive/UTM/Courses/seminar/AGENTS.md)  
@@ -8,7 +8,7 @@
 
 ## 1. Ringkasan Eksekutif Program
 
-- **Nama Program:** NextGen Tech Summit: AI, Innovation & Cyber Resilience
+- **Nama Program:** NextGen Celik Digital 2026: Bengkel Santai AI & Keselamatan Siber Remaja
 - **Penganjur:** Kumpulan Mahasiswa Universiti Teknologi Malaysia (UTM)
 - **Sasaran Peserta:** **47 Murid ASDAF** (Asrama Darul Falah, Bukit Persekutuan, KL) + **6 Staf/Warden Pengiring**
   - *Pecahan:* Tingkatan 1 (6), Tingkatan 2 (6), Tingkatan 3 (10), Tingkatan 4 (15), Tingkatan 5 (5), dan **4 Murid PPKI (Pendidikan Khas)**.

@@ -1,10 +1,10 @@
 /**
- * NextGen Tech Summit 2026 - Service Worker
+ * NextGen Celik Digital 2026 - Service Worker
  * Progressive Web App (PWA) Offline-First Engine
  * Strategy: App Shell Precaching + Stale-While-Revalidate Runtime Caching
  */
 
-const CACHE_NAME = 'nextgen-pwa-v1.0.2';
+const CACHE_NAME = 'nextgen-pwa-v1.0.3';
 
 const PRECACHE_ASSETS = [
   './',

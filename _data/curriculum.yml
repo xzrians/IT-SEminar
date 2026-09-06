@@ -1,4 +1,4 @@
-# Seminar Teknologi Maklumat & Kecerdasan Buatan (Separuh Hari) | UTM x ASDAF PERKIM
+# NextGen Celik Digital 2026 | UTM x ASDAF PERKIM
 
 modules:
   - id: 1
@@ -24,11 +24,11 @@ modules:
       - "Aktiviti kertas mahjong: Setiap meja memilih 1 aplikasi AI, melukis & menyenaraikan kebaikannya, lalu membentangkan dalam 2 minit."
 
 presentation_slides:
-  deck_title: "Seminar Teknologi Maklumat & AI: Eksplorasi Digital Santai"
+  deck_title: "NextGen Celik Digital: Menembusi Dunia Digital Santai"
   total_slides: 16
   slides:
     - slide_no: 1
-      title: "Selamat Datang ke Seminar Teknologi Maklumat & AI!"
+      title: "Selamat Datang ke NextGen Celik Digital 2026!"
       section: "Pembukaan"
       visual: "Logo animasi UTM x ASDAF, visual futuristik neon ceria, gelombang suara lofi."
       speaker_notes: "Beri salam semangat, panggil adik-adik dengan mesra. Maklumkan bahawa hari ini bukan kuliah bosan, tetapi ekspedisi meneroka dunia masa depan bersama abang & kakak UTM."
