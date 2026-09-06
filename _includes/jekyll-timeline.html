@@ -1,0 +1,129 @@
+<!-- Jekyll Timeline Component (Dependency-Free, GitHub Pages & Mobile Optimized) -->
+<div class="jekyll-timeline-component" id="jekyllTimeline">
+
+  <!-- Quick-Jump Horizontal Time Anchors (Mobile Friendly Swipe Track) -->
+  <div class="timeline-quick-bar">
+    <div class="quick-jump-label">
+      <i data-lucide="fast-forward"></i>
+      <span>Pintas Masa:</span>
+    </div>
+    <div class="quick-jump-track">
+      {% for slot in site.data.timeline %}
+      <button 
+        type="button"
+        class="quick-jump-pill" 
+        onclick="jumpToTimelineSlot('{{ slot.id }}')"
+        title="{{ slot.title }}">
+        <span class="pill-dot"></span>
+        <span class="pill-time">{{ slot.start_time }}</span>
+      </button>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Interactive Category Filter Chips -->
+  <div class="timeline-filter-bar">
+    <button type="button" class="timeline-filter-btn active" data-category="all" onclick="filterTimeline('all')">
+      <i data-lucide="layers"></i>
+      <span>Semua (8 Sesi)</span>
+    </button>
+    <button type="button" class="timeline-filter-btn" data-category="modul" onclick="filterTimeline('modul')">
+      <i data-lucide="cpu"></i>
+      <span>Modul & Bengkel</span>
+    </button>
+    <button type="button" class="timeline-filter-btn" data-category="kuiz" onclick="filterTimeline('kuiz')">
+      <i data-lucide="zap"></i>
+      <span>Kuiz Showdown</span>
+    </button>
+    <button type="button" class="timeline-filter-btn" data-category="rehat" onclick="filterTimeline('rehat')">
+      <i data-lucide="coffee"></i>
+      <span>Rehat & Jamuan</span>
+    </button>
+    <button type="button" class="timeline-filter-btn" data-category="majlis" onclick="filterTimeline('majlis')">
+      <i data-lucide="award"></i>
+      <span>Majlis & Protokol</span>
+    </button>
+  </div>
+
+  <!-- Vertical Timeline Spine & Cards -->
+  <div class="timeline-spine-wrapper">
+    <div class="timeline-spine-line" aria-hidden="true"></div>
+
+    <div class="timeline-events-list" id="timelineEventsList">
+      {% for item in site.data.timeline %}
+      <div 
+        class="timeline-event-item" 
+        id="{{ item.id }}" 
+        data-category="{{ item.category }}"
+        data-start="{{ item.start_time }}">
+        
+        <!-- Milestone Node with Glowing Icon -->
+        <div class="timeline-node-anchor">
+          <div class="timeline-node cat-{{ item.category }}">
+            <i data-lucide="{{ item.icon | default: 'clock' }}"></i>
+          </div>
+          <span class="timeline-node-time">{{ item.start_time }}</span>
+        </div>
+
+        <!-- Event Content Card -->
+        <div class="glass-card timeline-card cat-border-{{ item.category }} {% if item.category == 'kuiz' %}highlight-quiz{% endif %}">
+          
+          <!-- Card Meta Header -->
+          <div class="timeline-card-header">
+            <div class="timeline-time-group">
+              <span class="timeline-time-badge">
+                <i data-lucide="clock"></i> {{ item.time }}
+              </span>
+              <span class="timeline-duration-badge">{{ item.duration }}</span>
+            </div>
+
+            <div class="timeline-tags-group">
+              <span class="category-chip chip-{{ item.category }}">
+                {{ item.category_label | default: item.tag }}
+              </span>
+              <span class="location-chip" title="Lokasi Sesi">
+                <i data-lucide="map-pin"></i> {{ item.location }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Title & Description -->
+          <h4 class="timeline-card-title">{{ item.title }}</h4>
+          <p class="timeline-card-desc">{{ item.desc }}</p>
+
+          <!-- PIC / Pengendali Sesi -->
+          <div class="timeline-pic-badge">
+            <i data-lucide="user-check"></i>
+            <span><strong>PIC Pengendali:</strong> {{ item.pic }}</span>
+          </div>
+
+          <!-- Dedicated Table Facilitator & Crew Action Prompt -->
+          {% if item.fasi_action %}
+          <div class="timeline-fasi-prompt">
+            <div class="fasi-prompt-header">
+              <i data-lucide="compass"></i>
+              <strong>Tindakan Fasilitator & Mentor Meja:</strong>
+            </div>
+            <p class="fasi-prompt-text">{{ item.fasi_action }}</p>
+          </div>
+          {% endif %}
+
+          <!-- Materials & Utilities Checklist for Slot -->
+          {% if item.materials %}
+          <div class="timeline-materials-box">
+            <span class="materials-label"><i data-lucide="box"></i> Keperluan Sesi:</span>
+            <div class="materials-pill-list">
+              {% for mat in item.materials %}
+              <span class="material-pill">{{ mat }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>

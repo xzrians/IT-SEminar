@@ -192,6 +192,60 @@ function switchCurrTab(tabId) {
   }
 }
 
+/**
+ * Jekyll Timeline: Category Filtering
+ */
+function filterTimeline(category) {
+  const buttons = document.querySelectorAll('.timeline-filter-btn');
+  buttons.forEach(btn => {
+    if (btn.getAttribute('data-category') === category) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  const items = document.querySelectorAll('.timeline-event-item');
+  items.forEach(item => {
+    const itemCat = item.getAttribute('data-category');
+    if (category === 'all' || itemCat === category) {
+      item.classList.remove('hidden-slot');
+    } else {
+      item.classList.add('hidden-slot');
+    }
+  });
+
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
+/**
+ * Jekyll Timeline: Quick-Jump to Slot
+ */
+function jumpToTimelineSlot(slotId) {
+  const target = document.getElementById(slotId);
+  if (!target) return;
+
+  // If item is currently hidden by category filter, reset filter to 'all'
+  if (target.classList.contains('hidden-slot')) {
+    filterTimeline('all');
+  }
+
+  // Smooth scroll with offset for sticky header
+  const yOffset = -90;
+  const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  window.scrollTo({ top: y, behavior: 'smooth' });
+
+  // Add pulse glow highlight
+  target.classList.remove('target-highlight');
+  void target.offsetWidth;
+  target.classList.add('target-highlight');
+  setTimeout(() => {
+    target.classList.remove('target-highlight');
+  }, 2000);
+}
+
 // Attach functions to global window object
 window.toggleNav = toggleNav;
 window.switchBudgetVariant = switchBudgetVariant;
@@ -199,3 +253,5 @@ window.switchOpsTab = switchOpsTab;
 window.switchCurrTab = switchCurrTab;
 window.toggleQuiz = toggleQuiz;
 window.toggleTaskCheck = toggleTaskCheck;
+window.filterTimeline = filterTimeline;
+window.jumpToTimelineSlot = jumpToTimelineSlot;
