@@ -125,62 +125,92 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(7, 9, 14, 0.85);
+  background: rgba(7, 9, 14, 0.90);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-glass);
   transition: all 0.3s ease;
+  padding: 0;
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  min-height: 68px;
+  height: 68px;
+  gap: 16px;
 }
 
 .nav-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
   color: inherit;
+  flex-shrink: 0;
+  white-space: nowrap;
   transition: opacity 0.2s ease;
 }
 
 .nav-brand:hover {
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
 .brand-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  border-radius: 10px;
   background: linear-gradient(135deg, #6366f1 0%, #00f2fe 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
   color: #fff;
-  box-shadow: 0 0 20px rgba(0, 242, 254, 0.35);
+  box-shadow: 0 0 14px rgba(0, 242, 254, 0.3);
   flex-shrink: 0;
+  align-self: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+.brand-icon svg,
+.brand-icon i {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.brand-text-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+  white-space: nowrap;
 }
 
 .brand-title {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   letter-spacing: -0.3px;
+  line-height: 1.15;
   display: block;
+  white-space: nowrap;
   color: #ffffff;
+  margin: 0;
 }
 
 .brand-subtitle {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--accent-cyan);
   font-weight: 700;
   letter-spacing: 0.5px;
+  line-height: 1.15;
   display: block;
+  white-space: nowrap;
+  margin-top: 2px;
 }
 
 /* Desktop Segmented Glass Pill Menu */
@@ -1531,26 +1561,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .mobile-toggle {
-    display: block;
-  }
-
-  .nav-menu {
-    position: absolute;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background: var(--bg-secondary);
-    flex-direction: column;
-    padding: 20px;
-    border-bottom: 1px solid var(--border-glass);
-    display: none;
-  }
-
-  .nav-menu.show {
-    display: flex;
-  }
-
   .footer-meta {
     text-align: left;
   }
@@ -1681,6 +1691,7 @@ body {
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .network-status-pill {
@@ -1858,7 +1869,34 @@ body {
   font-weight: 700;
 }
 
-/* Mobile Viewport Adjustments */
+/* Responsive Navbar & Viewport Adjustments */
+@media (max-width: 1200px) {
+  .nav-menu {
+    padding: 4px 6px;
+    gap: 2px;
+  }
+  .nav-link {
+    padding: 6px 10px;
+    font-size: 0.82rem;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-link span {
+    display: none;
+  }
+  .nav-link {
+    padding: 8px 10px;
+  }
+  .nav-divider {
+    display: none;
+  }
+  .btn-print .print-text {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .bottom-app-nav {
     display: block;
@@ -1871,5 +1909,28 @@ body {
   .nav-menu {
     display: none !important;
   }
+
+  .brand-title {
+    font-size: 0.95rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.68rem;
+  }
+
+  .brand-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+    border-radius: 9px;
+  }
+
+  .brand-icon svg,
+  .brand-icon i {
+    width: 18px;
+    height: 18px;
+  }
 }
+
 
