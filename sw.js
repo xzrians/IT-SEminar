@@ -1,10 +1,10 @@
 /**
  * NextGen Celik Digital 2026 - Service Worker
  * Progressive Web App (PWA) Offline-First Engine
- * Strategy: App Shell Precaching + Stale-While-Revalidate Runtime Caching
+ * Strategy: Network-First with Cache Fallback for HTML & Forced Fresh Reloads
  */
 
-const CACHE_NAME = 'nextgen-pwa-v1.0.8';
+const CACHE_NAME = 'nextgen-pwa-v1.0.9';
 
 const PRECACHE_ASSETS = [
   './',
@@ -45,7 +45,15 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// 3. Fetch Event: Network-First for Navigation (HTML) + Stale-While-Revalidate for Assets
+// 3. Message Event: Allow Client Page to Force Instant skipWaiting
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    console.log('[SW] SKIP_WAITING received from client.');
+    self.skipWaiting();
+  }
+});
+
+// 4. Fetch Event: Network-First for Navigation (HTML) & Reloads + Stale-While-Revalidate for Assets
 self.addEventListener('fetch', (event) => {
   // Only handle GET requests
   if (event.request.method !== 'GET') return;
@@ -55,7 +63,25 @@ self.addEventListener('fetch', (event) => {
   // Exclude non-http/https schemes (e.g. chrome-extension)
   if (!url.protocol.startsWith('http')) return;
 
-  // A. Navigation requests (HTML documents): Network-First with Offline Cache Fallback
+  // A. Force Network Bypass on Explicit Reload/No-Cache Query Parameters
+  if (url.searchParams.has('reload') || url.searchParams.has('t') || url.searchParams.has('nocache')) {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // B. Navigation requests (HTML documents): Network-First with Offline Cache Fallback
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
@@ -76,7 +102,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // B. Static Assets (CSS, JS, Icons, Images): Stale-While-Revalidate
+  // C. Static Assets (CSS, JS, Icons, Images): Stale-While-Revalidate
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       const fetchPromise = fetch(event.request).then((networkResponse) => {

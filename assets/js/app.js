@@ -328,9 +328,116 @@ function initAppShellHubs() {
 }
 
 /**
- * Progressive Web App (PWA): Service Worker & Network Monitor
+ * Progressive Web App (PWA): Service Worker, Network Monitor & Cache-Busting Live Update Engine
  */
 let deferredInstallPrompt = null;
+let swRegistration = null;
+
+function showUpdatePrompt(worker) {
+  console.log('[PWA] New update detected! Showing update prompt...');
+  
+  // 1. Highlight navbar update button & show pulsing badge
+  const updateBtn = document.getElementById('btnUpdatePrompt');
+  const updateBadge = document.getElementById('updateBadgeDot');
+  if (updateBtn) {
+    updateBtn.classList.add('has-update');
+  }
+  if (updateBadge) {
+    updateBadge.style.display = 'inline-block';
+  }
+
+  // 2. Display the floating update toast
+  const toast = document.getElementById('pwaUpdateToast');
+  if (toast) {
+    toast.style.display = 'block';
+  }
+
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
+function dismissUpdateToast() {
+  const toast = document.getElementById('pwaUpdateToast');
+  if (toast) {
+    toast.style.display = 'none';
+  }
+}
+
+async function applyLatestUpdateAndClearCache() {
+  const updateBtn = document.getElementById('btnUpdatePrompt');
+  const toastBtn = document.getElementById('btnToastApplyUpdate');
+  
+  if (updateBtn) {
+    updateBtn.classList.add('loading');
+    updateBtn.innerHTML = '<i data-lucide="loader-2"></i> <span class="update-text">Memuat Kod...</span>';
+  }
+  if (toastBtn) {
+    toastBtn.disabled = true;
+    toastBtn.innerHTML = '<i data-lucide="loader-2"></i> <span>Mengemas Kini...</span>';
+  }
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+
+  try {
+    // 1. Tell all waiting / active service workers to SKIP_WAITING
+    if ('serviceWorker' in navigator) {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      for (const reg of registrations) {
+        if (reg.waiting) {
+          reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+        }
+        if (reg.installing) {
+          reg.installing.postMessage({ type: 'SKIP_WAITING' });
+        }
+        if (reg.active) {
+          reg.active.postMessage({ type: 'SKIP_WAITING' });
+        }
+      }
+    }
+
+    // 2. Completely purge all CacheStorage caches so no stale CSS/HTML/JS is kept
+    if ('caches' in window) {
+      const cacheNames = await caches.keys();
+      await Promise.all(cacheNames.map(name => caches.delete(name)));
+      console.log('[PWA] Purged all CacheStorage:', cacheNames);
+    }
+
+    // 3. Clear any cached version flags in localStorage
+    localStorage.removeItem('pwa_known_version');
+
+    // 4. Force hard reload bypassing browser HTTP cache with timestamp query
+    const targetUrl = new URL(window.location.href);
+    targetUrl.searchParams.set('reload', Date.now().toString());
+    window.location.href = targetUrl.toString();
+  } catch (error) {
+    console.error('[PWA] Error purging cache and updating:', error);
+    window.location.reload();
+  }
+}
+
+async function checkForRemoteUpdates() {
+  if (!navigator.onLine) return;
+  try {
+    const res = await fetch(`./sw.js?nocache=${Date.now()}`, { cache: 'no-store' });
+    if (!res.ok) return;
+    const content = await res.text();
+    const match = content.match(/CACHE_NAME\s*=\s*['"]([^'"]+)['"]/);
+    if (match && match[1]) {
+      const remoteVersion = match[1];
+      const localVersion = localStorage.getItem('pwa_known_version');
+      if (localVersion && localVersion !== remoteVersion) {
+        console.log(`[PWA] Remote version detected: ${remoteVersion} (current local: ${localVersion})`);
+        showUpdatePrompt();
+      } else if (!localVersion) {
+        localStorage.setItem('pwa_known_version', remoteVersion);
+      }
+    }
+  } catch (e) {
+    // Silently ignore network check errors
+  }
+}
 
 function initPwaServiceWorker() {
   // 1. Register Service Worker with instant update checking
@@ -338,13 +445,43 @@ function initPwaServiceWorker() {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js')
         .then(registration => {
+          swRegistration = registration;
           console.log('[PWA] Service Worker registered successfully, scope:', registration.scope);
-          // Check for worker updates on every page load
+
+          // If a worker is already waiting (e.g. from previous visit), prompt immediately
+          if (registration.waiting) {
+            showUpdatePrompt(registration.waiting);
+          }
+
+          // Listen for new worker installation
+          registration.addEventListener('updatefound', () => {
+            const installingWorker = registration.installing;
+            if (installingWorker) {
+              installingWorker.addEventListener('statechange', () => {
+                if (installingWorker.state === 'installed') {
+                  if (navigator.serviceWorker.controller) {
+                    showUpdatePrompt(installingWorker);
+                  }
+                }
+              });
+            }
+          });
+
+          // Check for worker updates
           registration.update();
+
+          // Poll for updates every 45 seconds while page is open
+          setInterval(() => {
+            registration.update();
+            checkForRemoteUpdates();
+          }, 45000);
         })
         .catch(error => {
           console.warn('[PWA] Service Worker registration failed:', error);
         });
+
+      // Quick remote version check 3 seconds after page load
+      setTimeout(checkForRemoteUpdates, 3000);
     });
 
     // Auto-reload once when a new service worker takes control
@@ -439,4 +576,7 @@ window.jumpToTimelineSlot = jumpToTimelineSlot;
 window.switchHub = switchHub;
 window.promptPwaInstall = promptPwaInstall;
 window.dismissOfflineBanner = dismissOfflineBanner;
+window.applyLatestUpdateAndClearCache = applyLatestUpdateAndClearCache;
+window.dismissUpdateToast = dismissUpdateToast;
+window.showUpdatePrompt = showUpdatePrompt;
 

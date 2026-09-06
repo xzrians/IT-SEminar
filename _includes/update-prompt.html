@@ -1,0 +1,26 @@
+<!-- Floating Update Available Prompt (Glassmorphism Modal/Toast) -->
+<div class="pwa-update-toast" id="pwaUpdateToast" role="alert" aria-live="polite" style="display: none;">
+  <div class="pwa-update-inner">
+    <div class="pwa-update-icon">
+      <i data-lucide="sparkles"></i>
+    </div>
+    <div class="pwa-update-body">
+      <div class="pwa-update-header">
+        <span class="pwa-update-title">Kemas Kini Baharu Dikesan!</span>
+        <span class="pwa-update-badge">Live Code</span>
+      </div>
+      <p class="pwa-update-desc">
+        Terdapat perubahan kod terkini pada seminar. Klik untuk muat semula versi baharu secara terus tanpa cache peranti.
+      </p>
+      <div class="pwa-update-actions">
+        <button type="button" class="btn-apply-update" id="btnToastApplyUpdate" onclick="applyLatestUpdateAndClearCache()">
+          <i data-lucide="refresh-cw"></i>
+          <span>Dapatkan Kod Terkini</span>
+        </button>
+        <button type="button" class="btn-dismiss-update" onclick="dismissUpdateToast()" title="Tutup Notifikasi" aria-label="Tutup">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

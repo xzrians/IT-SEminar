@@ -43,6 +43,13 @@
           <span class="status-text" id="networkStatusText">Online</span>
         </div>
 
+        <!-- Fresh Code / Update Prompt Pill Button -->
+        <button type="button" class="btn-update-prompt" id="btnUpdatePrompt" onclick="applyLatestUpdateAndClearCache()" title="Dapatkan kod terkini secara terus tanpa cache peranti">
+          <i data-lucide="refresh-cw"></i>
+          <span class="update-text">Muat Kod Baru</span>
+          <span class="update-badge-dot" id="updateBadgeDot" style="display: none;"></span>
+        </button>
+
         <!-- PWA Install Button (Appears when install prompt available) -->
         <button class="btn-install-pwa" id="btnInstallPwa" style="display: none;" onclick="promptPwaInstall()" title="Pasang ke Skrin Utama">
           <i data-lucide="download"></i>
