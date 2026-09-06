@@ -1,35 +1,34 @@
-# Kurikulum Bengkel: Rangka Pembentangan, Topik & Aktiviti Praktikal
-# NextGen Tech Summit 2026 | UTM x ASDAF PERKIM
+# Seminar Teknologi Maklumat & Kecerdasan Buatan (Separuh Hari) | UTM x ASDAF PERKIM
 
 modules:
   - id: 1
     code: "MODUL-01"
-    title: "Dunia Kecerdasan Buatan (AI) & Inspirasi Kerjaya Masa Depan"
-    time: "09:20 - 10:20 (60 Minit)"
+    title: "Teknologi Talk: “Teknologi di Sekeliling Kita” & Cabaran Kuiz"
+    time: "09:15 - 10:00 (45 Minit)"
     trainer: "Lead Trainer AI & Fasilitator UTM"
-    focus: "Mendedahkan asas AI, demonstrasi langsung di skrin besar, dan membuka mata remaja terhadap peluang kerjaya digital tanpa perlu latar belakang kaya."
+    focus: "Pengenalan ringkas dan santai mengenai AI, telefon pintar, media sosial, robot, serta kesedaran keselamatan siber dalam kehidupan seharian, diikuti kuiz interaktif."
     learning_outcomes:
-      - "Memahami perbezaan antara komputer biasa dengan sistem AI pintar."
-      - "Melihat bagaimana AI menjana teks, gambar dan suara secara masa nyata."
-      - "Mengetahui 5 laluan kerjaya teknologi bernilai tinggi yang boleh diceburi lepasan SPM/universiti."
+      - "Mengenal aplikasi teknologi & AI dalam kehidupan harian (ChatGPT, Google, TikTok, Robotik)."
+      - "Menyedari peranti dan algoritma yang berinteraksi dengan kita setiap hari."
+      - "Menyertai cabaran kuiz teknologi dewan tanpa telefon dengan semangat kesukanan."
 
   - id: 2
     code: "MODUL-02"
-    title: "Keselamatan Siber (Cyber Resilience) & Bengkel Startup Inovasi"
-    time: "10:45 - 11:45 (60 Minit)"
-    trainer: "Trainer 2 & 7 Mentor Meja"
-    focus: "Melindungi remaja daripada perangkap penipuan dalam talian (scam/phishing), etika jejak digital, serta mereka cipta solusi inovasi menggunakan kertas mahjong."
+    title: "Sesi “Bijak Melayari Internet” & Amali Kertas Mahjong"
+    time: "10:15 - 11:50 (95 Minit)"
+    trainer: "Trainer Keselamatan Siber & 7 Mentor Meja"
+    focus: "Pendedahan asas keselamatan siber (scam, password, buli siber, privasi), aktiviti kertas mahjong memilih aplikasi AI dan kebaikannya, serta pembentangan kumpulan."
     learning_outcomes:
-      - "Mengenal pasti taktik scam WhatsApp/Telegram dan formula pertahanan 3T (Tidak Pasti, Tidak Kongsi, Tidak Klik)."
-      - "Mencipta kata laluan kebal menggunakan konsep Frasa Laluan (Passphrase)."
-      - "Bekerjasama dalam 7 meja kluster untuk mereka cipta prototaip idea inovasi komuniti di atas kertas mahjong."
+      - "Mengenal pasti penipuan dalam talian (scam), pautan palsu, dan teknik cipta kata laluan kebal."
+      - "Memahami etika media sosial dan cara menangani buli siber."
+      - "Aktiviti kertas mahjong: Setiap meja memilih 1 aplikasi AI, melukis & menyenaraikan kebaikannya, lalu membentangkan dalam 2 minit."
 
 presentation_slides:
-  deck_title: "NextGen Tech Summit: Menembusi Sempadan Digital"
+  deck_title: "Seminar Teknologi Maklumat & AI: Eksplorasi Digital Santai"
   total_slides: 16
   slides:
     - slide_no: 1
-      title: "Selamat Datang ke NextGen Tech Summit 2026!"
+      title: "Selamat Datang ke Seminar Teknologi Maklumat & AI!"
       section: "Pembukaan"
       visual: "Logo animasi UTM x ASDAF, visual futuristik neon ceria, gelombang suara lofi."
       speaker_notes: "Beri salam semangat, panggil adik-adik dengan mesra. Maklumkan bahawa hari ini bukan kuliah bosan, tetapi ekspedisi meneroka dunia masa depan bersama abang & kakak UTM."

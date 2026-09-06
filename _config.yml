@@ -1,14 +1,14 @@
-# NextGen Tech Summit 2026 | Jekyll Configuration for GitHub Pages
-title: "NextGen Tech Summit 2026"
-tagline: "Bengkel Celik Digital & AI: Memperkasa Remaja Komuniti"
-description: "Hab Dokumentasi Operasi & Pelan Pelaksanaan Bengkel UTM x ASDAF 2026 (47 Pelajar, 13 Kru UTM, Bajet RM 800)"
+# NextGen Tech Seminar 2026 | Jekyll Configuration for GitHub Pages
+title: "NextGen Tech Seminar 2026"
+tagline: "Seminar & Bengkel Celik Digital: Memperkasa Remaja Komuniti"
+description: "Hab Dokumentasi Operasi & Pelan Pelaksanaan Seminar Celik Digital UTM x ASDAF 2026 (47 Pelajar, 13 Kru UTM, Bajet RM 800)"
 url: "https://xzrians.github.io"
 baseurl: "/ITSeminar"
 
 # Event Metadata
 event:
-  title: "NextGen Tech Summit 2026"
-  theme: "Bengkel Celik Digital & AI: Memperkasa Remaja Komuniti"
+  title: "NextGen Tech Seminar 2026"
+  theme: "Seminar & Bengkel Celik Digital: Memperkasa Remaja Komuniti"
   host: "Fakulti Komputeran, Universiti Teknologi Malaysia (UTM)"
   partner: "Asrama Darul Falah (ASDAF PERKIM), Bukit Persekutuan, KL"
   students_count: 47
