@@ -1,5 +1,5 @@
 /**
- * NextGen Tech Summit 2026 - Master Interactive Logic
+ * NextGen Celik Digital 2026 - Master Interactive Logic
  * Optimized for Jekyll Static Site Architecture & GitHub Pages.
  */
 
@@ -333,16 +333,28 @@ function initAppShellHubs() {
 let deferredInstallPrompt = null;
 
 function initPwaServiceWorker() {
-  // 1. Register Service Worker
+  // 1. Register Service Worker with instant update checking
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js')
         .then(registration => {
           console.log('[PWA] Service Worker registered successfully, scope:', registration.scope);
+          // Check for worker updates on every page load
+          registration.update();
         })
         .catch(error => {
           console.warn('[PWA] Service Worker registration failed:', error);
         });
+    });
+
+    // Auto-reload once when a new service worker takes control
+    let isRefreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!isRefreshing) {
+        isRefreshing = true;
+        console.log('[PWA] New Service Worker activated. Reloading page for latest content...');
+        window.location.reload();
+      }
     });
   }
 

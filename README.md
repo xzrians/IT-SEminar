@@ -151,7 +151,7 @@ Setiap fasilitator duduk bersama kumpulan masing-masing sepanjang program:
 
 | Slaid | Tajuk Paparan Slaid | Visual Utama | Nota & Panduan Penceramah (Speaker Notes) |
 | :---: | :--- | :--- | :--- |
-| **1** | Selamat Datang ke NextGen Tech Summit 2026! | Logo animasi UTM x ASDAF, visual neon futuristik | Buka dengan salam semangat. Panggil adik-adik dengan mesra, nyatakan ini adalah ekspedisi meneroka dunia masa depan. |
+| **1** | Selamat Datang ke NextGen Celik Digital 2026! | Logo animasi UTM x ASDAF, visual neon futuristik | Buka dengan salam semangat. Panggil adik-adik dengan mesra, nyatakan ini adalah ekspedisi meneroka dunia masa depan. |
 | **2** | Siapakah Kami? Abang & Kakak Komputeran UTM | Gambar santai 13 kru, peta perjalanan dari kampus ke ASDAF | Perkenalkan peranan mahasiswa sebagai rakan mentor yang sedia menyokong impian mereka. |
 | **3** | Apa Itu AI? Robot Jahat atau Pembantu Pintar? | Perbandingan robot filem fiksyen vs AI sebenar (Siri, Maps, YT) | Buka minda: AI bukan robot jahat, tetapi program matematik yang belajar mengecam corak data manusia. |
 | **4** | Ujian Mata AI: Kucing vs Anjing | 10,000 data gambar -> Algoritma kenal pasti misai/telinga | Interaktif: Minta dewan teka bagaimana komputer membezakan anak anjing muffin dan anak kucing. |
@@ -211,7 +211,7 @@ Setiap fasilitator duduk bersama kumpulan masing-masing sepanjang program:
 ## 7. Ringkasan Skrip Emcee Pentas (Cues Pantas)
 
 - **09:00 AM (Pembukaan):**  
-  *"Selamat pagi dan salam NextGen Innovators! Selamat datang ke NextGen Tech Summit! Hari ini korang bukan duduk dengar kuliah bosan, hari ini korang adalah barisan pengasas startup teknologi masa depan!"*
+  *"Selamat pagi dan salam NextGen Celik Digital! Selamat datang adik-adik ASDAF! Hari ini korang bukan duduk dengar kuliah bosan, hari ini korang adalah barisan peneroka celik teknologi masa depan!"*
 - **09:35 AM (Kuiz Pantas):**  
   *"Simpan telefon dalam poket, kita main guna tangan terpantas korang! Peraturannya: Tangan atas meja... Bila abang kira '3, 2, 1... ANGKAT TANGAN!', siapa laju dia jawab! Jawapan betul dapat 20 markah dan snek segera!"*
 - **10:45 AM (Startup Sprint):**  

@@ -4,7 +4,7 @@
  * Strategy: App Shell Precaching + Stale-While-Revalidate Runtime Caching
  */
 
-const CACHE_NAME = 'nextgen-pwa-v1.0.3';
+const CACHE_NAME = 'nextgen-pwa-v1.0.4';
 
 const PRECACHE_ASSETS = [
   './',
@@ -33,6 +33,7 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames.map((name) => {
           if (name !== CACHE_NAME) {
+            console.log('[SW] Purging stale cache:', name);
             return caches.delete(name);
           }
         })
@@ -43,7 +44,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// 3. Fetch Event: Stale-While-Revalidate Strategy
+// 3. Fetch Event: Network-First for Navigation (HTML) + Stale-While-Revalidate for Assets
 self.addEventListener('fetch', (event) => {
   // Only handle GET requests
   if (event.request.method !== 'GET') return;
@@ -53,9 +54,30 @@ self.addEventListener('fetch', (event) => {
   // Exclude non-http/https schemes (e.g. chrome-extension)
   if (!url.protocol.startsWith('http')) return;
 
+  // A. Navigation requests (HTML documents): Network-First with Offline Cache Fallback
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          // Offline fallback: serve cached index.html or root
+          return caches.match('./index.html') || caches.match('./');
+        })
+    );
+    return;
+  }
+
+  // B. Static Assets (CSS, JS, Icons, Images): Stale-While-Revalidate
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      // Background revalidation
       const fetchPromise = fetch(event.request).then((networkResponse) => {
         if (networkResponse && networkResponse.status === 200) {
           const responseToCache = networkResponse.clone();
@@ -65,14 +87,9 @@ self.addEventListener('fetch', (event) => {
         }
         return networkResponse;
       }).catch(() => {
-        // Network failure (offline mode)
-        // If it's a navigation request, return cached index.html
-        if (event.request.mode === 'navigate') {
-          return caches.match('./index.html') || caches.match('./');
-        }
+        // Offline handling for assets
       });
 
-      // Return cached response immediately if available, otherwise wait for network
       return cachedResponse || fetchPromise;
     })
   );
