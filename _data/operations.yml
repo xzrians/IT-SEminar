@@ -43,7 +43,7 @@ food_logistics:
   options:
     - option_name: "Pilihan Utama: Tempahan Kantin Sekolah / Asrama ASDAF"
       type: "Kantin Asrama"
-      pros: "Makanan dijamin panas/segar, tiada isu kelewatan trafik, menyokong peniaga premis asrama, waktu hidang fleksibel tepat jam 10:20 AM."
+      pros: "Makanan dijamin panas/segar, tiada isu kelewatan trafik, menyokong peniaga premis asrama, waktu hidang fleksibel tepat jam 10:00 AM."
       cons: "Perlu pengesahan menu 3 hari awal bersama pengusaha kantin."
       est_cost_per_pax: "RM 2.50 - RM 3.00"
       total_est: "RM 177.50 - RM 213.00 (71 Pax)"

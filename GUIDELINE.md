@@ -13,7 +13,7 @@ Anda **TIDAK PERLU** mengedit kod HTML atau CSS untuk mengemas kini maklumat aca
 📁 _data/
 ├── 💰 budget.yml       → Siling RM800, 3 Varian Bajet, Pax 66+5=71, Kos Makanan
 ├── 📦 operations.yml   → Dokumen Tak Hadir, Makanan Kantin/Luar, Goodies 47 Pax, Utiliti (Mahjong dll)
-├── ⏰ timeline.yml     → Jadual Minit-ke-Minit (08:30 – 13:00) & PIC Sesi
+├── ⏰ timeline.yml     → Jadual Minit-ke-Minit (08:30 – 12:00) & PIC Sesi
 ├── 📚 curriculum.yml   → Silibus 2 Modul, Rangka 16 Slaid, 4 Aktiviti Praktikal & PPKI
 ├── 🪑 tables.yml       → Pembahagian 7 Meja Kluster, Pelajar T1–T5, PPKI & Mentor UTM
 ├── 🎯 quiz.yml         → 5 Soalan Kuiz "3, 2, 1... Angkat Tangan!", Jawapan & Hadiah

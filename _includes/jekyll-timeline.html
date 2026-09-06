@@ -25,7 +25,7 @@
   <div class="timeline-filter-bar">
     <button type="button" class="timeline-filter-btn active" data-category="all" onclick="filterTimeline('all')">
       <i data-lucide="layers"></i>
-      <span>Semua (8 Sesi)</span>
+      <span>Semua ({{ site.data.timeline | size }} Sesi)</span>
     </button>
     <button type="button" class="timeline-filter-btn" data-category="modul" onclick="filterTimeline('modul')">
       <i data-lucide="cpu"></i>
