@@ -5,7 +5,7 @@ Selamat datang, AI Agent. Dokumen ini bertujuan untuk memberi panduan segera ten
 ---
 
 ## 1. Seni Bina Projek (Jekyll on GitHub Pages via GitHub Actions)
-- Repositori ini ialah **Jekyll Static Site Generator** yang dihoskan di GitHub Pages (`https://xzrians.github.io/ITSeminar/`).
+- Repositori ini ialah **Jekyll Static Site Generator** yang dihoskan di GitHub Pages (`https://xzrians.github.io/seminar/`).
 - GitHub Actions dibina secara automatik melalui `.github/workflows/deploy.yml` setiap kali cawangan `main` menerima perubahan (`git push origin main`).
 - **PRINSIP TERAS:** **DATA-DRIVEN**. Jangan ubah teks atau angka secara hardcoded di dalam fail HTML jika data tersebut berada di dalam folder `_data/`. Kemas kini fail YAML berkenaan, dan Liquid template akan menjana paparan secara automatik.
 

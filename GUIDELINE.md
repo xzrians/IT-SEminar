@@ -65,7 +65,7 @@ git push origin main
 1. GitHub Actions akan mengesan push ke cawangan `main`.
 2. Aliran kerja [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) akan membina (*build*) laman Jekyll secara automatik di pelayan cloud GitHub.
 3. Laman web rasmi akan dikemas kini dalam masa **~45 saat** di:  
-   👉 **https://xzrians.github.io/ITSeminar/**
+   👉 **https://xzrians.github.io/seminar/**
 
 ---
 
