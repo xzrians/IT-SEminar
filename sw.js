@@ -4,11 +4,12 @@
  * Strategy: App Shell Precaching + Stale-While-Revalidate Runtime Caching
  */
 
-const CACHE_NAME = 'nextgen-pwa-v1.0.4';
+const CACHE_NAME = 'nextgen-pwa-v1.0.5';
 
 const PRECACHE_ASSETS = [
   './',
   './index.html',
+  './slides/',
   './assets/css/styles.css',
   './assets/js/app.js',
   './manifest.webmanifest',

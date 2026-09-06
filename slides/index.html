@@ -1,0 +1,1367 @@
+---
+layout: null
+title: "Slaid Pembentangan Rasmi | NextGen Celik Digital 2026"
+permalink: /slides/
+---
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Slaid Pembentangan Rasmi | NextGen Celik Digital 2026</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --bg-card: #0e1526;
+      --bg-glass: rgba(19, 27, 46, 0.85);
+      --border-glass: rgba(255, 255, 255, 0.1);
+      --accent-indigo: #6366f1;
+      --accent-cyan: #00f2fe;
+      --accent-purple: #a855f7;
+      --accent-rose: #f43f5e;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+    }
+
+    /* Top Control Header */
+    .deck-header {
+      height: 56px;
+      background: rgba(7, 9, 14, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      z-index: 100;
+      flex-shrink: 0;
+    }
+
+    .header-left, .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-deck {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-glass);
+      color: var(--text-main);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-deck:hover {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: var(--accent-indigo);
+      color: #fff;
+    }
+
+    .btn-deck.active {
+      background: var(--accent-indigo);
+      border-color: var(--accent-indigo);
+      color: #fff;
+    }
+
+    .deck-timer {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border-glass);
+      font-family: monospace;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .deck-title-badge {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slide-counter {
+      background: rgba(99, 102, 241, 0.2);
+      color: #a5b4fc;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* Progress Bar */
+    .deck-progress-bar {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      width: 100%;
+      position: relative;
+    }
+
+    .deck-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-indigo), var(--accent-cyan));
+      width: 6.25%;
+      transition: width 0.3s ease;
+    }
+
+    /* Slide Stage / Viewport */
+    .slide-stage {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 24px;
+      background: radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.08) 0%, rgba(7, 9, 14, 1) 75%);
+    }
+
+    .slide-container {
+      width: 100%;
+      max-width: 1200px;
+      aspect-ratio: 16 / 9;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 20px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 35px rgba(99, 102, 241, 0.15);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Slide Panels */
+    .slide-item {
+      position: absolute;
+      inset: 0;
+      padding: 48px 56px;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: scale(0.98);
+    }
+
+    .slide-item.active {
+      display: flex;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Slide Header */
+    .slide-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .slide-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(0, 242, 254, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+    }
+
+    .slide-item-title {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #fff;
+      margin-top: 8px;
+    }
+
+    /* Slide Body Layouts */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .split-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+    }
+
+    .split-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .feature-card.highlight-cyan {
+      border-color: rgba(0, 242, 254, 0.3);
+      background: rgba(0, 242, 254, 0.05);
+    }
+
+    .feature-card.highlight-rose {
+      border-color: rgba(244, 63, 94, 0.3);
+      background: rgba(244, 63, 94, 0.05);
+    }
+
+    .feature-card.highlight-purple {
+      border-color: rgba(168, 85, 247, 0.3);
+      background: rgba(168, 85, 247, 0.05);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .feature-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .feature-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Slide Footer */
+    .slide-item-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-glass);
+      padding-top: 16px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+
+    /* Stage Floating Controls */
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(19, 27, 46, 0.8);
+      border: 1px solid var(--border-glass);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 20;
+    }
+
+    .nav-arrow:hover {
+      background: var(--accent-indigo);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+    }
+
+    .nav-prev { left: 32px; }
+    .nav-next { right: 32px; }
+
+    /* Speaker Notes Bottom Drawer */
+    .speaker-drawer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 15, 28, 0.98);
+      backdrop-filter: blur(16px);
+      border-top: 2px solid var(--accent-indigo);
+      padding: 16px 24px;
+      transform: translateY(100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 200;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.7);
+      max-height: 35vh;
+      overflow-y: auto;
+    }
+
+    .speaker-drawer.open {
+      transform: translateY(0);
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .drawer-content {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    /* Grid Selector Modal */
+    .grid-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 9, 14, 0.95);
+      backdrop-filter: blur(16px);
+      z-index: 300;
+      display: none;
+      flex-direction: column;
+      padding: 32px;
+      overflow-y: auto;
+    }
+
+    .grid-modal.open {
+      display: flex;
+    }
+
+    .grid-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .slide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .grid-thumb {
+      aspect-ratio: 16 / 9;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .grid-thumb:hover, .grid-thumb.active {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .grid-thumb-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .grid-thumb-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    /* Print View */
+    @media print {
+      body {
+        overflow: visible;
+        height: auto;
+        background: #fff;
+        color: #000;
+      }
+      .deck-header, .deck-progress-bar, .nav-arrow, .speaker-drawer, .grid-modal {
+        display: none !important;
+      }
+      .slide-stage {
+        padding: 0;
+        display: block;
+        background: #fff;
+      }
+      .slide-container {
+        max-width: 100%;
+        box-shadow: none;
+        border: none;
+        aspect-ratio: auto;
+      }
+      .slide-item {
+        position: relative !important;
+        display: flex !important;
+        opacity: 1 !important;
+        transform: none !important;
+        page-break-after: always;
+        height: 100vh;
+        width: 100vw;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        background: #0f172a !important;
+        color: #fff !important;
+      }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .slide-stage {
+        padding: 12px;
+      }
+      .slide-item {
+        padding: 24px 20px;
+      }
+      .slide-item-title {
+        font-size: 1.4rem;
+      }
+      .split-grid-2, .split-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .nav-arrow {
+        width: 36px;
+        height: 36px;
+      }
+      .nav-prev { left: 8px; }
+      .nav-next { right: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header Controls -->
+  <header class="deck-header">
+    <div class="header-left">
+      <a href="{{ '/' | relative_url }}" class="btn-deck" title="Kembali ke Hab Utama">
+        <i data-lucide="arrow-left"></i> <span>Hab Utama</span>
+      </a>
+      <div class="deck-title-badge">
+        <i data-lucide="cpu" style="color: var(--accent-cyan); width: 18px; height: 18px;"></i>
+        <span>NextGen Celik Digital 2026</span>
+        <span class="slide-counter" id="slideCounterBadge">1 / 16</span>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <!-- Session Stopwatch Timer -->
+      <div class="deck-timer" id="deckTimer" onclick="toggleTimer()" title="Klik untuk Mula/Jeda Pemasa Sesi">
+        <i data-lucide="timer" style="width: 16px; height: 16px;"></i>
+        <span id="timerDisplay">00:00</span>
+      </div>
+
+      <!-- Quick Slide Grid Selector -->
+      <button class="btn-deck" onclick="toggleGridModal()" title="Pilih Slaid (G)">
+        <i data-lucide="layout-grid"></i> <span>Katalog</span>
+      </button>
+
+      <!-- Speaker Notes Toggle -->
+      <button class="btn-deck" id="btnSpeakerNotes" onclick="toggleSpeakerDrawer()" title="Nota Penceramah (S)">
+        <i data-lucide="message-square"></i> <span>Nota</span>
+      </button>
+
+      <!-- Fullscreen Toggle -->
+      <button class="btn-deck" onclick="toggleFullscreen()" title="Skrin Penuh (F)">
+        <i data-lucide="maximize" id="fsIcon"></i> <span>Penuh</span>
+      </button>
+
+      <!-- Print / Export PDF -->
+      <button class="btn-deck" onclick="window.print()" title="Cetak / Eksport PDF">
+        <i data-lucide="printer"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Progress Bar Indicator -->
+  <div class="deck-progress-bar">
+    <div class="deck-progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- Main Slide Stage Area -->
+  <main class="slide-stage" id="slideStage">
+    <!-- Floating Arrow Nav -->
+    <button class="nav-arrow nav-prev" onclick="prevSlide()" aria-label="Slaid Sebelum">
+      <i data-lucide="chevron-left"></i>
+    </button>
+    <button class="nav-arrow nav-next" onclick="nextSlide()" aria-label="Slaid Seterusnya">
+      <i data-lucide="chevron-right"></i>
+    </button>
+
+    <div class="slide-container" id="slideContainer">
+
+      <!-- SLAID 1: Selamat Datang -->
+      <section class="slide-item active" data-slide="1" data-section="Pembukaan">
+        <div class="slide-item-header">
+          <span class="slide-tag"><i data-lucide="sparkles"></i> Pembukaan Rasmi</span>
+          <span style="color: var(--accent-cyan); font-weight: 700;">09:00 - 09:15</span>
+        </div>
+        <div class="slide-body">
+          <div style="text-align: center; width: 100%;">
+            <div style="display: inline-flex; padding: 12px; border-radius: 20px; background: rgba(99, 102, 241, 0.15); margin-bottom: 16px; border: 1px solid rgba(99, 102, 241, 0.3);">
+              <i data-lucide="cpu" style="width: 48px; height: 48px; color: var(--accent-cyan);"></i>
+            </div>
+            <h1 class="slide-item-title" style="font-size: 3rem; margin-bottom: 16px;">
+              Selamat Datang ke <br><span style="background: linear-gradient(135deg, #00f2fe, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">NextGen Celik Digital 2026</span>
+            </h1>
+            <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 680px; margin: 0 auto 24px;">
+              Bengkel Santai AI, Keselamatan Siber & Inovasi Remaja Masa Depan
+            </p>
+            <div style="display: flex; justify-content: center; gap: 16px;">
+              <span class="badge" style="background: rgba(255,255,255,0.06); padding: 8px 16px; border-radius: 20px; font-weight: 600; border: 1px solid var(--border-glass);">
+                🏛️ Universiti Teknologi Malaysia
+              </span>
+              <span class="badge" style="background: rgba(255,255,255,0.06); padding: 8px 16px; border-radius: 20px; font-weight: 600; border: 1px solid var(--border-glass);">
+                🤝 Asrama Darul Falah (ASDAF)
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>Misi: Memperkasa 47 Peneroka Digital Muda</span>
+          <span>Slaid 01 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Beri salam pembukaan dengan senyuman ceria. Panggil adik-adik dengan mesra. Nyatakan bahawa hari ini bukan kuliah akademik bosan, tetapi ekspedisi santai meneroka dunia masa depan bersama abang & kakak Fakulti Komputeran UTM!
+        </div>
+      </section>
+
+      <!-- SLAID 2: Siapakah Kami -->
+      <section class="slide-item" data-slide="2" data-section="Pengenalan">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="users"></i> Kenali Kami</span>
+            <h2 class="slide-item-title">Siapakah Kami? Abang & Kakak Komputeran UTM</h2>
+          </div>
+          <span style="color: var(--accent-purple); font-weight: 700;">13 Rakan Mentor</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-grid-3">
+            <div class="feature-card highlight-cyan">
+              <div class="feature-icon" style="color: var(--accent-cyan);"><i data-lucide="heart-handshake"></i></div>
+              <h3 class="feature-title">Bukan Cikgu Garang!</h3>
+              <p class="feature-desc">Kami datang sebagai abang dan kakak mentor. Jangan malu atau segan untuk angkat tangan dan bertanya apa saja!</p>
+            </div>
+            <div class="feature-card highlight-purple">
+              <div class="feature-icon" style="color: var(--accent-purple);"><i data-lucide="graduation-cap"></i></div>
+              <h3 class="feature-title">Fakulti Komputeran UTM</h3>
+              <p class="feature-desc">Mahasiswa bidang Sains Komputer, Keselamatan Siber, Kecerdasan Buatan (AI), dan Rangkaian Digital.</p>
+            </div>
+            <div class="feature-card highlight-rose">
+              <div class="feature-icon" style="color: var(--accent-rose);"><i data-lucide="target"></i></div>
+              <h3 class="feature-title">1 Mentor Setiap Meja</h3>
+              <p class="feature-desc">Setiap meja kluster mempunyai abang/kakak fasilitator khas yang sedia membantu sepanjang 4 jam ini.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>7 Meja Kluster: Bimbingan Rapat & Inklusif</span>
+          <span>Slaid 02 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Minta setiap ahli dewan memandang mentor meja masing-masing. Berikan tepukan gemuruh untuk 13 fasilitator UTM yang sanggup hadir membimbing mereka!
+        </div>
+      </section>
+
+      <!-- SLAID 3: Apakah Itu AI -->
+      <section class="slide-item" data-slide="3" data-section="Modul 1: Asas AI">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="cpu"></i> Modul 1: Asas AI</span>
+            <h2 class="slide-item-title">Apakah Sebenarnya AI? Robot Jahat vs Pembantu Pintar</h2>
+          </div>
+          <span style="color: var(--accent-cyan); font-weight: 700;">09:15 - 09:35</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-grid-2">
+            <div class="feature-card highlight-rose">
+              <div class="feature-icon" style="color: var(--accent-rose);"><i data-lucide="bot"></i></div>
+              <h3 class="feature-title">Mitos AI: Robot Filem Jahat</h3>
+              <p class="feature-desc">
+                Bila dengar perkataan AI, ramai bayangkan robot macam Terminator yang nak rampas dunia atau tembak laser. Itu cuma cerita wayang fiksyen!
+              </p>
+            </div>
+            <div class="feature-card highlight-cyan">
+              <div class="feature-icon" style="color: var(--accent-cyan);"><i data-lucide="smartphone"></i></div>
+              <h3 class="feature-title">Realiti: Kawan Baik Harian Kita</h3>
+              <p class="feature-desc">
+                AI sebenarnya adalah <strong>program komputer matematik</strong> yang belajar daripada tabiat kita: cadangan lagu YouTube, penapis spam, Google Maps & Waze!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>Analogi: Kawan yang hafal sejuta buku di perpustakaan dalam 1 saat.</span>
+          <span>Slaid 03 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Tanya dewan: 'Siapa kat sini pernah dengar perkataan AI sebelum ni? Angkat tangan!'. Terangkan dengan analogi mudah: AI seperti kawan yang sangat teliti memerhati apa yang kita suka.
+        </div>
+      </section>
+
+      <!-- SLAID 4: Ujian Mata AI -->
+      <section class="slide-item" data-slide="4" data-section="Modul 1: Asas AI">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="eye"></i> Penglihatan Komputer</span>
+            <h2 class="slide-item-title">Bagaimana Komputer Melihat? Ujian Mata AI</h2>
+          </div>
+          <span style="color: var(--accent-emerald); font-weight: 700;">Computer Vision</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-grid-2">
+            <div class="feature-card">
+              <div style="font-size: 3rem; text-align: center; margin-bottom: 12px;">🐶 🧁 🐱</div>
+              <h3 class="feature-title" style="text-align: center;">Ujian: Anak Anjing vs Kek Muffin</h3>
+              <p class="feature-desc" style="text-align: center;">
+                Bagi mata manusia, kita terus nampak beza. Tapi komputer cuma nampak susunan nombor piksel (0 dan 1)!
+              </p>
+            </div>
+            <div class="feature-card highlight-purple">
+              <h3 class="feature-title">Bagaimana AI Dilatih?</h3>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; color: #cbd5e1;">
+                <li><i data-lucide="check-circle" style="color: var(--accent-emerald); width: 16px;"></i> Masukkan 10,000 contoh gambar kucing & anjing.</li>
+                <li><i data-lucide="check-circle" style="color: var(--accent-emerald); width: 16px;"></i> Komputer cari corak: bentuk telinga, misai, hidung.</li>
+                <li><i data-lucide="check-circle" style="color: var(--accent-emerald); width: 16px;"></i> Bila tunjuk gambar baru: AI boleh teka dengan tepat!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>Konsep: Pembelajaran Mesin (Machine Learning) daripada Contoh</span>
+          <span>Slaid 04 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Ajak murid berfikir: 'Cuba bayangkan macam mana korang ajar adik kecil bezakan kucing dengan arnab? Korang tunjuk gambar berulang kali kan? Macam tu lah AI dilatih!'.
+        </div>
+      </section>
+
+      <!-- SLAID 5: Live Demo 1 - Pantun AI -->
+      <section class="slide-item" data-slide="5" data-section="Demo Interaktif">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="sparkles"></i> Demonstrasi Langsung 1</span>
+            <h2 class="slide-item-title">Live Demo: Menulis Pantun Bersama ChatGPT / Gemini</h2>
+          </div>
+          <span style="color: var(--accent-cyan); font-weight: 700;">Prompt Interaktif</span>
+        </div>
+        <div class="slide-body">
+          <div class="feature-card highlight-cyan" style="width: 100%; padding: 32px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <span style="background: var(--accent-cyan); color: #000; font-weight: 800; padding: 4px 10px; border-radius: 6px; font-size: 0.85rem;">PROMPT KITA:</span>
+              <span style="font-family: monospace; font-size: 1.1rem; color: #fff;">"Tulis pantun 4 kerat tentang semangat waja anak-anak ASDAF Bukit Persekutuan!"</span>
+            </div>
+            <div style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; font-style: italic; line-height: 1.8; font-size: 1.15rem; color: #a5b4fc;">
+              "Pohon beringin daunnya lebat,<br>
+              Tumbuh megah di puncak bukit;<br>
+              Anak ASDAF warganya hebat,<br>
+              Celik IT martabat berbangkit!"
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>AI menjana pantun mengikut rima A-B-A-B dalam masa 2 saat!</span>
+          <span>Slaid 05 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Tunjuk penceramah menaip perkataan secara langsung di skrin besar. Minta seorang adik dari Meja 1 sebutkan satu perkataan tambahan untuk diselitkan!
+        </div>
+      </section>
+
+      <!-- SLAID 6: Live Demo 2 - Gambar AI -->
+      <section class="slide-item" data-slide="6" data-section="Demo Interaktif">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="image"></i> Demonstrasi Langsung 2</span>
+            <h2 class="slide-item-title">Imaginasi Visual: Teks Bertukar Menjadi Gambar 4K!</h2>
+          </div>
+          <span style="color: var(--accent-purple); font-weight: 700;">Text-to-Image AI</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-grid-2">
+            <div class="feature-card highlight-purple">
+              <h3 class="feature-title">Prompt Imaginasi Liar:</h3>
+              <p class="feature-desc" style="font-size: 1.05rem; color: #fff; margin-bottom: 16px;">
+                <em>"Harimau Malaya memakai jersi sukan UTM, memakai topi angkasawan, bermain bola sepak di permukaan bulan dengan latar bumi bercahaya."</em>
+              </p>
+              <div class="badge" style="background: rgba(168, 85, 247, 0.2); color: #d8b4fe; padding: 6px 12px; border-radius: 8px; font-size: 0.85rem;">
+                ⚡ Dijana dalam 5 Saat menggunakan AI Kreatif
+              </div>
+            </div>
+            <div class="feature-card" style="align-items: center; justify-content: center; text-align: center; border-style: dashed;">
+              <i data-lucide="sparkles" style="width: 56px; height: 56px; color: var(--accent-cyan); margin-bottom: 12px;"></i>
+              <h4 style="color: #fff; font-size: 1.1rem;">Skrin Projektor Memaparkan Hasil</h4>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">Penceramah menunjukkan hasil visual di layar utama dewan!</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>AI menggabungkan konsep Harimau + Angkasa + Bola Sepak secara artistik.</span>
+          <span>Slaid 06 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Tunjukkan betapa kreatifnya komputer masa kini. Tanya dewan: 'Korang rasa susah tak nak lukis harimau main bola di angkasa? Tapi dengan arahan teks yang tepat, AI tolong kita visualkan!'.
+        </div>
+      </section>
+
+      <!-- SLAID 7: AI Sahabat Belajar -->
+      <section class="slide-item" data-slide="7" data-section="Aplikasi Harian">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="book-open"></i> Aplikasi Harian</span>
+            <h2 class="slide-item-title">AI Sebagai Guru Tuisyen Peribadi: Belajar Bijak & Jujur</h2>
+          </div>
+          <span style="color: var(--accent-emerald); font-weight: 700;">Integriti Digital</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-grid-2">
+            <div class="feature-card highlight-emerald">
+              <div class="feature-icon" style="color: var(--accent-emerald);"><i data-lucide="check"></i></div>
+              <h3 class="feature-title">Cara Betul Guna AI:</h3>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem; color: #cbd5e1;">
+                <li>• Minta terangkan formula Matematik yang sukar difahami.</li>
+                <li>• Semak tatabahasa & ejaan esei Bahasa Inggeris.</li>
+                <li>• Minta buat jadual ulang kaji peperiksaan SPM.</li>
+                <li>• Belajar soalan kuiz secara santai bila-bila masa.</li>
+              </ul>
+            </div>
+            <div class="feature-card highlight-rose">
+              <div class="feature-icon" style="color: var(--accent-rose);"><i data-lucide="x"></i></div>
+              <h3 class="feature-title">Jangan Lakukan Ini:</h3>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem; color: #cbd5e1;">
+                <li>• Salin bulat-bulat esei untuk kerja rumah (Plagiarisme).</li>
+                <li>• Percaya 100% fakta tanpa semak buku teks.</li>
+                <li>• Kongsi rahsia peribadi atau kata laluan kepada bot AI.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>Prinsip: AI membantu kita berfikir lebih laju, bukan ganti otak kita!</span>
+          <span>Slaid 07 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Tegaskan nilai integriti kepada adik-adik asrama: 'Otak kita adalah ciptaan Tuhan yang paling hebat. AI cuma alat bantuan, macam kalkulator membantu Matematik!'.
+        </div>
+      </section>
+
+      <!-- SLAID 8: 5 Kerjaya Masa Depan -->
+      <section class="slide-item" data-slide="8" data-section="Impian & Kerjaya">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="compass"></i> Masa Depan</span>
+            <h2 class="slide-item-title">5 Kerjaya Hebat Teknologi: Di Mana Tempat Anak ASDAF?</h2>
+          </div>
+          <span style="color: var(--accent-cyan); font-weight: 700;">Impian Tanpa Batas</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-grid-3">
+            <div class="feature-card">
+              <div class="feature-icon"><i data-lucide="gamepad-2"></i></div>
+              <h4 class="feature-title">1. Pereka Game</h4>
+              <p class="feature-desc">Cipta dunia game sendiri macam Roblox & Mobile Legends.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i data-lucide="shield-alert"></i></div>
+              <h4 class="feature-title">2. Pakar Siber</h4>
+              <p class="feature-desc">Wira pertahanan digital menentang penggodam jahat.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i data-lucide="navigation"></i></div>
+              <h4 class="feature-title">3. Jurutera Dron</h4>
+              <p class="feature-desc">Kawal dron pintar untuk pertanian dusun & pemetaan.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>Bakat teknologi tidak mengira anak bandar atau anak asrama pedalaman!</span>
+          <span>Slaid 08 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Beri dorongan motivasi: Siapa rajin belajar logik dan rajin bertanya, peluang biasiswa universiti dan tawaran kerjaya bergaji tinggi menanti kalian!
+        </div>
+      </section>
+
+      <!-- SLAID 9: Dunia Gelap Siber -->
+      <section class="slide-item" data-slide="9" data-section="Modul 2: Keselamatan Siber">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag" style="background: rgba(244,63,94,0.15); color: var(--accent-rose); border-color: rgba(244,63,94,0.3);">
+              <i data-lucide="alert-triangle"></i> Modul 2: Keselamatan Siber
+            </span>
+            <h2 class="slide-item-title">Dunia Gelap Internet: Jerat Scam & Pancingan Data (Phishing)</h2>
+          </div>
+          <span style="color: var(--accent-rose); font-weight: 700;">10:15 - 10:45</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-grid-2">
+            <div class="feature-card highlight-rose">
+              <div style="background: #000; border-radius: 12px; padding: 16px; font-family: monospace; border: 1px solid rgba(244,63,94,0.4);">
+                <div style="color: var(--accent-rose); font-size: 0.85rem; margin-bottom: 8px;">📩 Mesej WhatsApp Tidak Dikenali:</div>
+                <div style="color: #fff; font-size: 0.95rem; line-height: 1.5;">
+                  "Tahniah! Nombor anda dipilih memenangi RM10,000 dari Shopee! Sila klik pautan ini segera untuk tuntut wang: <span style="color: #38bdf8; text-decoration: underline;">http://shopee-menang-rm10k.xyz/claim</span>"
+                </div>
+              </div>
+            </div>
+            <div class="feature-card">
+              <h3 class="feature-title" style="color: var(--accent-rose);">3 Tanda Merah (Red Flags):</h3>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; color: #cbd5e1;">
+                <li>🚩 <strong>Terlalu Manis:</strong> Menang duit banyak tanpa pernah sertai peraduan.</li>
+                <li>🚩 <strong>Gesaan Panik:</strong> "Kena klik sekarang atau hadiah hangus!".</li>
+                <li>🚩 <strong>Pautan Pelik:</strong> Domain bukan `.com.my` tetapi ejaan meragukan.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>Ingat: Scammer zaman sekarang tidak pakai topeng, mereka guna mesej manis!</span>
+          <span>Slaid 09 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Tanya: 'Siapa pernah dapat mesej macam ni kat telefon bimbit mak ayah?'. Peringatkan mereka jangan sesekali klik kerana ia boleh memasang virus penceroboh.
+        </div>
+      </section>
+
+      <!-- SLAID 10: Formula 3T & 997 -->
+      <section class="slide-item" data-slide="10" data-section="Modul 2: Keselamatan Siber">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="shield-check"></i> Formula Emas</span>
+            <h2 class="slide-item-title">Formula Emas 3T: Senjata Utama Melawan Scammer!</h2>
+          </div>
+          <span style="color: var(--accent-cyan); font-weight: 700;">NSRC Hotline 997</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-grid-3">
+            <div class="feature-card highlight-cyan" style="text-align: center;">
+              <div style="font-size: 2.5rem; font-weight: 900; color: var(--accent-cyan); margin-bottom: 8px;">1. TIDAK</div>
+              <h3 class="feature-title">PASTI?</h3>
+              <p class="feature-desc">Jangan terburu-buru percaya. Tanya ustaz, warden atau guru asrama terlebih dahulu.</p>
+            </div>
+            <div class="feature-card highlight-purple" style="text-align: center;">
+              <div style="font-size: 2.5rem; font-weight: 900; color: var(--accent-purple); margin-bottom: 8px;">2. TIDAK</div>
+              <h3 class="feature-title">KONGSI!</h3>
+              <p class="feature-desc">Jangan berikan nombor kad pengenalan, kata laluan atau kod OTP kepada sesiapa.</p>
+            </div>
+            <div class="feature-card highlight-rose" style="text-align: center;">
+              <div style="font-size: 2.5rem; font-weight: 900; color: var(--accent-rose); margin-bottom: 8px;">3. TIDAK</div>
+              <h3 class="feature-title">KLIK!</h3>
+              <p class="feature-desc">Abaikan pautan mencurigakan dan terus padam atau sekat nombor berkenaan.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span style="color: var(--accent-amber); font-weight: 700;">📞 Talian Hotline Kecemasan Scam Kebangsaan: 997</span>
+          <span>Slaid 10 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Ajak seluruh dewan berdiri dan sebut beramai-ramai: 'TIDAK PASTI, TIDAK KONGSI, TIDAK KLIK!'. Hafalkan nombor 997 dalam ingatan.
+        </div>
+      </section>
+
+      <!-- SLAID 11: Password vs Passphrase -->
+      <section class="slide-item" data-slide="11" data-section="Modul 2: Keselamatan Siber">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="key"></i> Kata Laluan Kebal</span>
+            <h2 class="slide-item-title">Rahsia Kata Laluan Kebal: Password vs Passphrase</h2>
+          </div>
+          <span style="color: var(--accent-emerald); font-weight: 700;">Bina Ayat Rahsia</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-grid-2">
+            <div class="feature-card highlight-rose">
+              <div class="feature-icon" style="color: var(--accent-rose);"><i data-lucide="unlock"></i></div>
+              <h3 class="feature-title">Kata Laluan Lemah:</h3>
+              <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; font-family: monospace; font-size: 1.2rem; margin-bottom: 8px;">
+                kucing123 / 123456
+              </div>
+              <p class="feature-desc" style="color: var(--accent-rose); font-weight: 600;">
+                ⚠️ Dipecahkan oleh perisian penggodam dalam masa: 0.2 Saat sahaja!
+              </p>
+            </div>
+            <div class="feature-card highlight-emerald">
+              <div class="feature-icon" style="color: var(--accent-emerald);"><i data-lucide="lock"></i></div>
+              <h3 class="feature-title">Passphrase Kebal 3 Perkataan:</h3>
+              <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; font-family: monospace; font-size: 1.2rem; margin-bottom: 8px;">
+                RotiCanaiTerbangLaju99!
+              </div>
+              <p class="feature-desc" style="color: var(--accent-emerald); font-weight: 600;">
+                🛡️ Perlukan 10,000 Tahun untuk dipecahkan oleh komputer super!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>Petua: Gabungkan 3 benda rawak yang kelakar dan tambah nombor + simbol.</span>
+          <span>Slaid 11 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Bimbing pelajar mencuba formula ini: gabungkan makanan + aksi + nombor bertuah. Contoh: 'NasiLemakPanjatBumbung88!'.
+        </div>
+      </section>
+
+      <!-- SLAID 12: Jejak Digital & Maruah -->
+      <section class="slide-item" data-slide="12" data-section="Etika Digital">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="footprints"></i> Etika Digital</span>
+            <h2 class="slide-item-title">Jejak Digital & Maruah: Internet Tidak Pernah Lupa</h2>
+          </div>
+          <span style="color: var(--accent-purple); font-weight: 700;">Hentikan Buli Siber</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-grid-2">
+            <div class="feature-card highlight-purple">
+              <div class="feature-icon" style="color: var(--accent-purple);"><i data-lucide="footprints"></i></div>
+              <h3 class="feature-title">Tapak Kaki Digital (Digital Footprint)</h3>
+              <p class="feature-desc">
+                Setiap gambar, komen di TikTok, atau video yang dimuat naik akan meninggalkan jejak kekal. Walaupun ditekan butang padam, tangkapan layar mungkin sudah disimpan orang lain!
+              </p>
+            </div>
+            <div class="feature-card highlight-cyan">
+              <div class="feature-icon" style="color: var(--accent-cyan);"><i data-lucide="heart"></i></div>
+              <h3 class="feature-title">Adab & Kasih Sayang Sesama Kawan</h3>
+              <p class="feature-desc">
+                Jangan sesekali menyebarkan aib kawan asrama di media sosial. Elakkan komen toksik yang menyakitkan hati. Jadilah pengguna internet yang membawa kebaikan!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>Jaga maruah diri hari ini demi masa depan biasiswa & kerjaya anda.</span>
+          <span>Slaid 12 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Sampaikan dengan nada empati dan prihatin. Peringatkan bahawa apa yang kita tulis hari ini mencerminkan akhlak anak ASDAF.
+        </div>
+      </section>
+
+      <!-- SLAID 13: Bengkel Startup Sprint -->
+      <section class="slide-item" data-slide="13" data-section="Amali Mahjong">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="layout"></i> Amali Kertas Mahjong</span>
+            <h2 class="slide-item-title">Masa Menjadi Pencipta: Bengkel Startup Sprint 7 Meja!</h2>
+          </div>
+          <span style="color: var(--accent-cyan); font-weight: 700;">10:45 - 11:30</span>
+        </div>
+        <div class="slide-body">
+          <div class="feature-card highlight-cyan" style="width: 100%;">
+            <h3 class="feature-title" style="font-size: 1.4rem; margin-bottom: 12px;">Setiap Meja Adalah Sebuah Syarikat Inovasi Muda!</h3>
+            <p class="feature-desc" style="font-size: 1.05rem; margin-bottom: 20px;">
+              Gunakan kertas mahjong, marker berwarna, dan sticky notes neon di meja anda untuk melakar 1 alatan teknologi AI yang boleh menyelesaikan masalah sebenar di asrama atau sekolah!
+            </p>
+            <div class="split-grid-3">
+              <div style="background: rgba(0,0,0,0.3); padding: 14px; border-radius: 8px;">
+                <strong>1. Ketua & Penyelaras</strong><br><small style="color: var(--text-muted);">Pelajar Senior Tingkatan 4/5</small>
+              </div>
+              <div style="background: rgba(0,0,0,0.3); padding: 14px; border-radius: 8px;">
+                <strong>2. Pelukis & Artis Kreatif</strong><br><small style="color: var(--text-muted);">Murid PPKI & Junior</small>
+              </div>
+              <div style="background: rgba(0,0,0,0.3); padding: 14px; border-radius: 8px;">
+                <strong>3. Jurucakap Pentas</strong><br><small style="color: var(--text-muted);">Wakil Meja di Mikrofon</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>Bahan: 1 Kertas Mahjong, 3 Marker Warna, 1 Pad Sticky Notes per meja.</span>
+          <span>Slaid 13 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Arahkan fasilitator meja untuk membuka gulungan kertas mahjong di tengah-tengah meja dan agihkan pen marker kepada murid PPKI dan adik-adik junior!
+        </div>
+      </section>
+
+      <!-- SLAID 14: Format 4 Kuadran Poster -->
+      <section class="slide-item" data-slide="14" data-section="Amali Mahjong">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="grid"></i> Format Poster</span>
+            <h2 class="slide-item-title">Format Pembentangan Poster: 4 Kotak Emas</h2>
+          </div>
+          <span style="color: var(--accent-purple); font-weight: 700;">Panduan Lakaran</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-grid-2">
+            <div class="feature-card highlight-cyan">
+              <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-cyan);">KOTAK 1 (ATAS KIRI)</span>
+              <h3 class="feature-title">Nama Inovasi & Logo Cool</h3>
+              <p class="feature-desc">Cipta nama projek yang gempak dan lukis lambang/logo syarikat meja anda.</p>
+            </div>
+            <div class="feature-card highlight-rose">
+              <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-rose);">KOTAK 2 (ATAS KANAN)</span>
+              <h3 class="feature-title">Masalah Yang Dihadapi</h3>
+              <p class="feature-desc">Apa masalah di asrama/sekolah yang alat ini nak tolong selesaikan?</p>
+            </div>
+            <div class="feature-card highlight-purple">
+              <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-purple);">KOTAK 3 (BAWAH KIRI)</span>
+              <h3 class="feature-title">Lakaran Prototaip Alatan</h3>
+              <p class="feature-desc">Lukis bentuk alat, butang sensor, bateri, atau skrin aplikasi anda.</p>
+            </div>
+            <div class="feature-card highlight-emerald">
+              <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-emerald);">KOTAK 4 (BAWAH KANAN)</span>
+              <h3 class="feature-title">Kebaikan Kepada Murid</h3>
+              <p class="feature-desc">Senaraikan 3 manfaat besar bila alat ini mula digunakan di ASDAF.</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>Mentor meja membantu menggariskan 4 kuadran kemas di kertas mahjong.</span>
+          <span>Slaid 14 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Tunjukkan contoh pembahagian garisan tanda palang (+) di tengah kertas. Galakkan mereka menulis dengan tulisan besar dan warna-warni!
+        </div>
+      </section>
+
+      <!-- SLAID 15: Fast-Answer Tech Showdown -->
+      <section class="slide-item" data-slide="15" data-section="Cabaran Kuiz">
+        <div class="slide-item-header">
+          <div>
+            <span class="slide-tag"><i data-lucide="zap"></i> Kuiz Dewan</span>
+            <h2 class="slide-item-title">Fast-Answer Tech Showdown: 3, 2, 1... Angkat Kad!</h2>
+          </div>
+          <span style="color: var(--accent-rose); font-weight: 700;">Gaya Kahoot Skrin Dewan</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-grid-2">
+            <div class="feature-card highlight-rose">
+              <h3 class="feature-title">Peraturan Kuiz Dewan:</h3>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.95rem; color: #cbd5e1;">
+                <li>1. Soalan dipaparkan di skrin besar selama 30 saat.</li>
+                <li>2. Bincang 15 saat bersama ahli meja dan mentor.</li>
+                <li>3. Emcee kira detik: <em>"3... 2... 1... ANGKAT KAD!"</em>.</li>
+                <li>4. Murid PPKI & wakil meja angkat kad warna A/B/C/D serentak!</li>
+              </ul>
+            </div>
+            <div class="feature-card" style="text-align: center; justify-content: center;">
+              <div style="font-size: 3rem; margin-bottom: 8px;">🏆 🎁 ⚡</div>
+              <h3 class="feature-title">Hadiah Menanti Meja Terpantas!</h3>
+              <p class="feature-desc">Meja yang mengumpul markah tertinggi akan membawa pulang anugerah keraian dewan!</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>Sifar Gajet: Melatih kerjasama dan fokus penuh di skrin dewan.</span>
+          <span>Slaid 15 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Kawal tempo suasana dengan muzik bertenaga. Pastikan setiap meja mendapat giliran dan perhatian yang adil daripada emcee!
+        </div>
+      </section>
+
+      <!-- SLAID 16: Masa Depan Bermula Hari Ini -->
+      <section class="slide-item" data-slide="16" data-section="Penutup">
+        <div class="slide-item-header">
+          <span class="slide-tag"><i data-lucide="award"></i> Penutup Program</span>
+          <span style="color: var(--accent-cyan); font-weight: 700;">11:50 - 12:00</span>
+        </div>
+        <div class="slide-body">
+          <div style="text-align: center; width: 100%;">
+            <div style="display: inline-flex; padding: 16px; border-radius: 50%; background: rgba(0, 242, 254, 0.15); margin-bottom: 20px;">
+              <i data-lucide="rocket" style="width: 56px; height: 56px; color: var(--accent-cyan);"></i>
+            </div>
+            <h2 class="slide-item-title" style="font-size: 2.8rem; margin-bottom: 16px;">
+              Masa Depan Bermula Hari Ini!
+            </h2>
+            <p style="font-size: 1.25rem; color: #cbd5e1; max-width: 720px; margin: 0 auto 24px; line-height: 1.6;">
+              <em>"Kalian bukan sekadar pengguna teknologi, kalian adalah barisan pencipta inovasi masa depan negara!"</em>
+            </p>
+            <div style="font-size: 1rem; color: var(--accent-cyan); font-weight: 700;">
+              Terima Kasih Asrama Darul Falah (ASDAF) PERKIM & Kru Mahasiswa UTM!
+            </div>
+          </div>
+        </div>
+        <div class="slide-item-footer">
+          <span>Penyampaian Sijil, Hadiah Pemenang & Sesi Fotografi Kenangan</span>
+          <span>Slaid 16 / 16</span>
+        </div>
+        <div class="slide-notes" style="display: none;">
+          Sampaikan ucapan penghargaan rasmi kepada pihak pengurusan dan warden ASDAF. Ajak semua kru dan adik-adik berkumpul di hadapan pentas untuk sesi fotografi rasmi beramai-ramai!
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Speaker Notes Bottom Drawer -->
+  <aside class="speaker-drawer" id="speakerDrawer">
+    <div class="drawer-header">
+      <span><i data-lucide="mic"></i> Nota Penceramah & Soalan Dewan (Slaid <span id="notesSlideNum">1</span>)</span>
+      <button class="btn-deck" onclick="toggleSpeakerDrawer()" style="padding: 2px 8px; font-size: 0.75rem;">Tutup [S]</button>
+    </div>
+    <div class="drawer-content" id="drawerContent">
+      Memuatkan nota penceramah...
+    </div>
+  </aside>
+
+  <!-- Grid Catalog Modal -->
+  <div class="grid-modal" id="gridModal">
+    <div class="grid-modal-header">
+      <h2 style="font-family: var(--font-heading); font-size: 1.5rem; color: #fff;">
+        <i data-lucide="layout-grid"></i> Katalog 16 Slaid Pembentangan
+      </h2>
+      <button class="btn-deck" onclick="toggleGridModal()">
+        <i data-lucide="x"></i> <span>Tutup [Esc]</span>
+      </button>
+    </div>
+    <div class="slide-grid" id="slideGrid">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+
+  <script>
+    // Master Presentation Logic
+    let currentSlide = 1;
+    const totalSlides = 16;
+    let timerSeconds = 0;
+    let timerInterval = null;
+    let isTimerRunning = false;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) window.lucide.createIcons();
+      buildGridThumbs();
+      updateSlideView();
+
+      // Keyboard navigation
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+          nextSlide();
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          prevSlide();
+        } else if (e.key.toLowerCase() === 's') {
+          toggleSpeakerDrawer();
+        } else if (e.key.toLowerCase() === 'g') {
+          toggleGridModal();
+        } else if (e.key.toLowerCase() === 'f') {
+          toggleFullscreen();
+        } else if (e.key === 'Escape') {
+          closeAllOverlays();
+        }
+      });
+    });
+
+    function updateSlideView() {
+      const slides = document.querySelectorAll('.slide-item');
+      slides.forEach((slide) => {
+        const slideNo = parseInt(slide.getAttribute('data-slide'), 10);
+        if (slideNo === currentSlide) {
+          slide.classList.add('active');
+          // Update speaker notes
+          const notes = slide.querySelector('.slide-notes');
+          const drawerContent = document.getElementById('drawerContent');
+          const notesSlideNum = document.getElementById('notesSlideNum');
+          if (notes && drawerContent) {
+            drawerContent.innerHTML = notes.innerHTML;
+          }
+          if (notesSlideNum) notesSlideNum.textContent = currentSlide;
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      // Update counters & progress
+      const counterBadge = document.getElementById('slideCounterBadge');
+      if (counterBadge) counterBadge.textContent = `${currentSlide} / ${totalSlides}`;
+
+      const progressFill = document.getElementById('progressFill');
+      if (progressFill) {
+        const pct = (currentSlide / totalSlides) * 100;
+        progressFill.style.width = `${pct}%`;
+      }
+
+      // Update active grid item
+      document.querySelectorAll('.grid-thumb').forEach((thumb, idx) => {
+        if (idx + 1 === currentSlide) {
+          thumb.classList.add('active');
+        } else {
+          thumb.classList.remove('active');
+        }
+      });
+
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateSlideView();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateSlideView();
+      }
+    }
+
+    function jumpToSlide(num) {
+      if (num >= 1 && num <= totalSlides) {
+        currentSlide = num;
+        updateSlideView();
+        closeAllOverlays();
+      }
+    }
+
+    function toggleSpeakerDrawer() {
+      const drawer = document.getElementById('speakerDrawer');
+      const btn = document.getElementById('btnSpeakerNotes');
+      if (drawer) {
+        drawer.classList.toggle('open');
+        if (btn) btn.classList.toggle('active');
+      }
+    }
+
+    function toggleGridModal() {
+      const modal = document.getElementById('gridModal');
+      if (modal) {
+        modal.classList.toggle('open');
+      }
+    }
+
+    function closeAllOverlays() {
+      const modal = document.getElementById('gridModal');
+      const drawer = document.getElementById('speakerDrawer');
+      if (modal) modal.classList.remove('open');
+      if (drawer) drawer.classList.remove('open');
+    }
+
+    function buildGridThumbs() {
+      const grid = document.getElementById('slideGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      const slides = document.querySelectorAll('.slide-item');
+      slides.forEach((slide) => {
+        const no = slide.getAttribute('data-slide');
+        const titleElem = slide.querySelector('.slide-item-title');
+        const title = titleElem ? titleElem.innerText.replace(/\n/g, ' ') : `Slaid ${no}`;
+        const section = slide.getAttribute('data-section') || 'Modul';
+
+        const thumb = document.createElement('div');
+        thumb.className = `grid-thumb ${parseInt(no, 10) === currentSlide ? 'active' : ''}`;
+        thumb.onclick = () => jumpToSlide(parseInt(no, 10));
+        thumb.innerHTML = `
+          <div>
+            <span class="grid-thumb-num">SLAID ${no} &bull; ${section}</span>
+            <div class="grid-thumb-title">${title.substring(0, 50)}...</div>
+          </div>
+          <span style="font-size: 0.7rem; color: var(--text-muted);"><i data-lucide="play" style="width: 12px; height: 12px;"></i> Paparkan</span>
+        `;
+        grid.appendChild(thumb);
+      });
+    }
+
+    // Fullscreen Handler
+    function toggleFullscreen() {
+      const stage = document.getElementById('slideStage');
+      if (!document.fullscreenElement) {
+        if (stage.requestFullscreen) {
+          stage.requestFullscreen();
+        } else if (stage.webkitRequestFullscreen) {
+          stage.webkitRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    // Stopwatch Timer
+    function toggleTimer() {
+      if (isTimerRunning) {
+        clearInterval(timerInterval);
+        isTimerRunning = false;
+      } else {
+        isTimerRunning = true;
+        timerInterval = setInterval(() => {
+          timerSeconds++;
+          const mins = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+          const secs = String(timerSeconds % 60).padStart(2, '0');
+          const display = document.getElementById('timerDisplay');
+          if (display) display.textContent = `${mins}:${secs}`;
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>
