@@ -1,0 +1,110 @@
+ceiling: "RM 800.00"
+pax_count: "66 orang (47 Pelajar + 6 Staf ASDAF + 13 Kru UTM)"
+
+variants:
+  - id: 1
+    name: "Varian 1: Super-Lean"
+    total: 270.00
+    tag: "Kos Minimum"
+    tag_color: "blue"
+    status: "Alternatif Paling Jimat"
+    balance: 530.00
+    description: "Fokus kepada modul penting, doorgift asas dan sarapan ringkas. Sesuai jika ASDAF menyediakan makan tengah hari sendiri dari dewan makan asrama."
+    items:
+      - item: "Sarapan Ringkas (Roti bun + Air Kotak 250ml)"
+        qty: "66 pax"
+        unit_price: 2.00
+        total: 132.00
+      - item: "Alat Tulis & Kertas Manila (7 Meja)"
+        qty: "1 set"
+        unit_price: 35.00
+        total: 35.00
+      - item: "Hadiah Kuiz Showdown (5 Token Pemenang)"
+        qty: "5 set"
+        unit_price: 10.00
+        total: 50.00
+      - item: "Plak Penghargaan ASDAF (Akrilik)"
+        qty: "1 unit"
+        unit_price: 35.00
+        total: 35.00
+      - item: "Kontingensi / Kecemasan"
+        qty: "-"
+        unit_price: 18.00
+        total: 18.00
+
+  - id: 2
+    name: "Varian 2: Seimbang (Disyorkan)"
+    total: 520.00
+    tag: "Paling Disyorkan"
+    tag_color: "emerald"
+    status: "Nilai Terbaik (Best Value)"
+    balance: 280.00
+    recommended: true
+    description: "Kombinasi optimum: Sarapan lengkap, pek alat tulis setiap meja, doorgift kustom untuk setiap 47 pelajar, hadiah kuiz berkualiti, dan plak penghargaan eksklusif."
+    items:
+      - item: "Sarapan Pagi (Karipap/Kuih + Roti + Air Kotak)"
+        qty: "66 pax"
+        unit_price: 3.00
+        total: 198.00
+      - item: "Pek Modul & Alat Tulis 7 Meja (Marker, Manila, Pelekat)"
+        qty: "7 meja"
+        unit_price: 8.00
+        total: 56.00
+      - item: "Goodie Bag Pelajar ASDAF (Pen, Buku Nota Poket, Wafer)"
+        qty: "47 pek"
+        unit_price: 2.50
+        total: 117.50
+      - item: "Hadiah Kuiz Showdown (5 Pemenang Token IT/Alat Tulis)"
+        qty: "5 hadiah"
+        unit_price: 15.00
+        total: 75.00
+      - item: "Plak Cenderahati Rasmi Pengetua ASDAF PERKIM"
+        qty: "1 set"
+        unit_price: 45.00
+        total: 45.00
+      - item: "Sijil Penyertaan Rasmi Pelajar (Kertas Sijil Emboss)"
+        qty: "50 keping"
+        unit_price: 0.50
+        total: 25.00
+      - item: "Lain-lain & Kontingensi"
+        qty: "-"
+        unit_price: 3.50
+        total: 3.50
+
+  - id: 3
+    name: "Varian 3: Pakej Lengkap + Makan Tengah Hari"
+    total: 800.00
+    tag: "Pakej Penuh"
+    tag_color: "purple"
+    status: "Had Maksimum RM 800"
+    balance: 0.00
+    description: "Merangkumi penyediaan katering Makan Tengah Hari (Nasi Ayam/Lauk) untuk 66 orang, sarapan pagi, sijil penuh, cenderahati ASDAF, dan hadiah kuiz."
+    items:
+      - item: "Sarapan Pagi (Kuih 2 biji + Air Minuman)"
+        qty: "66 pax"
+        unit_price: 2.50
+        total: 165.00
+      - item: "Makan Tengah Hari (Nasi Berlauk + Air Minum 66 Pax)"
+        qty: "66 pek"
+        unit_price: 6.50
+        total: 429.00
+      - item: "Bahan Aktiviti 7 Meja (Kertas Mahjong, Pen Marker)"
+        qty: "7 meja"
+        unit_price: 6.00
+        total: 42.00
+      - item: "Hadiah Kuiz Showdown (5 Set Hadiah Berkualiti)"
+        qty: "5 set"
+        unit_price: 15.00
+        total: 75.00
+      - item: "Plak Cenderahati Rasmi ASDAF"
+        qty: "1 set"
+        unit_price: 45.00
+        total: 45.00
+      - item: "Sijil Penyertaan 47 Pelajar + Sijil Penghargaan Staf"
+        qty: "55 keping"
+        unit_price: 0.60
+        total: 33.00
+      - item: "Kontingensi & Logistik Kecemasan"
+        qty: "-"
+        unit_price: 11.00
+        total: 11.00

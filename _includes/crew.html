@@ -1,0 +1,38 @@
+<!-- 13 UTM Crew Roles & Responsibilities -->
+<section class="section-padding" id="kru">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i data-lucide="users"></i> Pengagihan Tugas Pasukan</span>
+      <h2 class="section-title">Matriks Pembahagian 13 Kru UTM</h2>
+      <p class="section-subtitle">
+        6 Kru Mengendalikan Pengurusan Pusat & Pentas Dewan, manakala 7 Kru Bertindak Sebagai Mentor Meja Dedikasi (Nisbah 1 Kru : 6-7 Pelajar).
+      </p>
+    </div>
+
+    <div class="crew-split-grid">
+      <!-- Left Column: Central Leads -->
+      <div class="crew-column">
+        <h3 class="col-title"><i data-lucide="shield"></i> 6 Pengurusan Pusat & Dewan</h3>
+        {% for lead in site.data.crew.central_leads %}
+        <div class="glass-card crew-card">
+          <span class="crew-role-badge">{{ lead.badge }} | Kru {{ lead.id }}</span>
+          <h4>{{ lead.role }}</h4>
+          <p>{{ lead.scope }}</p>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Right Column: 7 Table Mentors -->
+      <div class="crew-column">
+        <h3 class="col-title"><i data-lucide="layout-grid"></i> 7 Mentor Meja Dedikasi</h3>
+        {% for m in site.data.crew.table_mentors %}
+        <div class="glass-card crew-card">
+          <span class="crew-role-badge highlight">{{ m.table }} | Kru {{ m.id }}</span>
+          <h4>{{ m.role }}</h4>
+          <p>{{ m.scope }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

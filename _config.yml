@@ -1,0 +1,35 @@
+# NextGen Tech Summit 2026 | Jekyll Configuration for GitHub Pages
+title: "NextGen Tech Summit 2026"
+tagline: "Bengkel Celik Digital & AI: Memperkasa Remaja Komuniti"
+description: "Hab Dokumentasi Operasi & Pelan Pelaksanaan Bengkel UTM x ASDAF 2026 (47 Pelajar, 13 Kru UTM, Bajet RM 800)"
+url: "https://xzrians.github.io"
+baseurl: "/IT-SEminar"
+
+# Event Metadata
+event:
+  title: "NextGen Tech Summit 2026"
+  theme: "Bengkel Celik Digital & AI: Memperkasa Remaja Komuniti"
+  host: "Fakulti Komputeran, Universiti Teknologi Malaysia (UTM)"
+  partner: "Asrama Darul Falah (ASDAF PERKIM), Bukit Persekutuan, KL"
+  students_count: 47
+  students_male: 18
+  students_female: 29
+  crew_count: 13
+  staff_count: 6
+  tables_count: 7
+  budget_cap: "RM 800.00"
+  zero_device: true
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Build settings
+exclude:
+  - archive/
+  - README.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock

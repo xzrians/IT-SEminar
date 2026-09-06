@@ -1,0 +1,57 @@
+<!-- Master Event Timeline & Execution Schedule -->
+<section class="section-padding" id="jadual">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i data-lucide="clock"></i> Atur Cara Minit-ke-Minit</span>
+      <h2 class="section-title">Jadual Pelaksanaan Master (08:30 – 13:00)</h2>
+      <p class="section-subtitle">
+        Garis masa separuh hari yang seimbang antara taklimat interaktif, latihan aktiviti berkumpulan di meja, dan kuiz showdown pentas.
+      </p>
+    </div>
+
+    <!-- Mermaid Interactive Diagram -->
+    <div class="glass-card mermaid-box mb-8">
+      <h3><i data-lucide="git-commit"></i> Aliran Fasa Pelaksanaan Program</h3>
+      <div class="mermaid">
+graph LR
+  A["08:30 Pendaftaran<br>& Sarapan"] --> B["09:00 Pembukaan<br>& Tech Bingo"]
+  B --> C["09:20 Modul 1<br>Dunia AI & Kerjaya"]
+  C --> D["10:20 Rehat Kudapan<br>(25 Min)"]
+  D --> E["10:45 Modul 2<br>Siber & Inovasi"]
+  E --> F["11:45 Kuiz Showdown<br>(Sifar Telefon)"]
+  F --> G["12:15 Penutup, Hadiah<br>& Cenderahati"]
+  G --> H["12:45 Jamuan Tengah Hari<br>& Bersurai"]
+
+  style A fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#f8fafc
+  style B fill:#1e293b,stroke:#818cf8,stroke-width:2px,color:#f8fafc
+  style C fill:#1e293b,stroke:#c084fc,stroke-width:2px,color:#f8fafc
+  style D fill:#1e293b,stroke:#f59e0b,stroke-width:2px,color:#f8fafc
+  style E fill:#1e293b,stroke:#10b981,stroke-width:2px,color:#f8fafc
+  style F fill:#1e293b,stroke:#f43f5e,stroke-width:2px,color:#f8fafc
+  style G fill:#1e293b,stroke:#a855f7,stroke-width:2px,color:#f8fafc
+  style H fill:#1e293b,stroke:#00f2fe,stroke-width:2px,color:#f8fafc
+      </div>
+    </div>
+
+    <!-- Timeline List -->
+    <div class="timeline-container">
+      {% for item in site.data.timeline %}
+      <div class="timeline-item">
+        <div class="timeline-time">
+          {{ item.time }}
+          <span class="duration-badge">{{ item.duration }}</span>
+        </div>
+        <div class="glass-card timeline-content {% if item.tag contains 'Kuiz' %}highlight-border{% endif %}">
+          <span class="phase-tag phase-{{ forloop.index }}">{{ item.tag }}</span>
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.desc }}</p>
+          <div class="lead-tag">
+            <i data-lucide="user-check"></i>
+            <span><strong>PIC:</strong> {{ item.pic }}</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

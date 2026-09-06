@@ -1,0 +1,79 @@
+central_leads:
+  - id: 1
+    role: "Pengarah Projek & Lead Emcee"
+    category: "Kepimpinan"
+    badge: "Stage Lead"
+    scope: "Menyelaras keseluruhan program, ucapan pembukaan, kawalan pentas dewan, dan protokol bersama warden ASDAF."
+    tag_color: "cyan"
+
+  - id: 2
+    role: "Penceramah AI & Lead Trainer"
+    category: "Modul & Kandungan"
+    badge: "Speaker"
+    scope: "Menyampaikan Modul 1 & Modul 2, demonstrasi AI di layar besar, dan memimpin dinamika soalan kuiz."
+    tag_color: "purple"
+
+  - id: 3
+    role: "Lead Teknikal, AV & Projektor"
+    category: "Teknikal"
+    badge: "AV & IT"
+    scope: "Mengurus sistem siar raya (PA system), mikrofon wayarles, sambungan projektor HDMI, dan paparan slaid."
+    tag_color: "blue"
+
+  - id: 4
+    role: "Pengurus Masa & Skor Kuiz (Scorekeeper)"
+    category: "Operasi"
+    badge: "Stage Support"
+    scope: "Menjaga ketepatan masa mengikut jadual minit-ke-minit, mengira markah 'Fast-Answer Showdown' di hadapan dewan."
+    tag_color: "amber"
+
+  - id: 5
+    role: "Pengurus Hadiah, Cenderahati & Sijil"
+    category: "Protokol"
+    badge: "Logistik"
+    scope: "Menyusun hadiah pemenang kuiz, plak cenderahati pengetua ASDAF, dan 47 sijil penyertaan pelajar."
+    tag_color: "rose"
+
+  - id: 6
+    role: "Pengurus Jamuan, Kebersihan & Keselamatan"
+    category: "Logistik"
+    badge: "Hospitaliti"
+    scope: "Menyelaras hidangan kudapan pagi dan makan tengah hari (66 pax), memastikan keselamatan dan kebersihan dewan."
+    tag_color: "green"
+
+table_mentors:
+  - id: 7
+    table: "Meja 1"
+    role: "Mentor Meja 1 (7 Pelajar Lelaki: T1, T2, PPKI)"
+    scope: "Membimbing junior lelaki dan memberi tumpuan khas kepada 1 murid PPKI."
+    badge: "Dedicated Mentor"
+  - id: 8
+    table: "Meja 2"
+    role: "Mentor Meja 2 (6 Pelajar Lelaki: T1, T2)"
+    scope: "Memastikan penyertaan penuh pelajar junior dalam kuiz dan perbincangan."
+    badge: "Dedicated Mentor"
+  - id: 9
+    table: "Meja 3"
+    role: "Mentor Meja 3 (5 Pelajar Lelaki: T3, T4, T5)"
+    scope: "Memandu perbincangan kerjaya dan motivasi peperiksaan SPM pelajar senior."
+    badge: "Dedicated Mentor"
+  - id: 10
+    table: "Meja 4"
+    role: "Mentor Meja 4 (7 Pelajar Perempuan: T3, T4, PPKI)"
+    scope: "Menyokong perbincangan keselamatan siber dan perhatian inklusif murid PPKI."
+    badge: "Dedicated Mentor"
+  - id: 11
+    table: "Meja 5"
+    role: "Mentor Meja 5 (7 Pelajar Perempuan: T3, T4, PPKI)"
+    scope: "Menggalakkan keyakinan bersuara dalam kuiz dan bimbingan sabar murid PPKI."
+    badge: "Dedicated Mentor"
+  - id: 12
+    table: "Meja 6"
+    role: "Mentor Meja 6 (7 Pelajar Perempuan: T4, T5, PPKI)"
+    scope: "Membimbing aktiviti inovasi digital dan memberi tumpuan murid PPKI."
+    badge: "Dedicated Mentor"
+  - id: 13
+    table: "Meja 7"
+    role: "Mentor Meja 7 (8 Pelajar Perempuan: T4, T5)"
+    scope: "Sesi perkongsian persediaan universiti, biasiswa, dan laluan SPM."
+    badge: "Dedicated Mentor"

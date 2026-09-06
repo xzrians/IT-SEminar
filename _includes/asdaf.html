@@ -1,0 +1,63 @@
+<!-- ASDAF Background Check & Demographics -->
+<section class="section-padding bg-surface" id="asdaf">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i data-lucide="shield"></i> Semakan Latar Belakang & Komuniti</span>
+      <h2 class="section-title">Profil Asrama Darul Falah (ASDAF) PERKIM</h2>
+      <p class="section-subtitle">
+        Memahami komuniti 47 anak-anak asrama, 6 staf pentadbiran, serta prinsip pedagogi tanpa gajet bagi memastikan impak bengkel yang maksimum.
+      </p>
+    </div>
+
+    <!-- 2 Column Info Grid -->
+    <div class="asdaf-grid">
+      <div class="glass-card info-card">
+        <div class="card-icon">
+          <i data-lucide="building"></i>
+        </div>
+        <h3>Institusi Kebajikan PERKIM (1995)</h3>
+        <p>
+          <strong>{{ site.data.asdaf.name }}</strong> ditubuhkan pada tahun <strong>{{ site.data.asdaf.founded }}</strong> di bawah naungan <strong>{{ site.data.asdaf.organization }}</strong>, berpusat di <strong>{{ site.data.asdaf.location }}</strong>.
+        </p>
+        <ul class="clean-list">
+          <li><i data-lucide="check"></i> <span>Menaungi {{ site.data.asdaf.target_group }}.</span></li>
+          <li><i data-lucide="check"></i> <span>Pelajar tinggal di asrama berdisiplin tinggi tanpa telefon pintar peribadi harian.</span></li>
+          <li><i data-lucide="check"></i> <span>Peluang terbaik mendedahkan mereka kepada kemahiran celik AI & kerjaya masa depan.</span></li>
+        </ul>
+      </div>
+
+      <div class="glass-card info-card">
+        <div class="card-icon">
+          <i data-lucide="compass"></i>
+        </div>
+        <h3>Pendekatan Pedagogi & Mesra Pelajar</h3>
+        <p>
+          Penyesuaian kaedah pembelajaran berdasarkan realiti audiens dan keperluan inklusif murid:
+        </p>
+        <ul class="clean-list">
+          {% for p in site.data.asdaf.pedagogical_rules %}
+          <li><i data-lucide="arrow-right"></i> <span><strong>{{ p.rule }}:</strong> {{ p.desc }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Demographics Strip -->
+    <div class="glass-card demographics-strip">
+      <h3><i data-lucide="users"></i> Pecahan 47 Pelajar Mengikut Tingkatan & PPKI:</h3>
+      <div class="demo-pills">
+        {% for d in site.data.asdaf.demographics.breakdown %}
+        <div class="pill {% if d.form contains 'PPKI' %}highlight{% endif %}">
+          <strong>{{ d.form }}:</strong> {{ d.count }} Orang
+        </div>
+        {% endfor %}
+        <div class="pill warden">
+          <i data-lucide="shield-check"></i> <strong>Staf ASDAF:</strong> 6 Orang Warden
+        </div>
+        <div class="pill" style="border-color: rgba(99, 102, 241, 0.4); background: rgba(99, 102, 241, 0.12);">
+          <i data-lucide="user-check"></i> <strong>Kru UTM:</strong> 13 Orang Siswa
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

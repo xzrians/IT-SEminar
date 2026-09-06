@@ -1,0 +1,69 @@
+<!-- Budget Variants Section (RM 800 Ceiling) -->
+<section class="section-padding" id="bajet">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i data-lucide="pie-chart"></i> Siling Peruntukan: RM 800.00</span>
+      <h2 class="section-title">3 Varian Bajet Eksekutif (66 Pax)</h2>
+      <p class="section-subtitle">
+        Pelan belanjawan fleksibel merangkumi 47 pelajar, 6 staf ASDAF, dan 13 kru UTM. Klik mana-mana varian di bawah untuk melihat pecahan terperinci:
+      </p>
+    </div>
+
+    <!-- 3 Tabs -->
+    <div class="variant-tabs">
+      {% for v in site.data.budget.variants %}
+      <div 
+        class="variant-tab {% if v.recommended %}active{% endif %}" 
+        id="budget-tab-{{ v.id }}" 
+        onclick="switchBudgetVariant({{ v.id }})"
+      >
+        <span class="v-star">{{ v.tag }}</span>
+        <div class="v-name">{{ v.name }}</div>
+        <div class="v-price">RM {{ v.total | round: 0 }}</div>
+        <span class="v-sub">{% if v.balance > 0 %}Baki Tabung: RM {{ v.balance | round: 0 }}{% else %}100% Bajet Dimanfaatkan{% endif %}</span>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- 3 Display Panes -->
+    {% for v in site.data.budget.variants %}
+    <div class="glass-card budget-display budget-pane {% if v.recommended %}active{% endif %}" id="budget-pane-{{ v.id }}">
+      <div class="budget-header">
+        <div class="budget-title">
+          <h3>{{ v.name }}</h3>
+          <p>{{ v.description }}</p>
+        </div>
+        <div class="balance-pill {% if v.balance > 0 %}surplus{% else %}zero{% endif %}">
+          <i data-lucide="wallet"></i>
+          <span>{% if v.balance > 0 %}+ RM {{ v.balance | round: 2 }} Baki Simpanan{% else %}RM 0.00 (Pakej Lengkap Penuh){% endif %}</span>
+        </div>
+      </div>
+
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>Item & Keterangan Perbelanjaan</th>
+            <th>Kuantiti</th>
+            <th>Harga Seunit</th>
+            <th style="text-align: right;">Jumlah Kos</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in v.items %}
+          <tr>
+            <td><strong>{{ item.item }}</strong></td>
+            <td>{{ item.qty }}</td>
+            <td>RM {{ item.unit_price | round: 2 }}</td>
+            <td class="cost-price">RM {{ item.total | round: 2 }}</td>
+          </tr>
+          {% endfor %}
+          <tr>
+            <td colspan="3">JUMLAH KESELURUHAN</td>
+            <td class="cost-price" style="color: var(--accent-cyan); font-size: 1.15rem;">RM {{ v.total | round: 2 }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,42 @@
+rules:
+  - "Kuiz dijalankan secara fizikal tanpa telefon pintar atau gajet peribadi."
+  - "Soalan dipaparkan di skrin projektor dengan grafik jelas dan huruf besar."
+  - "Emcee mengira: 'Tiga... Dua... Satu... ANGKAT TANGAN!'."
+  - "Mentor meja menyokong pelajar untuk pantas mengangkat tangan; emcee memilih tangan terpantas."
+  - "Jika betul, markah meja dicatat di papan skor dan pemenang menerima token hadiah segera!"
+
+questions:
+  - no: 1
+    category: "Asas Kecerdasan Buatan (AI)"
+    question: "Apakah maksud singkatan AI dalam bahasa Melayu dan Inggeris?"
+    answer: "Kecerdasan Buatan (Artificial Intelligence)"
+    clue: "Teknologi komputer pintar yang meniru kebolehan berfikir manusia."
+    prize: "Token Hadiah Pantas 1"
+
+  - no: 2
+    category: "Keselamatan Siber"
+    question: "Jika anda menerima mesej WhatsApp daripada nombor tidak dikenali mendakwa anda memenangi RM10,000 dan meminta kata laluan (password) atau kod OTP, apakah tindakan anda?"
+    answer: "JANGAN beri maklumat, JANGAN klik pautan, dan laporkan/sekat nombor tersebut (Phishing/Scam)."
+    clue: "Ingat prinsip 3T: Tidak Pasti, Tidak Kongsi, Tidak Klik!"
+    prize: "Token Hadiah Pantas 2"
+
+  - no: 3
+    category: "Kreativiti Digital"
+    question: "Namakan SATU perisian atau alatan percuma yang boleh digunakan untuk mereka bentuk poster, logo atau kad ucapan digital."
+    answer: "Canva (juga diterima: Photoshop, Figma, GIMP, Paint 3D)"
+    clue: "Bermula dengan huruf 'C', sangat popular dan ada ribuan templat percuma."
+    prize: "Token Hadiah Pantas 3"
+
+  - no: 4
+    category: "Generative AI"
+    question: "Apakah nama teknologi 'Chatbot AI' dibangunkan oleh OpenAI yang terkenal dengan kebolehan menjawab soalan dan membantu kerja sekolah?"
+    answer: "ChatGPT (juga diterima: Claude, Gemini / Google Bard, Copilot)"
+    clue: "Ada perkataan 'Chat' di hadapan."
+    prize: "Token Hadiah Pantas 4"
+
+  - no: 5
+    category: "Hala Tuju & Karier Digital"
+    question: "Sebutkan DUA contoh kerjaya masa depan dalam bidang teknologi maklumat (IT)."
+    answer: "Pakar Keselamatan Siber, Jurutera AI/Data Scientist, Pembangun Aplikasi (App Developer), Perekabentuk Web (Web Designer), Pentadbir Rangkaian."
+    clue: "Pilih mana-mana kerjaya digital yang dibentangkan oleh penceramah sebentar tadi."
+    prize: "Hadiah Utama Kuiz Showdown"

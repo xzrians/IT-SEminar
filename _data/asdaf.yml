@@ -1,0 +1,38 @@
+name: "Asrama Darul Falah (ASDAF)"
+organization: "Pertubuhan Kebajikan Islam Malaysia (PERKIM Kebangsaan)"
+founded: "1995"
+location: "Bukit Persekutuan (Federal Hill), Kuala Lumpur"
+target_group: "Anak-anak yatim, asnaf, dan muallaf daripada pelbagai latar belakang sosio-ekonomi"
+demographics:
+  total: 47
+  male: 18
+  female: 29
+  staff: 6
+  breakdown:
+    - form: "Tingkatan 1"
+      count: 6
+      profile: "Peralihan sekolah rendah ke menengah, memerlukan bimbingan ice-breaking mesra."
+    - form: "Tingkatan 2"
+      count: 6
+      profile: "Kitaran asas pengenalan konsep sains dan teknologi awal."
+    - form: "Tingkatan 3"
+      count: 10
+      profile: "Fasa penentuan aliran akademik/vokasional menengah atas."
+    - form: "Tingkatan 4"
+      count: 15
+      profile: "Kumpulan terbesar; mula memikirkan hala tuju SPM & kerjaya."
+    - form: "Tingkatan 5"
+      count: 5
+      profile: "Calon SPM; memerlukan pendedahan laluan kerjaya digital, biasiswa & universiti."
+    - form: "PPKI (Pendidikan Khas)"
+      count: 4
+      profile: "Perlu bimbingan visual, bahan interaktif sentuh/fizikal dan mentor sabar."
+pedagogical_rules:
+  - rule: "Sifar Keperluan Gajet (Zero-Device Requirement)"
+    desc: "Pelajar asrama tidak dibenarkan membawa telefon pintar peribadi. Tiada aplikasi digital seperti Kahoot/Quizizz digunakan; diganti dengan Fast-Answer Showdown di layar skrin."
+  - rule: "Nisbah Bimbingan Rapat (1:6 Mentor-to-Student Ratio)"
+    desc: "13 kru dibahagikan di mana 7 mentor duduk bersama di setiap meja untuk memastikan tiada pelajar terpinggir, terutamanya murid PPKI."
+  - rule: "Pendedahan Realistik & Visual Terus"
+    desc: "Penceramah menggunakan skrin projektor pusat untuk mendemonstrasi AI dan alatan percuma, manakala mentor membimbing interaksi fizikal di meja."
+  - rule: "Inklusiviti & Nilai Kasih Sayang"
+    desc: "Pendekatan empati tinggi menghormati latar belakang anak yatim dan asnaf, menekankan motivasi masa depan dan peluang dunia digital terbuka luas."

@@ -1,0 +1,55 @@
+- id: 1
+  name: "Meja 1 (Cyber Guardians)"
+  gender: "Lelaki"
+  students: "7 Pelajar (3x T1, 3x T2, 1x PPKI Lelaki)"
+  mentor: "Mentor Meja 1 (Kru 7)"
+  color: "cyan"
+  focus: "Bimbingan asas awal Tingkatan 1–2 + sokongan inklusif murid PPKI."
+
+- id: 2
+  name: "Meja 2 (Quantum Coders)"
+  gender: "Lelaki"
+  students: "6 Pelajar (3x T1, 3x T2)"
+  mentor: "Mentor Meja 2 (Kru 8)"
+  color: "blue"
+  focus: "Pengukuhan konsep logik dan teknologi untuk pelajar junior lelaki."
+
+- id: 3
+  name: "Meja 3 (Binary Knights)"
+  gender: "Lelaki"
+  students: "5 Pelajar (2x T3, 2x T4, 1x T5)"
+  mentor: "Mentor Meja 3 (Kru 9)"
+  color: "indigo"
+  focus: "Pendedahan kerjaya IT, SPM, dan motivasi kepimpinan senior lelaki."
+
+- id: 4
+  name: "Meja 4 (AI Pioneers)"
+  gender: "Perempuan"
+  students: "7 Pelajar (4x T3, 2x T4, 1x PPKI Perempuan)"
+  mentor: "Mentor Meja 4 (Kru 10)"
+  color: "purple"
+  focus: "Fasilitasi aktif aliran menengah rendah-atas dan sokongan inklusif PPKI."
+
+- id: 5
+  name: "Meja 5 (Data Divas)"
+  gender: "Perempuan"
+  students: "7 Pelajar (4x T3, 2x T4, 1x PPKI Perempuan)"
+  mentor: "Mentor Meja 5 (Kru 11)"
+  color: "pink"
+  focus: "Latihan idea inovasi digital dan bimbingan sabar untuk murid PPKI."
+
+- id: 6
+  name: "Meja 6 (Cyber Queens)"
+  gender: "Perempuan"
+  students: "7 Pelajar (5x T4, 1x T5, 1x PPKI Perempuan)"
+  mentor: "Mentor Meja 6 (Kru 12)"
+  color: "rose"
+  focus: "Eksplorasi reka bentuk UI/UX dan bimbingan inklusif PPKI."
+
+- id: 7
+  name: "Meja 7 (Future Leaders)"
+  gender: "Perempuan"
+  students: "8 Pelajar (4x T4, 4x T5)"
+  mentor: "Mentor Meja 7 (Kru 13)"
+  color: "amber"
+  focus: "Bimbingan hala tuju pasca-SPM, peluang kemasukan universiti dan biasiswa TVET/IT."

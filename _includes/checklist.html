@@ -1,0 +1,38 @@
+<!-- Execution Checklist Section -->
+<section class="section-padding bg-surface" id="checklist">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i data-lucide="check-square"></i> Tindakan Operasi</span>
+      <h2 class="section-title">Senarai Semak Pelaksanaan Program</h2>
+      <p class="section-subtitle">
+        Garis panduan tindakan mengikut 3 fasa operasi. Tandakan kotak apabila selesai (status disimpan secara automatik dalam pelayar anda):
+      </p>
+    </div>
+
+    <div class="checklist-grid">
+      {% for phase in site.data.checklist.phases %}
+      <div class="glass-card check-group">
+        <h3>
+          <i data-lucide="{% if forloop.index == 1 %}calendar-check{% elsif forloop.index == 2 %}clock{% else %}file-check{% endif %}"></i>
+          {{ phase.name }}
+        </h3>
+
+        {% for t in phase.tasks %}
+        {% assign task_id = forloop.parentloop.index | append: '-' | append: forloop.index %}
+        <label class="check-item" id="task-label-{{ task_id }}">
+          <input 
+            type="checkbox" 
+            id="chk-{{ task_id }}" 
+            onchange="toggleTaskCheck('{{ task_id }}')"
+          >
+          <span>
+            <strong>{{ t.task }}</strong><br>
+            <small style="color: var(--text-muted);"><i data-lucide="user" style="width: 12px; height: 12px; display: inline;"></i> PIC: {{ t.pic }}</small>
+          </span>
+        </label>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

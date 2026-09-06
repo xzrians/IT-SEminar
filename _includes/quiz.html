@@ -1,0 +1,36 @@
+<!-- Zero-Device Fast-Answer Tech Showdown Quiz -->
+<section class="section-padding bg-surface" id="kuiz">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i data-lucide="zap"></i> Sifar Gajet Diperlukan</span>
+      <h2 class="section-title">Fast-Answer Tech Showdown (5 Soalan)</h2>
+      <p class="section-subtitle">
+        Format pantas: Penceramah papar soalan di skrin projektor dewan. "3, 2, 1... Angkat Tangan!". Meja terpantas menjawab dan menuntut token hadiah segera.
+      </p>
+    </div>
+
+    <div class="quiz-grid">
+      {% for q in site.data.quiz.questions %}
+      <div class="glass-card quiz-card" id="quiz-{{ q.no }}" onclick="toggleQuiz({{ q.no }})">
+        <div class="quiz-num">Soalan #{{ q.no }}</div>
+        <div class="quiz-topic">{{ q.category }}</div>
+        <div class="quiz-q">{{ q.question }}</div>
+
+        <div class="quiz-options">
+          <div class="option"><strong>Petunjuk:</strong> {{ q.clue }}</div>
+          <div class="option"><strong>Ganjaran:</strong> {{ q.prize }}</div>
+        </div>
+
+        <div class="quiz-answer-box">
+          <div class="answer-badge"><i data-lucide="check-circle-2"></i> Jawapan Rasmi:</div>
+          <div class="answer-expl">{{ q.answer }}</div>
+        </div>
+
+        <div class="reveal-hint">
+          <i data-lucide="mouse-pointer-click"></i> Klik kad untuk semak jawapan rasmi
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

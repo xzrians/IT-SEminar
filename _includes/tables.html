@@ -1,0 +1,43 @@
+<!-- 7 Cluster Tables & Dedicated Mentorship -->
+<section class="section-padding bg-surface" id="meja">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i data-lucide="layout-grid"></i> Bimbingan Rapat 1:6</span>
+      <h2 class="section-title">7 Meja Kluster Pelajar & Mentor Dedikasi</h2>
+      <p class="section-subtitle">
+        47 pelajar dibahagikan kepada 3 Meja Lelaki (18 murid) dan 4 Meja Perempuan (29 murid) mengikut peringkat umur dan perhatian khas PPKI, dengan seorang fasilitator UTM duduk bersama di setiap meja.
+      </p>
+    </div>
+
+    <div class="tables-grid">
+      {% for t in site.data.tables %}
+      <div class="glass-card table-card {% if t.students contains 'PPKI' %}ppki-card{% endif %}">
+        <span class="table-badge">{{ t.gender }}</span>
+        
+        <div class="table-header">
+          <h3>{{ t.name }}</h3>
+          <span class="pax-count">Meja #{{ t.id }}</span>
+        </div>
+
+        <div class="table-specs">
+          <div><i data-lucide="users"></i> <span><strong>Keahlian:</strong> {{ t.students }}</span></div>
+        </div>
+
+        <p class="table-desc">{{ t.focus }}</p>
+
+        {% if t.students contains 'PPKI' %}
+        <div class="ppki-alert">
+          <i data-lucide="alert-circle"></i>
+          <span><strong>Inklusif PPKI:</strong> Ada murid pendidikan khas. Mentor meja akan membimbing secara visual, santai dan sentuhan fizikal.</span>
+        </div>
+        {% endif %}
+
+        <div class="fasi-tag">
+          <i data-lucide="user-check"></i>
+          <span><strong>{{ t.mentor }}</strong></span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

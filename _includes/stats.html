@@ -1,0 +1,14 @@
+<!-- Quick Metrics & Stats Section -->
+<section style="padding-bottom: 40px;">
+  <div class="container">
+    <div class="stats-grid">
+      {% for stat in site.data.stats %}
+      <div class="stat-card {% if stat.value == '0' %}highlight{% endif %}">
+        <div class="stat-number">{{ stat.value }}</div>
+        <div class="stat-label">{{ stat.label }}</div>
+        <div class="stat-sub">{{ stat.sub }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
