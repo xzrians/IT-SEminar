@@ -1132,6 +1132,66 @@ body {
   }
 }
 
+/* Operations Tab Switcher */
+.ops-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.ops-tab {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ops-tab:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.ops-tab.active {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: var(--accent-cyan);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+}
+
+.ops-pane {
+  display: none;
+}
+
+.ops-pane.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@media (max-width: 850px) {
+  .ops-tabs {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .ops-tabs {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Print Stylesheet for Physical Briefing Day */
 @media print {
   body {

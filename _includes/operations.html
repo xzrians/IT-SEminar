@@ -1,183 +1,207 @@
-<!-- Detailed Operations: Documentation, Food, Goodies & Utilities -->
+<!-- Detailed Operations: Documentation, Food, Goodies & Utilities (Simplified with Tabs) -->
 <section class="section-padding bg-surface" id="operasi">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag"><i data-lucide="package-check"></i> Pelan Tindakan Logistik Terperinci</span>
-      <h2 class="section-title">Dokumentasi, Makanan, Goodies & Utiliti Aktiviti</h2>
+      <span class="section-tag"><i data-lucide="package-check"></i> Pengurusan Logistik Pantas</span>
+      <h2 class="section-title">Dokumentasi, Makanan, Goodies & Utiliti</h2>
       <p class="section-subtitle">
-        Penyelarasan 4 aspek kritikal operasi bagi memastikan tiada pelajar terpinggir, bekalan makanan mencukupi (71 pax), dan alatan aktiviti sedia sebelum bengkel bermula.
+        Pilih mana-mana tab di bawah untuk menyemak perincian edaran pelajar tidak hadir, logistik 71 pax makanan, beg goodies, atau senarai utiliti 7 meja:
       </p>
     </div>
 
-    <!-- 1. Documentation Distribution for Absent Students -->
-    <div class="glass-card mb-8">
-      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-glass); padding-bottom: 14px;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div class="card-icon" style="margin-bottom: 0; width: 42px; height: 42px;">
-            <i data-lucide="file-text"></i>
-          </div>
-          <div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">{{ site.data.operations.documentation_distribution.title }}</h3>
-            <p style="color: var(--text-secondary); font-size: 0.88rem;">{{ site.data.operations.documentation_distribution.purpose }}</p>
-          </div>
-        </div>
-        <span class="badge badge-cyan" style="font-size: 0.82rem; padding: 6px 12px;">
-          <i data-lucide="printer"></i> Sasaran: {{ site.data.operations.documentation_distribution.target_copies }}
-        </span>
-      </div>
-
-      <div class="tables-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-        {% for doc in site.data.operations.documentation_distribution.items %}
-        <div class="glass-card" style="padding: 16px; border-color: rgba(56, 189, 248, 0.2);">
-          <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 6px;">
-            {{ doc.format }}
-          </div>
-          <h4 style="font-family: var(--font-heading); font-size: 1.05rem; margin-bottom: 8px;">{{ doc.name }}</h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5;">{{ doc.desc }}</p>
-          <div style="font-size: 0.78rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px;">
-            <div><i data-lucide="user-check" style="width: 14px; height: 14px; display: inline;"></i> <strong>Penerima:</strong> {{ doc.recipient }}</div>
-            <div style="margin-top: 4px; color: #a5b4fc;"><i data-lucide="award" style="width: 14px; height: 14px; display: inline;"></i> <strong>PIC:</strong> {{ doc.pic }}</div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
+    <!-- 4 Compact Operations Tabs -->
+    <div class="ops-tabs">
+      <button class="ops-tab active" id="ops-tab-btn-1" onclick="switchOpsTab(1)">
+        <i data-lucide="file-text"></i> <span>1. Dokumen Tak Hadir</span>
+      </button>
+      <button class="ops-tab" id="ops-tab-btn-2" onclick="switchOpsTab(2)">
+        <i data-lucide="coffee"></i> <span>2. Makanan (71 Pax)</span>
+      </button>
+      <button class="ops-tab" id="ops-tab-btn-3" onclick="switchOpsTab(3)">
+        <i data-lucide="gift"></i> <span>3. Goodies & Hadiah</span>
+      </button>
+      <button class="ops-tab" id="ops-tab-btn-4" onclick="switchOpsTab(4)">
+        <i data-lucide="clipboard-list"></i> <span>4. Utiliti & Alatan</span>
+      </button>
     </div>
 
-    <!-- 2. Food Logistics: Kantin vs Luar (71 Pax) -->
-    <div class="glass-card mb-8">
-      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-glass); padding-bottom: 14px;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div class="card-icon" style="margin-bottom: 0; width: 42px; height: 42px; background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald);">
-            <i data-lucide="coffee"></i>
-          </div>
-          <div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">{{ site.data.operations.food_logistics.title }}</h3>
-            <p style="color: var(--accent-cyan); font-size: 0.88rem; font-weight: 600;">{{ site.data.operations.food_logistics.formula }}</p>
-          </div>
-        </div>
-        <span class="badge badge-emerald" style="font-size: 0.82rem; padding: 6px 12px;">
-          <i data-lucide="check"></i> {{ site.data.operations.food_logistics.menu }}
-        </span>
-      </div>
-
-      <div class="crew-split-grid">
-        {% for opt in site.data.operations.food_logistics.options %}
-        <div class="glass-card" style="padding: 20px; border-color: rgba(16, 185, 129, 0.25);">
-          <span class="crew-role-badge {% if opt.type contains 'Kantin' %}highlight{% endif %}">{{ opt.type }}</span>
-          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 10px;">{{ opt.option_name }}</h4>
-          
-          <ul class="clean-list" style="margin-bottom: 14px;">
-            <li><i data-lucide="check" class="text-emerald"></i> <span><strong>Kelebihan:</strong> {{ opt.pros }}</span></li>
-            <li><i data-lucide="alert-triangle" class="text-amber"></i> <span><strong>Perhatian:</strong> {{ opt.cons }}</span></li>
-            <li><i data-lucide="dollar-sign" class="text-cyan"></i> <span><strong>Kos Anggaran:</strong> {{ opt.est_cost_per_pax }} / pax (Total 71 pax: <strong>{{ opt.total_est }}</strong>)</span></li>
-          </ul>
-
-          <div style="font-size: 0.8rem; color: #a5b4fc; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px;">
-            <i data-lucide="user"></i> <strong>Tindakan:</strong> {{ opt.pic }}
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-
-    <!-- 3. Goodies 47 Pelajar & 5 Hadiah Kuiz Showdown -->
-    <div class="glass-card mb-8">
-      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-glass); padding-bottom: 14px;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div class="card-icon" style="margin-bottom: 0; width: 42px; height: 42px; background: rgba(244, 63, 94, 0.15); color: var(--accent-rose);">
-            <i data-lucide="gift"></i>
-          </div>
-          <div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">{{ site.data.operations.goodies_and_prizes.title }}</h3>
-            <p style="color: var(--text-secondary); font-size: 0.88rem;">Pek doorgift lengkap untuk setiap pelajar + 5 set hadiah kuiz berimpak tinggi</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="crew-split-grid mb-6">
-        <!-- Goodies Bag Contents -->
-        <div class="glass-card" style="padding: 20px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--accent-cyan);"><i data-lucide="shopping-bag"></i> Goodies 47 Pelajar ASDAF</h4>
-            <span class="pax-count">{{ site.data.operations.goodies_and_prizes.goodies_all_students.target }}</span>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Jenis Beg: <strong>{{ site.data.operations.goodies_and_prizes.goodies_all_students.bag_type }}</strong> &bull; Peruntukan: <strong>{{ site.data.operations.goodies_and_prizes.goodies_all_students.budget_allocation }}</strong></p>
-          
-          <ul class="clean-list">
-            {% for g in site.data.operations.goodies_and_prizes.goodies_all_students.contents %}
-            <li>
-              <i data-lucide="check-circle-2" class="text-cyan"></i>
-              <span><strong>{{ g.item }}:</strong> {{ g.desc }}</span>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-
-        <!-- 5 Quiz Prizes -->
-        <div class="glass-card" style="padding: 20px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--accent-rose);"><i data-lucide="trophy"></i> 5 Hadiah Kuiz Showdown</h4>
-            <span class="pax-count">Bajet: {{ site.data.operations.goodies_and_prizes.quiz_prizes.budget_allocation }}</span>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Format Kuiz: <em>3, 2, 1... Angkat Tangan!</em> (Tanpa Telefon Pintar)</p>
-
-          <div style="display: flex; flex-direction: column; gap: 10px;">
-            {% for p in site.data.operations.goodies_and_prizes.quiz_prizes.items %}
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
-              <div>
-                <strong style="font-size: 0.88rem; color: #fff; display: block;">{{ p.rank }}</strong>
-                <span style="font-size: 0.82rem; color: var(--text-secondary);">{{ p.prize }}</span>
-              </div>
-              <span class="badge badge-amber" style="font-size: 0.75rem; white-space: nowrap;">{{ p.est_val }}</span>
+    <!-- PANE 1: Documentation Distribution for Absent Students -->
+    <div class="ops-pane active" id="ops-pane-1">
+      <div class="glass-card">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-glass); padding-bottom: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="card-icon" style="margin-bottom: 0; width: 42px; height: 42px;">
+              <i data-lucide="file-text"></i>
             </div>
-            {% endfor %}
+            <div>
+              <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">{{ site.data.operations.documentation_distribution.title }}</h3>
+              <p style="color: var(--text-secondary); font-size: 0.88rem;">{{ site.data.operations.documentation_distribution.purpose }}</p>
+            </div>
+          </div>
+          <span class="badge badge-cyan" style="font-size: 0.82rem; padding: 6px 12px;">
+            <i data-lucide="printer"></i> Sasaran: {{ site.data.operations.documentation_distribution.target_copies }}
+          </span>
+        </div>
+
+        <div class="tables-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+          {% for doc in site.data.operations.documentation_distribution.items %}
+          <div class="glass-card" style="padding: 16px; border-color: rgba(56, 189, 248, 0.2);">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 6px;">
+              {{ doc.format }}
+            </div>
+            <h4 style="font-family: var(--font-heading); font-size: 1.05rem; margin-bottom: 8px;">{{ doc.name }}</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5;">{{ doc.desc }}</p>
+            <div style="font-size: 0.78rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px;">
+              <div><i data-lucide="user-check" style="width: 14px; height: 14px; display: inline;"></i> <strong>Penerima:</strong> {{ doc.recipient }}</div>
+              <div style="margin-top: 4px; color: #a5b4fc;"><i data-lucide="award" style="width: 14px; height: 14px; display: inline;"></i> <strong>PIC:</strong> {{ doc.pic }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- PANE 2: Food Logistics: Kantin vs Luar (71 Pax) -->
+    <div class="ops-pane" id="ops-pane-2">
+      <div class="glass-card">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-glass); padding-bottom: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="card-icon" style="margin-bottom: 0; width: 42px; height: 42px; background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald);">
+              <i data-lucide="coffee"></i>
+            </div>
+            <div>
+              <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">{{ site.data.operations.food_logistics.title }}</h3>
+              <p style="color: var(--accent-cyan); font-size: 0.88rem; font-weight: 600;">{{ site.data.operations.food_logistics.formula }}</p>
+            </div>
+          </div>
+          <span class="badge badge-emerald" style="font-size: 0.82rem; padding: 6px 12px;">
+            <i data-lucide="check"></i> {{ site.data.operations.food_logistics.menu }}
+          </span>
+        </div>
+
+        <div class="crew-split-grid">
+          {% for opt in site.data.operations.food_logistics.options %}
+          <div class="glass-card" style="padding: 20px; border-color: rgba(16, 185, 129, 0.25);">
+            <span class="crew-role-badge {% if opt.type contains 'Kantin' %}highlight{% endif %}">{{ opt.type }}</span>
+            <h4 style="font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 10px;">{{ opt.option_name }}</h4>
+            
+            <ul class="clean-list" style="margin-bottom: 14px;">
+              <li><i data-lucide="check" class="text-emerald"></i> <span><strong>Kelebihan:</strong> {{ opt.pros }}</span></li>
+              <li><i data-lucide="alert-triangle" class="text-amber"></i> <span><strong>Perhatian:</strong> {{ opt.cons }}</span></li>
+              <li><i data-lucide="dollar-sign" class="text-cyan"></i> <span><strong>Kos Anggaran:</strong> {{ opt.est_cost_per_pax }} / pax (Total 71 pax: <strong>{{ opt.total_est }}</strong>)</span></li>
+            </ul>
+
+            <div style="font-size: 0.8rem; color: #a5b4fc; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 10px;">
+              <i data-lucide="user"></i> <strong>Tindakan:</strong> {{ opt.pic }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- PANE 3: Goodies 47 Pelajar & 5 Hadiah Kuiz Showdown -->
+    <div class="ops-pane" id="ops-pane-3">
+      <div class="glass-card">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-glass); padding-bottom: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="card-icon" style="margin-bottom: 0; width: 42px; height: 42px; background: rgba(244, 63, 94, 0.15); color: var(--accent-rose);">
+              <i data-lucide="gift"></i>
+            </div>
+            <div>
+              <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">{{ site.data.operations.goodies_and_prizes.title }}</h3>
+              <p style="color: var(--text-secondary); font-size: 0.88rem;">Pek doorgift lengkap untuk setiap pelajar + 5 set hadiah kuiz berimpak tinggi</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="crew-split-grid">
+          <!-- Goodies Bag Contents -->
+          <div class="glass-card" style="padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--accent-cyan);"><i data-lucide="shopping-bag"></i> Goodies 47 Pelajar ASDAF</h4>
+              <span class="pax-count">{{ site.data.operations.goodies_and_prizes.goodies_all_students.target }}</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Jenis Beg: <strong>{{ site.data.operations.goodies_and_prizes.goodies_all_students.bag_type }}</strong> &bull; Peruntukan: <strong>{{ site.data.operations.goodies_and_prizes.goodies_all_students.budget_allocation }}</strong></p>
+            
+            <ul class="clean-list">
+              {% for g in site.data.operations.goodies_and_prizes.goodies_all_students.contents %}
+              <li>
+                <i data-lucide="check-circle-2" class="text-cyan"></i>
+                <span><strong>{{ g.item }}:</strong> {{ g.desc }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <!-- 5 Quiz Prizes -->
+          <div class="glass-card" style="padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--accent-rose);"><i data-lucide="trophy"></i> 5 Hadiah Kuiz Showdown</h4>
+              <span class="pax-count">Bajet: {{ site.data.operations.goodies_and_prizes.quiz_prizes.budget_allocation }}</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Format Kuiz: <em>3, 2, 1... Angkat Tangan!</em> (Tanpa Telefon Pintar)</p>
+
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              {% for p in site.data.operations.goodies_and_prizes.quiz_prizes.items %}
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                <div>
+                  <strong style="font-size: 0.88rem; color: #fff; display: block;">{{ p.rank }}</strong>
+                  <span style="font-size: 0.82rem; color: var(--text-secondary);">{{ p.prize }}</span>
+                </div>
+                <span class="badge badge-amber" style="font-size: 0.75rem; white-space: nowrap;">{{ p.est_val }}</span>
+              </div>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 4. Utilities & Activity Supplies (Kertas Mahjong, Marker, Sticky, etc.) -->
-    <div class="glass-card">
-      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-glass); padding-bottom: 14px;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div class="card-icon" style="margin-bottom: 0; width: 42px; height: 42px; background: rgba(245, 158, 11, 0.15); color: var(--accent-amber);">
-            <i data-lucide="clipboard-list"></i>
-          </div>
-          <div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">{{ site.data.operations.utilities_and_supplies.title }}</h3>
-            <p style="color: var(--text-secondary); font-size: 0.88rem;">{{ site.data.operations.utilities_and_supplies.purpose }}</p>
+    <!-- PANE 4: Utilities & Activity Supplies (Kertas Mahjong, Marker, Sticky, etc.) -->
+    <div class="ops-pane" id="ops-pane-4">
+      <div class="glass-card">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-glass); padding-bottom: 14px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="card-icon" style="margin-bottom: 0; width: 42px; height: 42px; background: rgba(245, 158, 11, 0.15); color: var(--accent-amber);">
+              <i data-lucide="clipboard-list"></i>
+            </div>
+            <div>
+              <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">{{ site.data.operations.utilities_and_supplies.title }}</h3>
+              <p style="color: var(--text-secondary); font-size: 0.88rem;">{{ site.data.operations.utilities_and_supplies.purpose }}</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="tables-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-        {% for cat in site.data.operations.utilities_and_supplies.categories %}
-        <div class="glass-card" style="padding: 20px; border-color: rgba(245, 158, 11, 0.2);">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
-            <i data-lucide="{{ cat.icon }}" class="text-amber"></i>
-            <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: #fff;">{{ cat.category }}</h4>
+        <div class="tables-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+          {% for cat in site.data.operations.utilities_and_supplies.categories %}
+          <div class="glass-card" style="padding: 20px; border-color: rgba(245, 158, 11, 0.2);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+              <i data-lucide="{{ cat.icon }}" class="text-amber"></i>
+              <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: #fff;">{{ cat.category }}</h4>
+            </div>
+
+            <table class="data-table" style="font-size: 0.85rem;">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Kuantiti</th>
+                  <th>Tujuan Penggunaan</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for itm in cat.items %}
+                <tr>
+                  <td><strong>{{ itm.name }}</strong></td>
+                  <td><span class="badge badge-blue" style="font-size: 0.75rem;">{{ itm.qty }}</span></td>
+                  <td style="color: var(--text-secondary);">{{ itm.purpose }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
           </div>
-
-          <table class="data-table" style="font-size: 0.85rem;">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Kuantiti</th>
-                <th>Tujuan Penggunaan</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for itm in cat.items %}
-              <tr>
-                <td><strong>{{ itm.name }}</strong></td>
-                <td><span class="badge badge-blue" style="font-size: 0.75rem;">{{ itm.qty }}</span></td>
-                <td style="color: var(--text-secondary);">{{ itm.purpose }}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
     </div>
   </div>

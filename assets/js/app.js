@@ -134,8 +134,36 @@ function initScrollSpy() {
   });
 }
 
+/**
+ * Operations Tab Switcher (Dokumen, Makanan, Goodies, Utiliti)
+ */
+function switchOpsTab(tabId) {
+  // Update Buttons
+  const tabs = document.querySelectorAll('.ops-tab');
+  tabs.forEach(tab => tab.classList.remove('active'));
+
+  const activeTab = document.getElementById(`ops-tab-btn-${tabId}`);
+  if (activeTab) {
+    activeTab.classList.add('active');
+  }
+
+  // Update Panes
+  const panes = document.querySelectorAll('.ops-pane');
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  const activePane = document.getElementById(`ops-pane-${tabId}`);
+  if (activePane) {
+    activePane.classList.add('active');
+  }
+
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
 // Attach functions to global window object
 window.toggleNav = toggleNav;
 window.switchBudgetVariant = switchBudgetVariant;
+window.switchOpsTab = switchOpsTab;
 window.toggleQuiz = toggleQuiz;
 window.toggleTaskCheck = toggleTaskCheck;
