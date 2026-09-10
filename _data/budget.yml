@@ -1,15 +1,15 @@
 ceiling: "RM 800.00"
-pax_count: "66 Orang Pax Asas + 5 Pax Penampan (Buffer) = 71 Pax Jamuan"
-formula: "47 Pelajar + 6 Staf + 13 Pelajar UTM = 66 Pax (+ 5 Lebihan = 71 Pax)"
-food_pax: 71
+pax_count: "46 Pelajar ASDAF (18 Lelaki, 28 Perempuan) | Sarapan 50 Pax | Makan Tengah Hari 52 Pax"
+formula: "Bajet semasa: Sarapan (50 pax) + Makan Tengah Hari (52 pax) + Alat Tulis untuk 7 Kumpulan"
+food_pax: 52
 
 pax_breakdown:
-  students: 47
+  students: 46
   staff: 6
   utm_students: 13
-  buffer: 5
-  total_base: 66
-  total_food: 71
+  breakfast_pax: 50
+  lunch_pax: 52
+  total: 65
 
 food_sources:
   primary: "Kantin Sekolah / Asrama ASDAF (Makanan segar, tiada caj hantar, sokong asrama)"
@@ -47,43 +47,35 @@ variants:
         total: 18.00
 
   - id: 2
-    name: "Varian 2: Seimbang (Disyorkan)"
-    total: 520.00
+    name: "Varian 2: Bajet Semasa 7 Kumpulan (Disyorkan)"
+    total: 799.00
     tag: "Paling Disyorkan"
     tag_color: "emerald"
-    status: "Nilai Terbaik (Best Value)"
-    balance: 280.00
+    status: "Selari Dengan Kiraan Terkini"
+    balance: 1.00
     recommended: true
-    description: "Kombinasi optimum: Sarapan 71 pax (66 Pax + 5 Lebihan) via Kantin/Luar, bahan aktiviti lengkap 7 meja, goodies bag untuk 47 pelajar, hadiah kuiz berimpak, dan plak penghargaan rasmi."
+    description: "Pecahan bajet semasa berdasarkan 46 pelajar, 7 kumpulan, serta jumlah sarapan dan makan tengah hari yang dikemas kini."
     items:
-      - item: "Sarapan Pagi (Roti Bun + Air Kotak 250ml) [66 Pax + 5 Lebihan = 71 Pax]"
-        qty: "71 pax"
-        unit_price: 2.50
-        total: 177.50
-      - item: "Bahan Aktiviti Lengkap 7 Meja (25 Mahjong, 25 Marker, 10 Sticky, 2 Tape, 7 Gunting, 7 Gam)"
-        qty: "7 meja"
+      - item: "Sarapan: Roti"
+        qty: "RM1.20/pax x 50 pax"
+        unit_price: 1.20
+        total: 60.00
+      - item: "Sarapan: Air Kotak"
+        qty: "RM20/karton x 3 karton"
+        unit_price: 20.00
+        total: 60.00
+      - item: "Makan Tengah Hari: Nasi Ayam + Air"
+        qty: "RM10/pax x 52 pax"
         unit_price: 10.00
-        total: 70.00
-      - item: "Goodies Bag Lengkap Pelajar ASDAF (Beg Kraf, Pen Stylus, Mini Note, Snek) [47 Pelajar]"
-        qty: "47 pek"
-        unit_price: 2.50
-        total: 117.50
-      - item: "Hadiah Kuiz Showdown (5 Hadiah Bermanfaat: Flash Drive, Lampu LED, Botol Air, dll)"
-        qty: "5 hadiah"
-        unit_price: 15.00
-        total: 75.00
-      - item: "Plak Cenderahati Rasmi Pengetua ASDAF PERKIM"
-        qty: "1 set"
-        unit_price: 45.00
-        total: 45.00
-      - item: "Sijil Penyertaan Rasmi Pelajar (Kertas Emboss) + Pek Edaran Tak Hadir"
-        qty: "55 keping"
-        unit_price: 0.50
-        total: 27.50
-      - item: "Kontingensi, Bateri AV & Plastik Sampah"
-        qty: "-"
-        unit_price: 7.50
-        total: 7.50
+        total: 520.00
+      - item: "Alat Tulis 7 Kumpulan (Kertas Mahjong 18, Marker 18, Sticky Notes 10, Tape 2, Gunting 7, Gam 7)"
+        qty: "7 kumpulan"
+        unit_price: 19.86
+        total: 139.00
+      - item: "Cetakan Survey Ringkas Pre & Post"
+        qty: "100 helaian (50 pre + 50 post)"
+        unit_price: 0.20
+        total: 20.00
 
   - id: 3
     name: "Varian 3: Pakej Lengkap + Makan Tengah Hari"

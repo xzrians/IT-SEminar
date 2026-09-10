@@ -31,7 +31,7 @@ central_leads:
     role: "Pengurus Hadiah, Cenderahati & Sijil"
     category: "Protokol"
     badge: "Logistik"
-    scope: "Menyusun hadiah pemenang kuiz, plak cenderahati pengetua ASDAF, dan 47 sijil penyertaan pelajar."
+    scope: "Menyusun hadiah pemenang kuiz, plak cenderahati pengetua ASDAF, dan 46 sijil penyertaan pelajar."
     tag_color: "rose"
 
   - id: 6
@@ -74,6 +74,6 @@ table_mentors:
     badge: "Dedicated Mentor"
   - id: 13
     table: "Meja 7"
-    role: "Mentor Meja 7 (8 Pelajar Perempuan: T4, T5)"
+    role: "Mentor Meja 7 (7 Pelajar Perempuan: T4, T5)"
     scope: "Sesi perkongsian persediaan universiti, biasiswa, dan laluan SPM."
     badge: "Dedicated Mentor"
