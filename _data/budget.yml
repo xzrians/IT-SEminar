@@ -68,10 +68,14 @@ variants:
         qty: "RM10/pax x 52 pax"
         unit_price: 10.00
         total: 520.00
-      - item: "Alat Tulis 7 Kumpulan (Kertas Mahjong 25, Marker 25, Sticky Notes 10, Tape 2, Gunting 7, Gam 7)"
+      - item: "Alat Tulis 7 Kumpulan (Kertas Mahjong 18, Marker 18, Sticky Notes 10, Tape 2, Gunting 7, Gam 7)"
         qty: "7 kumpulan"
-        unit_price: 22.71
-        total: 159.00
+        unit_price: 19.86
+        total: 139.00
+      - item: "Cetakan Survey Ringkas Pre & Post"
+        qty: "100 helaian (50 pre + 50 post)"
+        unit_price: 0.20
+        total: 20.00
 
   - id: 3
     name: "Varian 3: Pakej Lengkap + Makan Tengah Hari"
