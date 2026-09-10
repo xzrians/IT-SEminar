@@ -1,0 +1,30 @@
+title: "Borang Survey Pre & Post (Untuk Cetakan)"
+subtitle: "1 helai dua muka: muka depan pre-survey, muka belakang post-survey."
+print_note: "Cetak dua muka (duplex), hitam putih, A4."
+program: "Seminar NextGen Celik Digital (UTM x ASDAF)"
+scale:
+  - "1 = Sangat Tidak Setuju"
+  - "2 = Tidak Setuju"
+  - "3 = Neutral"
+  - "4 = Setuju"
+  - "5 = Sangat Setuju"
+
+pre:
+  title: "Muka Depan: Pre-Survey (Sebelum Program)"
+  questions:
+    - "Saya faham apa itu AI (Artificial Intelligence)."
+    - "Saya tahu cara kenal pasti scam / phishing dalam talian."
+    - "Saya tahu kepentingan jejak digital (digital footprint)."
+    - "Saya yakin menggunakan internet dengan lebih selamat."
+    - "Saya berminat untuk belajar tentang kerjaya digital/IT."
+  open_question: "Apa yang anda paling ingin belajar hari ini?"
+
+post:
+  title: "Muka Belakang: Post-Survey (Selepas Program)"
+  questions:
+    - "Selepas program, saya lebih faham apa itu AI."
+    - "Selepas program, saya lebih tahu cara elak scam / phishing."
+    - "Saya lebih faham kesan jejak digital terhadap masa depan saya."
+    - "Saya lebih yakin untuk amalkan keselamatan siber asas."
+    - "Program ini membantu minat saya terhadap teknologi/kerjaya digital."
+  improve_question: "Apa yang boleh ditambah baik untuk program ini?"

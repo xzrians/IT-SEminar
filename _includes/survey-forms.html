@@ -1,0 +1,51 @@
+<!-- Printable Pre/Post Survey Form Section -->
+<section class="section-padding bg-surface" id="survey-form">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag"><i data-lucide="clipboard-check"></i> Borang Penilaian</span>
+      <h2 class="section-title">{{ site.data.survey.title }}</h2>
+      <p class="section-subtitle">{{ site.data.survey.subtitle }}</p>
+    </div>
+
+    <div class="glass-card" style="margin-bottom: 20px;">
+      <div class="demo-pills" style="margin: 0;">
+        <span class="pill"><i data-lucide="file-text"></i> {{ site.data.survey.program }}</span>
+        <span class="pill highlight"><i data-lucide="printer"></i> {{ site.data.survey.print_note }}</span>
+      </div>
+    </div>
+
+    <div class="tables-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+      <div class="glass-card">
+        <h3 style="font-family: var(--font-heading); margin-bottom: 10px;">{{ site.data.survey.pre.title }}</h3>
+        <p style="margin-bottom: 8px; color: var(--text-secondary);"><strong>Skala Tick (✓):</strong></p>
+        <ul class="clean-list" style="margin-bottom: 14px;">
+          {% for s in site.data.survey.scale %}
+          <li><i data-lucide="check-circle-2" class="text-cyan"></i> <span>{{ s }}</span></li>
+          {% endfor %}
+        </ul>
+        <ol style="padding-left: 18px; color: var(--text-secondary); line-height: 1.7;">
+          {% for q in site.data.survey.pre.questions %}
+          <li>{{ q }}</li>
+          {% endfor %}
+        </ol>
+        <p style="margin-top: 12px; color: var(--text-secondary);"><strong>Soalan terbuka:</strong> {{ site.data.survey.pre.open_question }}</p>
+      </div>
+
+      <div class="glass-card">
+        <h3 style="font-family: var(--font-heading); margin-bottom: 10px;">{{ site.data.survey.post.title }}</h3>
+        <p style="margin-bottom: 8px; color: var(--text-secondary);"><strong>Skala Tick (✓):</strong></p>
+        <ul class="clean-list" style="margin-bottom: 14px;">
+          {% for s in site.data.survey.scale %}
+          <li><i data-lucide="check-circle-2" class="text-emerald"></i> <span>{{ s }}</span></li>
+          {% endfor %}
+        </ul>
+        <ol style="padding-left: 18px; color: var(--text-secondary); line-height: 1.7;">
+          {% for q in site.data.survey.post.questions %}
+          <li>{{ q }}</li>
+          {% endfor %}
+        </ol>
+        <p style="margin-top: 12px; color: var(--text-secondary);"><strong>Penambahbaikan:</strong> {{ site.data.survey.post.improve_question }}</p>
+      </div>
+    </div>
+  </div>
+</section>
