@@ -1,4 +1,4 @@
----
+﻿---
 layout: null
 title: "Cetak Borang Pre & Post Survey | NextGen Celik Digital 2026"
 permalink: /survey-print/
@@ -152,7 +152,7 @@ permalink: /survey-print/
       padding: 24px 16px 50px 16px;
     }
 
-    /* The exact A4 Paper Sheet */
+    /* The exact A4 Paper Sheet (Strictly 1 Page) */
     .a4-page {
       width: 210mm;
       min-height: 297mm;
@@ -169,76 +169,57 @@ permalink: /survey-print/
       position: relative;
     }
 
-    /* Survey Section (Half Sheet) */
-    .survey-half {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 2mm 0;
-    }
-
-    /* Section Header */
-    .header-row {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      border-bottom: 1.5px solid #0f172a;
+    /* Master Top Header (Shared for the Whole Page) */
+    .master-header {
+      border-bottom: 2px solid #0f172a;
       padding-bottom: 4px;
       margin-bottom: 4px;
     }
 
-    .header-brand h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 11pt;
-      font-weight: 800;
-      letter-spacing: -0.2px;
-      color: #0f172a;
-      line-height: 1.2;
+    .master-header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
     }
 
-    .header-brand p {
-      font-size: 7.5pt;
+    .master-title h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.15;
+      letter-spacing: -0.2px;
+    }
+
+    .master-title p {
+      font-size: 7.2pt;
       font-weight: 600;
       color: #475569;
-      line-height: 1.2;
     }
 
-    .section-badge-box {
-      text-align: right;
-      flex-shrink: 0;
-    }
-
-    .section-badge-tag {
-      display: inline-block;
+    .master-badge {
       background: #0f172a;
       color: #ffffff;
-      font-size: 8pt;
+      font-size: 7.2pt;
       font-weight: 800;
-      padding: 2px 7px;
+      padding: 3px 8px;
       border-radius: 3px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      white-space: nowrap;
     }
 
-    .section-timing {
-      font-size: 6.8pt;
-      color: #475569;
-      font-weight: 600;
-      margin-top: 2px;
-    }
-
-    /* Student Meta Details Strip */
+    /* Student Meta Details Strip (Filled ONCE at top) */
     .meta-fields-strip {
       display: grid;
       grid-template-columns: 2fr 1fr 1.2fr;
-      gap: 10px;
+      gap: 12px;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 3px;
       padding: 3.5px 8px;
-      margin-bottom: 4px;
+      margin-top: 4px;
       font-size: 7.5pt;
     }
 
@@ -261,7 +242,42 @@ permalink: /survey-print/
       height: 12px;
     }
 
-    /* Instructions & Scale Reference */
+    /* Section Container */
+    .survey-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .section-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 3px 8px;
+      border-radius: 3px;
+      margin-bottom: 3px;
+    }
+
+    .section-bar-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 8pt;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section-bar-timing {
+      font-size: 6.8pt;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    /* Scale & Instruction Strip */
     .scale-bar {
       display: flex;
       align-items: center;
@@ -269,8 +285,8 @@ permalink: /survey-print/
       background: #f1f5f9;
       border-left: 3px solid #0f172a;
       padding: 2.5px 7px;
-      margin-bottom: 4px;
-      font-size: 7pt;
+      margin-bottom: 3px;
+      font-size: 6.9pt;
       line-height: 1.2;
     }
 
@@ -281,7 +297,7 @@ permalink: /survey-print/
 
     .scale-legend {
       display: flex;
-      gap: 8px;
+      gap: 7px;
       font-weight: 700;
       color: #334155;
     }
@@ -294,14 +310,14 @@ permalink: /survey-print/
     .survey-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 7.6pt;
+      font-size: 7.5pt;
       margin-bottom: 3px;
     }
 
     .survey-table th, 
     .survey-table td {
       border: 1px solid #94a3b8;
-      padding: 3px 5px;
+      padding: 2.8px 5px;
       vertical-align: middle;
     }
 
@@ -310,7 +326,7 @@ permalink: /survey-print/
       font-weight: 800;
       color: #0f172a;
       text-align: center;
-      font-size: 7pt;
+      font-size: 6.9pt;
     }
 
     .survey-table th.col-q {
@@ -329,7 +345,7 @@ permalink: /survey-print/
       width: 61%;
       font-weight: 500;
       color: #0f172a;
-      line-height: 1.22;
+      line-height: 1.2;
     }
 
     .survey-table td.col-rating {
@@ -350,51 +366,45 @@ permalink: /survey-print/
     /* Open Question Strip */
     .open-question-wrap {
       margin-top: 2px;
-      font-size: 7.3pt;
+      font-size: 7.2pt;
     }
 
     .open-prompt {
       font-weight: 700;
       color: #0f172a;
-      margin-bottom: 1px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
+      margin-bottom: 2px;
     }
 
     .open-line {
       width: 100%;
       border-bottom: 1px dotted #64748b;
-      height: 12px;
-      margin-top: 1px;
+      height: 13px;
     }
 
-    /* Center Dividing Line (Cut / Fold Line) */
-    .divider-cut {
+    /* Elegant In-Page Divider (NO CUT / NO POTONG) */
+    .section-divider-bar {
       display: flex;
       align-items: center;
-      justify-content: center;
+      margin: 3mm 0;
       position: relative;
-      margin: 3.5mm 0;
-      padding: 2px 0;
-      user-select: none;
     }
 
-    .divider-cut::before {
+    .section-divider-bar::before {
       content: "";
       position: absolute;
-      top: 50%;
       left: 0;
       right: 0;
-      border-top: 1.5px dashed #475569;
+      top: 50%;
+      border-top: 1.5px solid #cbd5e1;
       z-index: 1;
     }
 
-    .divider-label {
+    .section-divider-badge {
       position: relative;
       z-index: 2;
       background: #ffffff;
-      padding: 0 10px;
+      padding: 0 12px;
+      margin: 0 auto;
       font-size: 6.8pt;
       font-weight: 800;
       color: #475569;
@@ -403,6 +413,36 @@ permalink: /survey-print/
       display: inline-flex;
       align-items: center;
       gap: 6px;
+    }
+
+    /* Dedicated Spacious Comments & Feedback Area in Post Section */
+    .feedback-comment-box {
+      border: 1px solid #94a3b8;
+      border-radius: 3px;
+      background: #fdfefe;
+      padding: 4px 8px;
+      margin-top: 3px;
+    }
+
+    .feedback-title {
+      font-size: 7.2pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 3px;
+    }
+
+    .feedback-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 3px;
+      padding-bottom: 2px;
+    }
+
+    .feedback-line {
+      border-bottom: 1px dotted #64748b;
+      width: 100%;
+      height: 1px;
     }
 
     /* ==========================================================================
@@ -447,6 +487,11 @@ permalink: /survey-print/
         overflow: hidden !important;
       }
 
+      .master-badge, .section-bar {
+        background: #000000 !important;
+        color: #ffffff !important;
+      }
+
       .survey-table th {
         background: #f1f5f9 !important;
         color: #000000 !important;
@@ -460,12 +505,11 @@ permalink: /survey-print/
         background: #f1f5f9 !important;
       }
 
-      .section-badge-tag {
-        background: #000000 !important;
-        color: #ffffff !important;
+      .section-divider-badge {
+        background: #ffffff !important;
       }
 
-      .divider-label {
+      .feedback-comment-box {
         background: #ffffff !important;
       }
     }
@@ -485,7 +529,7 @@ permalink: /survey-print/
       </div>
       <span class="toolbar-badge">
         <i data-lucide="file-check-2" style="width: 12px; height: 12px;"></i>
-        1 Helaian A4 (Top & Bottom)
+        1 Helaian A4 Lengkap (Pre & Post)
       </span>
     </div>
 
@@ -499,7 +543,7 @@ permalink: /survey-print/
 
   <!-- Screen Helper Tip -->
   <div class="tips-callout no-print">
-    💡 <strong>Tip Cetakan:</strong> Dalam tetingkap cetakan browser, pilih <strong>Destination: Save as PDF</strong> atau pencetak anda. Tetapkan <strong>Paper size: A4</strong>, <strong>Layout: Portrait</strong>, dan <strong>Margins: Default / Minimum</strong>. Slaid Pre & Post dijamin muat tepat dalam 1 kertas tunggal.
+    💡 <strong>Tip Cetakan:</strong> Borang ini direka untuk <strong>1 helai A4 lengkap (tanpa perlu dipotong)</strong>. Pelajar mengisi Bahagian 1 pada permulaan seminar, menyimpan kertas, dan melengkapkan Bahagian 2 serta ruangan komen pada akhir seminar.
   </div>
 
   <!-- Sheet Canvas Wrapper -->
@@ -507,22 +551,17 @@ permalink: /survey-print/
     <div class="a4-page" id="printableSheet">
 
       <!-- ======================================================================
-           SEPARUH ATAS: PRE-SURVEY (SEBELUM PROGRAM)
+           MASTER HEADER & STUDENT METADATA (FILLED ONCE AT TOP)
            ====================================================================== -->
-      <section class="survey-half survey-pre">
-        <!-- Header -->
-        <div class="header-row">
-          <div class="header-brand">
+      <div class="master-header">
+        <div class="master-header-top">
+          <div class="master-title">
             <h1>{{ site.data.survey.program }}</h1>
-            <p>{{ site.data.survey.pre.title }} &bull; Borang Penilaian Tahap Pengetahuan Pelajar</p>
+            <p>{{ site.data.survey.subtitle }}</p>
           </div>
-          <div class="section-badge-box">
-            <span class="section-badge-tag">{{ site.data.survey.pre.code }}</span>
-            <div class="section-timing">{{ site.data.survey.pre.timing }}</div>
-          </div>
+          <span class="master-badge">BORANG SOAL SELIDIK & MAKLUM BALAS</span>
         </div>
 
-        <!-- Student Meta Strip -->
         <div class="meta-fields-strip">
           {% for mf in site.data.survey.meta_fields %}
           <div class="meta-field">
@@ -531,8 +570,19 @@ permalink: /survey-print/
           </div>
           {% endfor %}
         </div>
+      </div>
 
-        <!-- Scale & Instruction Strip -->
+      <!-- ======================================================================
+           BAHAGIAN 1: PRE-SURVEY (SEBELUM PROGRAM)
+           ====================================================================== -->
+      <section class="survey-section survey-pre">
+        <div class="section-bar">
+          <div class="section-bar-title">
+            <span>{{ site.data.survey.pre.tag }}: {{ site.data.survey.pre.title }}</span>
+          </div>
+          <div class="section-bar-timing">{{ site.data.survey.pre.timing }}</div>
+        </div>
+
         <div class="scale-bar">
           <div class="scale-instruction">{{ site.data.survey.pre.instruction }}</div>
           <div class="scale-legend">
@@ -542,7 +592,7 @@ permalink: /survey-print/
           </div>
         </div>
 
-        <!-- Question Table -->
+        <!-- Pre Questions Table -->
         <table class="survey-table">
           <thead>
             <tr>
@@ -571,51 +621,35 @@ permalink: /survey-print/
           </tbody>
         </table>
 
-        <!-- Open Ended Question -->
+        <!-- Pre Open Ended Question -->
         <div class="open-question-wrap">
           <div class="open-prompt">
-            <span><strong>Soalan Ringkas:</strong> {{ site.data.survey.pre.open_prompt }}</span>
+            <strong>Soalan Ringkas:</strong> {{ site.data.survey.pre.open_prompt }}
           </div>
           <div class="open-line"></div>
         </div>
       </section>
 
       <!-- ======================================================================
-           GARISAN PEMISAH / POTONG (CUT OR FOLD LINE)
+           IN-PAGE SECTION DIVIDER (CLEAN SEPARATOR, NO CUT / POTONG)
            ====================================================================== -->
-      <div class="divider-cut" title="Potong atau lipat dua helaian ini">
-        <span class="divider-label">
-          ✂ &nbsp; {{ site.data.survey.divider_text }} &nbsp; ✂
-        </span>
+      <div class="section-divider-bar">
+        <div class="section-divider-badge">
+          ▼ &nbsp; {{ site.data.survey.divider_text }} &nbsp; ▼
+        </div>
       </div>
 
       <!-- ======================================================================
-           SEPARUH BAWAH: POST-SURVEY (SELEPAS PROGRAM)
+           BAHAGIAN 2: POST-SURVEY & RUANGAN KOMEN PELAJAR (SELEPAS PROGRAM)
            ====================================================================== -->
-      <section class="survey-half survey-post">
-        <!-- Header -->
-        <div class="header-row">
-          <div class="header-brand">
-            <h1>{{ site.data.survey.program }}</h1>
-            <p>{{ site.data.survey.post.title }} &bull; Penilaian Refleksi & Impak Sesi</p>
+      <section class="survey-section survey-post">
+        <div class="section-bar">
+          <div class="section-bar-title">
+            <span>{{ site.data.survey.post.tag }}: {{ site.data.survey.post.title }}</span>
           </div>
-          <div class="section-badge-box">
-            <span class="section-badge-tag">{{ site.data.survey.post.code }}</span>
-            <div class="section-timing">{{ site.data.survey.post.timing }}</div>
-          </div>
+          <div class="section-bar-timing">{{ site.data.survey.post.timing }}</div>
         </div>
 
-        <!-- Student Meta Strip -->
-        <div class="meta-fields-strip">
-          {% for mf in site.data.survey.meta_fields %}
-          <div class="meta-field">
-            <label>{{ mf.label }}:</label>
-            <div class="meta-line"></div>
-          </div>
-          {% endfor %}
-        </div>
-
-        <!-- Scale & Instruction Strip -->
         <div class="scale-bar">
           <div class="scale-instruction">{{ site.data.survey.post.instruction }}</div>
           <div class="scale-legend">
@@ -625,7 +659,7 @@ permalink: /survey-print/
           </div>
         </div>
 
-        <!-- Question Table -->
+        <!-- Post Questions Table -->
         <table class="survey-table">
           <thead>
             <tr>
@@ -654,12 +688,16 @@ permalink: /survey-print/
           </tbody>
         </table>
 
-        <!-- Open Ended Question -->
-        <div class="open-question-wrap">
-          <div class="open-prompt">
-            <span><strong>Refleksi & Penambahbaikan:</strong> {{ site.data.survey.post.open_prompt }}</span>
+        <!-- Dedicated Student Feedback & Comment Box (Spacious for Comments) -->
+        <div class="feedback-comment-box">
+          <div class="feedback-title">
+            <strong>{{ site.data.survey.post.open_prompt }}</strong>
           </div>
-          <div class="open-line"></div>
+          <div class="feedback-lines">
+            <div class="feedback-line"></div>
+            <div class="feedback-line"></div>
+            <div class="feedback-line"></div>
+          </div>
         </div>
       </section>
 
@@ -667,12 +705,10 @@ permalink: /survey-print/
   </div>
 
   <script>
-    // Initialize Lucide Icons
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }
 
-    // Check for autoprint parameter in URL
     window.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
       if (params.get('autoprint') === '1') {

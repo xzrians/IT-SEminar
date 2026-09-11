@@ -35,9 +35,9 @@ documentation_distribution:
       recipient: "Pengurusan & Warden ASDAF"
       pic: "Lead Teknikal UTM"
 
-    - name: "Borang Survey Gabungan Pre & Post (1 Helaian A4 Top & Bottom)"
-      format: "Bercetak 1 Muka (A4 Single-Sheet: Separuh Atas & Separuh Bawah)"
-      desc: "Format jimat kertas: Bahagian Atas = Pre-Survey (08:45 AM), Bahagian Bawah = Post-Survey (12:45 PM) dengan garisan potong/lipat tengah (✂). Mengukur impak pemahaman AI, celik scam, jejak digital, keselamatan siber, dan minat kerjaya (Skala 1-5 + soalan terbuka)."
+    - name: "Borang Survey Gabungan Pre & Post (1 Helaian A4 Lengkap)"
+      format: "Bercetak 1 Muka (A4 Single-Sheet: Pre di atas, Post & Komen di bawah)"
+      desc: "1 helaian A4 lengkap tanpa dipotong: Bahagian Atas = Pre-Survey (08:45 AM), Bahagian Bawah = Post-Survey & Ruangan Komen/Maklum Balas (12:45 PM). Pelajar menyimpan kertas yang sama untuk perbandingan impak celik digital, keselamatan siber, dan berkongsi ulasan bertulis."
       recipient: "46 Pelajar ASDAF + 4 simpanan (Jumlah: 50 keping A4)"
       pic: "AJK Dokumentasi UTM"
 

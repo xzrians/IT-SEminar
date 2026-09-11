@@ -1,6 +1,6 @@
-title: "Borang Soal Selidik Pre & Post (1 Helaian A4: Atas & Bawah)"
-subtitle: "1 Keping Kertas A4: Separuh Atas = Pre-Survey, Separuh Bawah = Post-Survey (Format Jimat Kertas & Mudah Edar)"
-print_note: "Cetak 1 muka (Single-sided), saiz A4, hitam putih. Boleh digunting atau dilipat di garisan tengah (✂)."
+title: "Borang Soal Selidik Pre & Post (1 Helaian A4 Lengkap)"
+subtitle: "1 Helaian A4 Yang Sama: Bahagian Pre di atas, Bahagian Post & Komen Maklum Balas di bawah (Tanpa Potong)."
+print_note: "Cetak 1 muka (Single-sided), saiz A4, hitam putih. 1 kertas disimpan oleh pelajar sepanjang seminar."
 program: "Seminar NextGen Celik Digital (UTM x ASDAF 2026)"
 target_pax: "46 Pelajar ASDAF (+ 4 simpanan = 50 keping A4)"
 
@@ -30,11 +30,11 @@ meta_fields:
     placeholder: "T1 / T2 / T3 / T4 / T5 / PPKI"
 
 pre:
-  tag: "BAHAGIAN ATAS"
+  tag: "BAHAGIAN 1"
   code: "PRE-SURVEY"
   title: "Soal Selidik Pra-Program (Sebelum Seminar)"
-  timing: "Diisi sebelum sesi taklimat & pembentangan bermula (08:45 AM)"
-  instruction: "Tandakan (✓) pada satu nombor bagi setiap kenyataan mengikut tahap persetujuan anda:"
+  timing: "Diisi pada permulaan sesi taklimat (08:45 AM)"
+  instruction: "Tandakan (✓) pada satu nombor bagi setiap kenyataan sebelum seminar bermula:"
   questions:
     - id: 1
       text: "Saya faham apa itu AI (Kecerdasan Buatan) dan fungsinya dalam kehidupan harian."
@@ -46,15 +46,15 @@ pre:
       text: "Saya berasa yakin menggunakan internet dan media sosial secara selamat."
     - id: 5
       text: "Saya berminat untuk meneroka bidang teknologi maklumat dan kerjaya digital."
-  open_prompt: "Apa yang anda paling harapkan atau ingin pelajari hari ini?"
+  open_prompt: "Harapan / Apa yang paling anda ingin pelajari hari ini?"
 
-divider_text: "POTONG / LIPAT DI SINI (SELEPAS PRE-SURVEY DIKUMPUL / DILIPAT)"
+divider_text: "BAHAGIAN 2: SELEPAS PROGRAM (POST-SURVEY & MAKLUM BALAS)"
 
 post:
-  tag: "BAHAGIAN BAWAH"
+  tag: "BAHAGIAN 2"
   code: "POST-SURVEY"
-  title: "Soal Selidik Pasca-Program (Selepas Seminar)"
-  timing: "Diisi selepas tamat semua modul sebelum jamuan makan & bersurai (12:45 PM)"
+  title: "Soal Selidik Pasca-Program & Maklum Balas (Selepas Seminar)"
+  timing: "Diisi pada akhir seminar sebelum jamuan makan & bersurai (12:45 PM)"
   instruction: "Tandakan (✓) pada satu nombor bagi setiap kenyataan mengikut pengalaman anda hari ini:"
   questions:
     - id: 1
@@ -67,4 +67,4 @@ post:
       text: "Saya kini yakin untuk mengamalkan langkah keselamatan akaun & kata laluan kukuh."
     - id: 5
       text: "Program ini meningkatkan minat saya untuk mendalami kemahiran & kerjaya digital."
-  open_prompt: "Cadangan penambahbaikan / Perkara paling berharga yang anda pelajari hari ini:"
+  open_prompt: "Ruangan Komen & Maklum Balas Pelajar: Tulis pandangan anda tentang program ini dan apa yang boleh ditambah baik:"

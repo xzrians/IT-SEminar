@@ -88,15 +88,15 @@
         </div>
       </div>
 
-      <!-- GARISAN PEMISAH POTONG / LIPAT -->
-      <div style="position: relative; text-align: center; margin: 28px 0; user-select: none;">
-        <div style="border-top: 2px dashed rgba(255, 255, 255, 0.2); position: absolute; top: 50%; left: 0; right: 0;"></div>
-        <span style="position: relative; z-index: 2; background: #0d121f; padding: 4px 16px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; color: var(--accent-amber); border: 1px solid rgba(245, 158, 11, 0.3);">
-          ✂ &nbsp; {{ site.data.survey.divider_text }} &nbsp; ✂
+      <!-- PEMBAHAGI SEKSYEN DALAM 1 HELAIAN A4 YANG SAMA (TANPA POTONG) -->
+      <div style="position: relative; text-align: center; margin: 26px 0; user-select: none;">
+        <div style="border-top: 1.5px solid rgba(255, 255, 255, 0.15); position: absolute; top: 50%; left: 0; right: 0;"></div>
+        <span style="position: relative; z-index: 2; background: #0d121f; padding: 5px 18px; border-radius: var(--radius-full); font-size: 0.74rem; font-weight: 700; color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.18);">
+          ▼ &nbsp; {{ site.data.survey.divider_text }} &nbsp; ▼
         </span>
       </div>
 
-      <!-- SEPARUH BAWAH: POST-SURVEY -->
+      <!-- SEPARUH BAWAH: POST-SURVEY & RUANGAN KOMEN -->
       <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); border-radius: var(--radius-md); padding: 20px;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; border-bottom: 1px solid var(--border-glass); padding-bottom: 10px;">
           <div>
@@ -142,8 +142,17 @@
           </table>
         </div>
 
-        <div style="background: rgba(255, 255, 255, 0.02); padding: 10px 14px; border-radius: var(--radius-sm); border-left: 3px solid var(--accent-emerald); font-size: 0.85rem;">
-          <strong style="color: var(--accent-emerald);">Refleksi & Penambahbaikan:</strong> {{ site.data.survey.post.open_prompt }}
+        <!-- Ruangan Komen & Maklum Balas Pelajar (Spacious Box) -->
+        <div style="background: rgba(16, 185, 129, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.25); font-size: 0.85rem;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px; color: #6ee7b7; font-weight: 700;">
+            <i data-lucide="message-square" style="width: 16px; height: 16px;"></i>
+            <span>{{ site.data.survey.post.open_prompt }}</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; padding: 6px 0;">
+            <div style="border-bottom: 1px dashed rgba(255, 255, 255, 0.15); height: 12px;"></div>
+            <div style="border-bottom: 1px dashed rgba(255, 255, 255, 0.15); height: 12px;"></div>
+            <div style="border-bottom: 1px dashed rgba(255, 255, 255, 0.15); height: 12px;"></div>
+          </div>
         </div>
       </div>
 

@@ -1,17 +1,20 @@
-# BORANG SOAL SELIDIK RINGKAS (1 HELAIAN A4: ATAS & BAWAH)
+# BORANG SOAL SELIDIK RINGKAS (1 HELAIAN A4 LENGKAP - TANPA POTONG)
 
-> **Panduan Cetakan:** Cetak 1 muka (Single-sided) atas kertas saiz **A4**.  
-> **Susun Atur:** **Separuh Atas = PRE-SURVEY**, **Separuh Bawah = POST-SURVEY**.  
-> *Nota: Borang boleh dilipat dua atau dipotong pada garisan putus-putus (✂) untuk memudahkan agihan.*
+> **Panduan Cetakan:** Cetak 1 muka (Single-sided) atas kertas saiz **A4** (Hitam Putih).  
+> **Format:** 1 Helaian Tunggal yang disimpan oleh pelajar sepanjang program.  
+> - **Bahagian 1 (Atas):** Diisi pada permulaan seminar (08:45 AM).  
+> - **Bahagian 2 (Bawah):** Diisi pada akhir seminar bersama ulasan/maklum balas bertulis (12:45 PM).
 
 ---
 
-## 🔼 BAHAGIAN ATAS: PRE-SURVEY (SEBELUM PROGRAM)
+### MAKLUMAT PELAJAR (Diisi sekali di bahagian atas kertas)
 **Program:** Seminar NextGen Celik Digital (UTM x ASDAF 2026)  
-**Masa Edaran:** 08:45 AM (Sebelum Sesi Taklimat)  
 **Nama / Kod Pelajar:** ____________________________________ &nbsp;&nbsp;&nbsp;&nbsp; **No. Meja:** Meja [ &nbsp; ] &nbsp;&nbsp;&nbsp;&nbsp; **Tingkatan:** ______
 
-**Skala Pilihan:** `[1] Sangat Tidak Setuju` | `[2] Tidak Setuju` | `[3] Neutral` | `[4] Setuju` | `[5] Sangat Setuju`
+---
+
+## 1️⃣ BAHAGIAN 1: PRE-SURVEY (SEBELUM PROGRAM)
+*Masa: 08:45 AM | Tanda (✓) mengikut skala: [1] STS | [2] TS | [3] N | [4] S | [5] SS*
 
 | Bil | Kenyataan / Pernyataan | 1 (STS) | 2 (TS) | 3 (N) | 4 (S) | 5 (SS) |
 |:---:|:---|:---:|:---:|:---:|:---:|:---:|
@@ -21,24 +24,16 @@
 | 4 | Saya berasa yakin menggunakan internet dan media sosial secara selamat. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
 | 5 | Saya berminat untuk meneroka bidang teknologi maklumat dan kerjaya digital. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
 
-**Soalan Terbuka:**  
+**Soalan Ringkas (Harapan):**  
 Apa yang anda paling harapkan atau ingin pelajari hari ini?  
 `____________________________________________________________________________________________________`
 
 <br>
 
-------------------------------------------------------------------------------------------------------------------
-✂ - - - - - - - - - - - - - - - - - **POTONG / LIPAT DI SINI (SELEPAS PRE-SURVEY)** - - - - - - - - - - - - - - - - - ✂
-------------------------------------------------------------------------------------------------------------------
-
-<br>
-
-## 🔽 BAHAGIAN BAWAH: POST-SURVEY (SELEPAS PROGRAM)
-**Program:** Seminar NextGen Celik Digital (UTM x ASDAF 2026)  
-**Masa Edaran:** 12:45 PM (Selepas Tamat Semua Sesi)  
-**Nama / Kod Pelajar:** ____________________________________ &nbsp;&nbsp;&nbsp;&nbsp; **No. Meja:** Meja [ &nbsp; ] &nbsp;&nbsp;&nbsp;&nbsp; **Tingkatan:** ______
-
-**Skala Pilihan:** `[1] Sangat Tidak Setuju` | `[2] Tidak Setuju` | `[3] Neutral` | `[4] Setuju` | `[5] Sangat Setuju`
+==================================================================================================  
+### 2️⃣ BAHAGIAN 2: POST-SURVEY & RUANGAN KOMEN PELAJAR (SELEPAS PROGRAM)  
+*Masa: 12:45 PM | Tanda (✓) mengikut skala: [1] STS | [2] TS | [3] N | [4] S | [5] SS*  
+==================================================================================================  
 
 | Bil | Kenyataan / Pernyataan | 1 (STS) | 2 (TS) | 3 (N) | 4 (S) | 5 (SS) |
 |:---:|:---|:---:|:---:|:---:|:---:|:---:|
@@ -48,7 +43,9 @@ Apa yang anda paling harapkan atau ingin pelajari hari ini?
 | 4 | Saya kini yakin untuk mengamalkan langkah keselamatan akaun & kata laluan kukuh. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
 | 5 | Program ini meningkatkan minat saya untuk mendalami kemahiran & kerjaya digital. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
 
-**Soalan Terbuka:**  
-Cadangan penambahbaikan / Perkara paling berharga yang anda pelajari hari ini:  
-`____________________________________________________________________________________________________`
+**Ruangan Komen & Maklum Balas Pelajar:**  
+Tulis ulasan anda tentang program ini dan apa cadangan yang boleh ditambah baik:  
+1. `_________________________________________________________________________________________________`  
+2. `_________________________________________________________________________________________________`  
+3. `_________________________________________________________________________________________________`
 
