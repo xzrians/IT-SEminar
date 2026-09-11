@@ -152,15 +152,15 @@ permalink: /survey-print/
       padding: 24px 16px 50px 16px;
     }
 
-    /* The exact A4 Paper Sheet (Strictly 1 Page) */
+    /* The exact A4 Paper Sheet (Strictly 1 Page, Pure Black & White) */
     .a4-page {
       width: 210mm;
       min-height: 297mm;
       max-height: 297mm;
       height: 297mm;
       background: #ffffff;
-      color: #0f172a;
-      padding: 7mm 11mm;
+      color: #000000;
+      padding: 9mm 12mm;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1);
       display: flex;
       flex-direction: column;
@@ -171,9 +171,9 @@ permalink: /survey-print/
 
     /* Master Top Header (Shared for the Whole Page) */
     .master-header {
-      border-bottom: 2px solid #0f172a;
-      padding-bottom: 4px;
-      margin-bottom: 4px;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 6px;
+      margin-bottom: 6px;
     }
 
     .master-header-top {
@@ -185,25 +185,27 @@ permalink: /survey-print/
 
     .master-title h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 11.5pt;
+      font-size: 13pt;
       font-weight: 800;
-      color: #0f172a;
-      line-height: 1.15;
+      color: #000000;
+      line-height: 1.2;
       letter-spacing: -0.2px;
     }
 
     .master-title p {
-      font-size: 7.2pt;
+      font-size: 9pt;
       font-weight: 600;
-      color: #475569;
+      color: #222222;
+      margin-top: 2px;
     }
 
     .master-badge {
-      background: #0f172a;
-      color: #ffffff;
-      font-size: 7.2pt;
+      background: #ffffff;
+      color: #000000;
+      border: 1.5px solid #000000;
+      font-size: 8.5pt;
       font-weight: 800;
-      padding: 3px 8px;
+      padding: 4px 10px;
       border-radius: 3px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -213,33 +215,33 @@ permalink: /survey-print/
     /* Student Meta Details Strip (Filled ONCE at top) */
     .meta-fields-strip {
       display: grid;
-      grid-template-columns: 2fr 1fr 1.2fr;
-      gap: 12px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      grid-template-columns: 2.2fr 1fr 1.3fr;
+      gap: 14px;
+      background: #ffffff;
+      border: 1.5px solid #000000;
       border-radius: 3px;
-      padding: 3.5px 8px;
-      margin-top: 4px;
-      font-size: 7.5pt;
+      padding: 6px 10px;
+      margin-top: 6px;
+      font-size: 9.5pt;
     }
 
     .meta-field {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       white-space: nowrap;
     }
 
     .meta-field label {
-      font-weight: 700;
-      color: #334155;
+      font-weight: 800;
+      color: #000000;
     }
 
     .meta-field .meta-line {
       flex: 1;
-      border-bottom: 1px dotted #64748b;
+      border-bottom: 1px dotted #000000;
       min-width: 40px;
-      height: 12px;
+      height: 14px;
     }
 
     /* Section Container */
@@ -253,28 +255,30 @@ permalink: /survey-print/
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #0f172a;
-      color: #ffffff;
-      padding: 3px 8px;
+      background: #f2f2f2;
+      color: #000000;
+      border: 1.5px solid #000000;
+      padding: 5px 10px;
       border-radius: 3px;
-      margin-bottom: 3px;
+      margin-bottom: 5px;
     }
 
     .section-bar-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 8pt;
+      font-size: 10pt;
       font-weight: 800;
       letter-spacing: 0.3px;
       text-transform: uppercase;
       display: flex;
       align-items: center;
       gap: 6px;
+      color: #000000;
     }
 
     .section-bar-timing {
-      font-size: 6.8pt;
+      font-size: 8.5pt;
       font-weight: 600;
-      color: #94a3b8;
+      color: #333333;
     }
 
     /* Scale & Instruction Strip */
@@ -282,24 +286,24 @@ permalink: /survey-print/
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #f1f5f9;
-      border-left: 3px solid #0f172a;
-      padding: 2.5px 7px;
-      margin-bottom: 3px;
-      font-size: 6.9pt;
+      background: #ffffff;
+      border: 1px solid #000000;
+      padding: 4px 8px;
+      margin-bottom: 5px;
+      font-size: 8.5pt;
       line-height: 1.2;
     }
 
     .scale-instruction {
-      font-weight: 600;
-      color: #1e293b;
+      font-weight: 700;
+      color: #000000;
     }
 
     .scale-legend {
       display: flex;
-      gap: 7px;
+      gap: 8px;
       font-weight: 700;
-      color: #334155;
+      color: #000000;
     }
 
     .scale-legend span {
@@ -310,42 +314,43 @@ permalink: /survey-print/
     .survey-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 7.5pt;
-      margin-bottom: 3px;
+      font-size: 9.5pt;
+      margin-bottom: 5px;
     }
 
     .survey-table th, 
     .survey-table td {
-      border: 1px solid #94a3b8;
-      padding: 2.8px 5px;
+      border: 1px solid #000000;
+      padding: 4.5px 7px;
       vertical-align: middle;
     }
 
     .survey-table th {
-      background: #e2e8f0;
+      background: #f2f2f2;
       font-weight: 800;
-      color: #0f172a;
+      color: #000000;
       text-align: center;
-      font-size: 6.9pt;
+      font-size: 9pt;
     }
 
     .survey-table th.col-q {
       text-align: left;
-      padding-left: 6px;
+      padding-left: 8px;
     }
 
     .survey-table td.col-num {
       text-align: center;
-      font-weight: 700;
-      width: 4%;
-      background: #f8fafc;
+      font-weight: 800;
+      width: 5%;
+      background: #ffffff;
+      color: #000000;
     }
 
     .survey-table td.col-statement {
       width: 61%;
       font-weight: 500;
-      color: #0f172a;
-      line-height: 1.2;
+      color: #000000;
+      line-height: 1.3;
     }
 
     .survey-table td.col-rating {
@@ -354,9 +359,9 @@ permalink: /survey-print/
     }
 
     .tick-box {
-      width: 12px;
-      height: 12px;
-      border: 1.2px solid #334155;
+      width: 14px;
+      height: 14px;
+      border: 1.5px solid #000000;
       display: inline-block;
       border-radius: 2px;
       margin: 0 auto;
@@ -365,27 +370,30 @@ permalink: /survey-print/
 
     /* Open Question Strip */
     .open-question-wrap {
-      margin-top: 2px;
-      font-size: 7.2pt;
+      margin-top: 4px;
+      font-size: 9pt;
+      border: 1px solid #000000;
+      padding: 5px 8px;
+      background: #ffffff;
     }
 
     .open-prompt {
       font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 2px;
+      color: #000000;
+      margin-bottom: 4px;
     }
 
     .open-line {
       width: 100%;
-      border-bottom: 1px dotted #64748b;
-      height: 13px;
+      border-bottom: 1px dotted #000000;
+      height: 14px;
     }
 
     /* Elegant In-Page Divider (NO CUT / NO POTONG) */
     .section-divider-bar {
       display: flex;
       align-items: center;
-      margin: 3mm 0;
+      margin: 4mm 0;
       position: relative;
     }
 
@@ -395,7 +403,7 @@ permalink: /survey-print/
       left: 0;
       right: 0;
       top: 50%;
-      border-top: 1.5px solid #cbd5e1;
+      border-top: 2px solid #000000;
       z-index: 1;
     }
 
@@ -403,12 +411,13 @@ permalink: /survey-print/
       position: relative;
       z-index: 2;
       background: #ffffff;
-      padding: 0 12px;
+      border: 1.5px solid #000000;
+      padding: 2px 14px;
       margin: 0 auto;
-      font-size: 6.8pt;
+      font-size: 8.5pt;
       font-weight: 800;
-      color: #475569;
-      letter-spacing: 0.8px;
+      color: #000000;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       display: inline-flex;
       align-items: center;
@@ -417,30 +426,30 @@ permalink: /survey-print/
 
     /* Dedicated Spacious Comments & Feedback Area in Post Section */
     .feedback-comment-box {
-      border: 1px solid #94a3b8;
+      border: 1.5px solid #000000;
       border-radius: 3px;
-      background: #fdfefe;
-      padding: 4px 8px;
-      margin-top: 3px;
+      background: #ffffff;
+      padding: 6px 10px;
+      margin-top: 5px;
     }
 
     .feedback-title {
-      font-size: 7.2pt;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 3px;
+      font-size: 9pt;
+      font-weight: 800;
+      color: #000000;
+      margin-bottom: 6px;
     }
 
     .feedback-lines {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      padding-top: 3px;
-      padding-bottom: 2px;
+      gap: 16px;
+      padding-top: 4px;
+      padding-bottom: 4px;
     }
 
     .feedback-line {
-      border-bottom: 1px dotted #64748b;
+      border-bottom: 1px dotted #000000;
       width: 100%;
       height: 1px;
     }
@@ -450,7 +459,7 @@ permalink: /survey-print/
        ========================================================================== */
     @page {
       size: A4 portrait;
-      margin: 6mm 8mm;
+      margin: 8mm 10mm;
     }
 
     @media print {
@@ -476,8 +485,8 @@ permalink: /survey-print/
       .a4-page {
         width: 100% !important;
         height: 100% !important;
-        min-height: 284mm !important;
-        max-height: 284mm !important;
+        min-height: 280mm !important;
+        max-height: 280mm !important;
         padding: 0 !important;
         margin: 0 !important;
         box-shadow: none !important;
@@ -488,29 +497,34 @@ permalink: /survey-print/
       }
 
       .master-badge, .section-bar {
-        background: #000000 !important;
-        color: #ffffff !important;
+        background: #f2f2f2 !important;
+        color: #000000 !important;
+        border: 1.5px solid #000000 !important;
       }
 
       .survey-table th {
-        background: #f1f5f9 !important;
+        background: #f2f2f2 !important;
         color: #000000 !important;
       }
 
       .meta-fields-strip {
-        background: #f8fafc !important;
+        background: #ffffff !important;
+        border: 1.5px solid #000000 !important;
       }
 
       .scale-bar {
-        background: #f1f5f9 !important;
+        background: #ffffff !important;
+        border: 1px solid #000000 !important;
       }
 
       .section-divider-badge {
         background: #ffffff !important;
+        border: 1.5px solid #000000 !important;
       }
 
       .feedback-comment-box {
         background: #ffffff !important;
+        border: 1.5px solid #000000 !important;
       }
     }
   </style>

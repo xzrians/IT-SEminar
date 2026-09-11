@@ -563,43 +563,49 @@ for item in slides_data:
 # Save presentation
 pptx_path1 = 'docs/presentation/Bengkel_Santai_NextGen_Celik_Digital_2026.pptx'
 pptx_path2 = 'slides/Bengkel_Santai_NextGen_Celik_Digital_2026.pptx'
-prs.save(pptx_path1)
-prs.save(pptx_path2)
-print(f"Saved PPTX successfully to:\n- {pptx_path1}\n- {pptx_path2}")
+try:
+    prs.save(pptx_path1)
+    print(f"Saved PPTX successfully to:\n- {pptx_path1}")
+except Exception as e:
+    print(f"Note: Could not save to {pptx_path1}: {e}")
+
+try:
+    prs.save(pptx_path2)
+    print(f"Saved PPTX successfully to:\n- {pptx_path2}")
+except Exception as e:
+    print(f"Note: Could not save to {pptx_path2}: {e}")
+
 
 
 # ==========================================
 # 2. GENERATE DOCX (PRE & POST SURVEY)
 # ==========================================
-print("\n--- Generating Survey Form (DOCX) ---")
+print("\n--- Generating Survey Form (DOCX - Black & White Full A4) ---")
 
 doc = docx.Document()
 
-# Page Setup: A4 Portrait, Narrow Margins (0.35 in top/bottom, 0.45 in left/right)
-# to strictly guarantee 1 single page!
+# Page Setup: A4 Portrait (8.27 in x 11.69 in)
+# Margins set to 0.45 in (top/bottom) and 0.5 in (left/right)
+# Printable area: 7.27 in width x 10.79 in height -> perfectly fills 1 whole A4 page!
 section = doc.sections[0]
 section.page_width = DocxInches(8.27)
 section.page_height = DocxInches(11.69)
-section.top_margin = DocxInches(0.35)
-section.bottom_margin = DocxInches(0.35)
-section.left_margin = DocxInches(0.45)
-section.right_margin = DocxInches(0.45)
+section.top_margin = DocxInches(0.42)
+section.bottom_margin = DocxInches(0.42)
+section.left_margin = DocxInches(0.5)
+section.right_margin = DocxInches(0.5)
 
-# Color constants in Hex for docx XML
-HEX_MAROON = "7A1C30"
-HEX_LIGHT_MAROON = "F9EBEF"
-HEX_NAVY = "132238"
-HEX_LIGHT_NAVY = "EEF2F6"
-HEX_GOLD = "C5A880"
-HEX_LIGHT_GRAY = "F8F9FA"
-HEX_BORDER = "CCCCCC"
+C_BLACK = DocxRGBColor(0, 0, 0)
+C_DARK = DocxRGBColor(30, 30, 30)
+HEX_LIGHT_GRAY = "F2F2F2"
+HEX_BLACK = "000000"
 
 def set_cell_shading(cell, color_hex):
     tcPr = cell._tc.get_or_add_tcPr()
     shd = parse_xml(f'<w:shd {nsdecls("w")} w:fill="{color_hex}"/>')
     tcPr.append(shd)
 
-def set_cell_margins(cell, top=50, bottom=50, left=80, right=80):
+def set_cell_margins(cell, top=50, bottom=50, left=70, right=70):
     tcPr = cell._tc.get_or_add_tcPr()
     tcMar = OxmlElement('w:tcMar')
     for m_type, val in [('top', top), ('bottom', bottom), ('left', left), ('right', right)]:
@@ -609,92 +615,99 @@ def set_cell_margins(cell, top=50, bottom=50, left=80, right=80):
         tcMar.append(node)
     tcPr.append(tcMar)
 
-def set_table_borders(table, border_color="BBBBBB"):
+def set_table_borders(table, border_color="000000"):
     tblPr = table._tbl.tblPr
     borders = parse_xml(f'''
         <w:tblBorders {nsdecls("w")}>
-            <w:top w:val="single" w:sz="4" w:space="0" w:color="{border_color}"/>
-            <w:bottom w:val="single" w:sz="4" w:space="0" w:color="{border_color}"/>
-            <w:left w:val="none"/>
-            <w:right w:val="none"/>
+            <w:top w:val="single" w:sz="6" w:space="0" w:color="{border_color}"/>
+            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="{border_color}"/>
+            <w:left w:val="single" w:sz="6" w:space="0" w:color="{border_color}"/>
+            <w:right w:val="single" w:sz="6" w:space="0" w:color="{border_color}"/>
             <w:insideH w:val="single" w:sz="4" w:space="0" w:color="{border_color}"/>
-            <w:insideV w:val="none"/>
+            <w:insideV w:val="single" w:sz="4" w:space="0" w:color="{border_color}"/>
         </w:tblBorders>
     ''')
     tblPr.append(borders)
 
-# 1. Header Banner Table
-hdr_table = doc.add_table(rows=1, cols=1)
-hdr_table.alignment = WD_TABLE_ALIGNMENT.CENTER
-hdr_table.autofit = False
-hdr_cell = hdr_table.cell(0, 0)
-hdr_cell.width = DocxInches(7.37)
-set_cell_shading(hdr_cell, HEX_MAROON)
-set_cell_margins(hdr_cell, top=70, bottom=70, left=100, right=100)
+# 1. Header (Clean Black & White, Bigger Font)
+p_inst = doc.add_paragraph()
+p_inst.alignment = WD_ALIGN_PARAGRAPH.CENTER
+p_inst.paragraph_format.space_before = DocxPt(0)
+p_inst.paragraph_format.space_after = DocxPt(1)
+r_inst = p_inst.add_run("UNIVERSITI TEKNOLOGI MALAYSIA (UTM KL)  ×  ASRAMA DARUL FALAH (ASDAF) PERKIM")
+r_inst.font.name = "Arial"
+r_inst.font.size = DocxPt(9.5)
+r_inst.font.bold = True
+r_inst.font.color.rgb = C_BLACK
 
-p_h = hdr_cell.paragraphs[0]
-p_h.alignment = WD_ALIGN_PARAGRAPH.CENTER
-p_h.paragraph_format.space_before = DocxPt(0)
-p_h.paragraph_format.space_after = DocxPt(1)
+p_title = doc.add_paragraph()
+p_title.alignment = WD_ALIGN_PARAGRAPH.CENTER
+p_title.paragraph_format.space_before = DocxPt(1)
+p_title.paragraph_format.space_after = DocxPt(2)
+r_title = p_title.add_run("BORANG SOAL SELIDIK PRE & POST")
+r_title.font.name = "Arial"
+r_title.font.size = DocxPt(14)
+r_title.font.bold = True
+r_title.font.color.rgb = C_BLACK
 
-run_inst = p_h.add_run("UNIVERSITI TEKNOLOGI MALAYSIA (UTM KL)  ×  ASRAMA DARUL FALAH (ASDAF) PERKIM\n")
-run_inst.font.name = "Arial"
-run_inst.font.size = DocxPt(8.5)
-run_inst.font.bold = True
-run_inst.font.color.rgb = DocxRGBColor(245, 208, 169) # Gold tint
+p_sub = doc.add_paragraph()
+p_sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
+p_sub.paragraph_format.space_before = DocxPt(0)
+p_sub.paragraph_format.space_after = DocxPt(5)
+r_sub = p_sub.add_run("Bengkel Santai NextGen Celik Digital 2026: Literasi Teknologi & AI  •  12 September 2026")
+r_sub.font.name = "Arial"
+r_sub.font.size = DocxPt(10)
+r_sub.font.color.rgb = C_DARK
 
-run_htitle = p_h.add_run("BORANG SOAL SELIDIK PRE & POST (1 HELAIAN LENGKAP)\n")
-run_htitle.font.name = "Arial Black"
-run_htitle.font.size = DocxPt(12)
-run_htitle.font.bold = True
-run_htitle.font.color.rgb = DocxRGBColor(255, 255, 255)
-
-run_hsub = p_h.add_run("Bengkel Santai NextGen Celik Digital 2026: Literasi Teknologi & AI  •  Sabtu, 12 September 2026")
-run_hsub.font.name = "Arial"
-run_hsub.font.size = DocxPt(8)
-run_hsub.font.color.rgb = DocxRGBColor(255, 255, 255)
-
-# Student Metadata Table (3 columns: Nama, No. Meja, Tingkatan)
+# 2. Student Metadata Box (3 Columns, Bold 10.5pt Text)
 meta_table = doc.add_table(rows=1, cols=3)
 meta_table.alignment = WD_TABLE_ALIGNMENT.CENTER
-set_table_borders(meta_table, border_color="DDDDDD")
-col_widths = [DocxInches(4.17), DocxInches(1.5), DocxInches(1.7)]
+set_table_borders(meta_table, border_color="000000")
+m_widths = [DocxInches(3.97), DocxInches(1.5), DocxInches(1.8)]
 
 meta_fields = [
-    ("Nama / Kod:", "_________________________________"),
-    ("No. Meja:", "Meja [   ]"),
-    ("Tingkatan:", "[  ] T1-T5  [  ] PPKI")
+    ("Nama Pelajar:", " _______________________________"),
+    ("No. Meja:", " Meja [   ]"),
+    ("Tingkatan:", " [  ] T1–T5   [  ] PPKI")
 ]
 
 for idx, (label, val) in enumerate(meta_fields):
     cell = meta_table.cell(0, idx)
-    cell.width = col_widths[idx]
-    set_cell_margins(cell, top=40, bottom=40, left=60, right=60)
-    set_cell_shading(cell, HEX_LIGHT_GRAY)
+    cell.width = m_widths[idx]
+    set_cell_margins(cell, top=50, bottom=50, left=70, right=70)
+    set_cell_shading(cell, "FFFFFF")
     p = cell.paragraphs[0]
     p.paragraph_format.space_before = DocxPt(0)
     p.paragraph_format.space_after = DocxPt(0)
-    r1 = p.add_run(f"{label} ")
+    
+    r1 = p.add_run(label)
     r1.font.name = "Arial"
     r1.font.bold = True
-    r1.font.size = DocxPt(8.5)
-    r1.font.color.rgb = DocxRGBColor(19, 34, 56)
+    r1.font.size = DocxPt(10)
+    r1.font.color.rgb = C_BLACK
+    
     r2 = p.add_run(val)
     r2.font.name = "Arial"
-    r2.font.size = DocxPt(8.5)
+    r2.font.bold = True if idx > 0 else False
+    r2.font.size = DocxPt(10)
+    r2.font.color.rgb = C_BLACK
 
-# Instruction & Scale Note
+# 3. Scale Legend (Clear & Bigger)
 p_scale = doc.add_paragraph()
-p_scale.paragraph_format.space_before = DocxPt(3)
-p_scale.paragraph_format.space_after = DocxPt(2)
-r_sc_lbl = p_scale.add_run("Skala Penilaian: ")
-r_sc_lbl.font.name = "Arial"
-r_sc_lbl.font.bold = True
-r_sc_lbl.font.size = DocxPt(7.5)
-r_sc_val = p_scale.add_run("1 = Sangat Tidak Setuju (STS)   |   2 = Tidak Setuju (TS)   |   3 = Neutral (N)   |   4 = Setuju (S)   |   5 = Sangat Setuju (SS)")
-r_sc_val.font.name = "Arial"
-r_sc_val.font.size = DocxPt(7.5)
-r_sc_val.font.italic = True
+p_scale.paragraph_format.space_before = DocxPt(4)
+p_scale.paragraph_format.space_after = DocxPt(4)
+p_scale.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+r_sc_t = p_scale.add_run("Skala Penilaian:  ")
+r_sc_t.font.name = "Arial"
+r_sc_t.font.bold = True
+r_sc_t.font.size = DocxPt(9.5)
+r_sc_t.font.color.rgb = C_BLACK
+
+r_sc_b = p_scale.add_run("1 = Sangat Tidak Setuju   |   2 = Tidak Setuju   |   3 = Neutral   |   4 = Setuju   |   5 = Sangat Setuju")
+r_sc_b.font.name = "Arial"
+r_sc_b.font.size = DocxPt(9.5)
+r_sc_b.font.color.rgb = C_BLACK
 
 # -------------------------------------------------------------
 # Function to add Survey Section Table (Pre or Post)
@@ -704,48 +717,53 @@ def add_survey_section(sec_data, is_pre=True):
     bar_tbl = doc.add_table(rows=1, cols=1)
     bar_tbl.alignment = WD_TABLE_ALIGNMENT.CENTER
     b_cell = bar_tbl.cell(0, 0)
-    b_cell.width = DocxInches(7.37)
+    b_cell.width = DocxInches(7.27)
     
-    bg_color = HEX_MAROON if is_pre else HEX_NAVY
-    set_cell_shading(b_cell, bg_color)
-    set_cell_margins(b_cell, top=35, bottom=35, left=80, right=80)
+    set_cell_shading(b_cell, HEX_LIGHT_GRAY)
+    set_cell_margins(b_cell, top=45, bottom=45, left=80, right=80)
+    
+    # Border around header
+    tcPr = b_cell._tc.get_or_add_tcPr()
+    borders = parse_xml(f'''
+        <w:tcBorders {nsdecls("w")}>
+            <w:top w:val="single" w:sz="6" w:space="0" w:color="000000"/>
+            <w:left w:val="single" w:sz="6" w:space="0" w:color="000000"/>
+            <w:bottom w:val="single" w:sz="6" w:space="0" w:color="000000"/>
+            <w:right w:val="single" w:sz="6" w:space="0" w:color="000000"/>
+        </w:tcBorders>
+    ''')
+    tcPr.append(borders)
     
     bp = b_cell.paragraphs[0]
     bp.paragraph_format.space_before = DocxPt(0)
     bp.paragraph_format.space_after = DocxPt(0)
     
-    tag_run = bp.add_run(f"[{sec_data['tag']}: {sec_data['code']}] ")
-    tag_run.font.name = "Arial"
-    tag_run.font.bold = True
-    tag_run.font.size = DocxPt(8.5)
-    tag_run.font.color.rgb = DocxRGBColor(245, 208, 169)
+    run_h = bp.add_run(f"{sec_data['tag']}: {sec_data['title'].upper()}")
+    run_h.font.name = "Arial"
+    run_h.font.bold = True
+    run_h.font.size = DocxPt(10.5)
+    run_h.font.color.rgb = C_BLACK
     
-    title_run = bp.add_run(sec_data['title'].upper())
-    title_run.font.name = "Arial"
-    title_run.font.bold = True
-    title_run.font.size = DocxPt(8.5)
-    title_run.font.color.rgb = DocxRGBColor(255, 255, 255)
-    
-    timing_run = bp.add_run(f"  •  ({sec_data['timing']})")
-    timing_run.font.name = "Arial"
-    timing_run.font.size = DocxPt(7.5)
-    timing_run.font.italic = True
-    timing_run.font.color.rgb = DocxRGBColor(220, 220, 220)
+    run_t = bp.add_run(f"  ({sec_data['timing']})")
+    run_t.font.name = "Arial"
+    run_t.font.italic = True
+    run_t.font.size = DocxPt(9)
+    run_t.font.color.rgb = C_DARK
 
     # Questions Table: 7 columns (No, Kenyataan, 1, 2, 3, 4, 5)
     q_table = doc.add_table(rows=len(sec_data['questions']) + 1, cols=7)
     q_table.alignment = WD_TABLE_ALIGNMENT.CENTER
-    set_table_borders(q_table, border_color="CCCCCC")
+    set_table_borders(q_table, border_color="000000")
     
-    q_widths = [DocxInches(0.35), DocxInches(4.52), DocxInches(0.5), DocxInches(0.5), DocxInches(0.5), DocxInches(0.5), DocxInches(0.5)]
-    headers = ["No", "Kenyataan Soal Selidik", "1 (STS)", "2 (TS)", "3 (N)", "4 (S)", "5 (SS)"]
+    q_widths = [DocxInches(0.42), DocxInches(4.35), DocxInches(0.5), DocxInches(0.5), DocxInches(0.5), DocxInches(0.5), DocxInches(0.5)]
+    headers = ["No", "Kenyataan Soal Selidik (Tandakan ✓ pada pilihan anda)", "1", "2", "3", "4", "5"]
     
     # Header Row
     for col_idx, text in enumerate(headers):
         cell = q_table.cell(0, col_idx)
         cell.width = q_widths[col_idx]
-        set_cell_margins(cell, top=30, bottom=30, left=40, right=40)
-        set_cell_shading(cell, HEX_LIGHT_MAROON if is_pre else HEX_LIGHT_NAVY)
+        set_cell_margins(cell, top=40, bottom=40, left=50, right=50)
+        set_cell_shading(cell, HEX_LIGHT_GRAY)
         p = cell.paragraphs[0]
         p.alignment = WD_ALIGN_PARAGRAPH.CENTER if col_idx != 1 else WD_ALIGN_PARAGRAPH.LEFT
         p.paragraph_format.space_before = DocxPt(0)
@@ -753,15 +771,15 @@ def add_survey_section(sec_data, is_pre=True):
         run = p.add_run(text)
         run.font.name = "Arial"
         run.font.bold = True
-        run.font.size = DocxPt(7.5)
-        run.font.color.rgb = DocxRGBColor(122, 28, 48) if is_pre else DocxRGBColor(19, 34, 56)
+        run.font.size = DocxPt(9.5)
+        run.font.color.rgb = C_BLACK
 
     # Data Rows
     for row_idx, q in enumerate(sec_data['questions'], start=1):
         # Col 0: No
         c0 = q_table.cell(row_idx, 0)
         c0.width = q_widths[0]
-        set_cell_margins(c0, top=25, bottom=25, left=30, right=30)
+        set_cell_margins(c0, top=40, bottom=40, left=40, right=40)
         p0 = c0.paragraphs[0]
         p0.alignment = WD_ALIGN_PARAGRAPH.CENTER
         p0.paragraph_format.space_before = DocxPt(0)
@@ -769,103 +787,128 @@ def add_survey_section(sec_data, is_pre=True):
         r0 = p0.add_run(str(q['id']))
         r0.font.name = "Arial"
         r0.font.bold = True
-        r0.font.size = DocxPt(7.5)
+        r0.font.size = DocxPt(10)
+        r0.font.color.rgb = C_BLACK
         
-        # Col 1: Text
+        # Col 1: Text (Bigger 10pt font)
         c1 = q_table.cell(row_idx, 1)
         c1.width = q_widths[1]
-        set_cell_margins(c1, top=25, bottom=25, left=40, right=40)
+        set_cell_margins(c1, top=40, bottom=40, left=60, right=60)
         p1 = c1.paragraphs[0]
         p1.paragraph_format.space_before = DocxPt(0)
         p1.paragraph_format.space_after = DocxPt(0)
         r1 = p1.add_run(q['text'])
         r1.font.name = "Arial"
-        r1.font.size = DocxPt(7.5)
+        r1.font.size = DocxPt(10)
+        r1.font.color.rgb = C_BLACK
         
-        # Cols 2-6: Checkboxes [ ]
+        # Cols 2-6: Checkboxes [ ] (Clear & Bold)
         for opt_idx in range(2, 7):
             c_opt = q_table.cell(row_idx, opt_idx)
             c_opt.width = q_widths[opt_idx]
-            set_cell_margins(c_opt, top=25, bottom=25, left=20, right=20)
+            set_cell_margins(c_opt, top=40, bottom=40, left=20, right=20)
             p_opt = c_opt.paragraphs[0]
             p_opt.alignment = WD_ALIGN_PARAGRAPH.CENTER
             p_opt.paragraph_format.space_before = DocxPt(0)
             p_opt.paragraph_format.space_after = DocxPt(0)
             r_opt = p_opt.add_run("[   ]")
             r_opt.font.name = "Arial"
-            r_opt.font.size = DocxPt(7.5)
-            r_opt.font.color.rgb = DocxRGBColor(100, 116, 139)
+            r_opt.font.bold = True
+            r_opt.font.size = DocxPt(10)
+            r_opt.font.color.rgb = C_BLACK
 
-    # Open Prompt / Comment Area
+    # Open Prompt / Comment Area Box
     op_table = doc.add_table(rows=1, cols=1)
     op_table.alignment = WD_TABLE_ALIGNMENT.CENTER
     op_cell = op_table.cell(0, 0)
-    op_cell.width = DocxInches(7.37)
-    set_cell_margins(op_cell, top=35, bottom=35, left=60, right=60)
-    set_cell_shading(op_cell, HEX_LIGHT_GRAY)
+    op_cell.width = DocxInches(7.27)
+    set_cell_margins(op_cell, top=45, bottom=45, left=70, right=70)
+    set_table_borders(op_table, border_color="000000")
     
     op_p = op_cell.paragraphs[0]
     op_p.paragraph_format.space_before = DocxPt(0)
     op_p.paragraph_format.space_after = DocxPt(0)
     
-    op_lbl = op_p.add_run(f"✎ {sec_data['open_prompt']}\n")
+    op_lbl = op_p.add_run(f"{sec_data['open_prompt']}\n")
     op_lbl.font.name = "Arial"
     op_lbl.font.bold = True
-    op_lbl.font.size = DocxPt(7.5)
-    op_lbl.font.color.rgb = DocxRGBColor(19, 34, 56)
+    op_lbl.font.size = DocxPt(9.5)
+    op_lbl.font.color.rgb = C_BLACK
     
     if is_pre:
-        op_lines = op_p.add_run("Jawapan: __________________________________________________________________________________________________")
+        op_lines = op_p.add_run("Jawapan: ____________________________________________________________________________________")
     else:
         op_lines = op_p.add_run(
-            "Baris 1: __________________________________________________________________________________________________\n"
-            "Baris 2: __________________________________________________________________________________________________\n"
-            "Baris 3: __________________________________________________________________________________________________"
+            "1. __________________________________________________________________________________________\n"
+            "2. __________________________________________________________________________________________\n"
+            "3. __________________________________________________________________________________________"
         )
     op_lines.font.name = "Arial"
-    op_lines.font.size = DocxPt(7)
-    op_lines.font.color.rgb = DocxRGBColor(140, 140, 140)
+    op_lines.font.size = DocxPt(9.5)
+    op_lines.font.color.rgb = C_BLACK
 
 # Add Pre-Survey
 add_survey_section(survey['pre'], is_pre=True)
 
-# Continuous Flow Divider (NO CUT / NO POTONG)
+# Continuous Flow Divider (NO CUT / NO POTONG - Clean B&W)
 sep_table = doc.add_table(rows=1, cols=1)
 sep_table.alignment = WD_TABLE_ALIGNMENT.CENTER
 sep_cell = sep_table.cell(0, 0)
-sep_cell.width = DocxInches(7.37)
-set_cell_shading(sep_cell, "F1F5F9")
-set_cell_margins(sep_cell, top=25, bottom=25, left=60, right=60)
+sep_cell.width = DocxInches(7.27)
+set_cell_margins(sep_cell, top=30, bottom=30, left=60, right=60)
+set_cell_shading(sep_cell, HEX_LIGHT_GRAY)
+
+tcPr_sep = sep_cell._tc.get_or_add_tcPr()
+borders_sep = parse_xml(f'''
+    <w:tcBorders {nsdecls("w")}>
+        <w:top w:val="single" w:sz="6" w:space="0" w:color="000000"/>
+        <w:left w:val="single" w:sz="6" w:space="0" w:color="000000"/>
+        <w:bottom w:val="single" w:sz="6" w:space="0" w:color="000000"/>
+        <w:right w:val="single" w:sz="6" w:space="0" w:color="000000"/>
+    </w:tcBorders>
+''')
+tcPr_sep.append(borders_sep)
 
 sp = sep_cell.paragraphs[0]
 sp.alignment = WD_ALIGN_PARAGRAPH.CENTER
 sp.paragraph_format.space_before = DocxPt(0)
 sp.paragraph_format.space_after = DocxPt(0)
 
-s_run = sp.add_run("▼  SILA KEKALKAN KERTAS INI SEPANJANG PROGRAM — SAMBUNG KE BAHAGIAN 2 SELEPAS TAMAT SEMINAR (TANPA POTONG)  ▼")
+s_run = sp.add_run("▼  SILA SIMPAN KERTAS INI SEPANJANG PROGRAM — SAMBUNG KE BAHAGIAN 2 SELEPAS TAMAT SEMINAR (TANPA POTONG)  ▼")
 s_run.font.name = "Arial"
 s_run.font.bold = True
-s_run.font.size = DocxPt(7)
-s_run.font.color.rgb = DocxRGBColor(122, 28, 48)
+s_run.font.size = DocxPt(9)
+s_run.font.color.rgb = C_BLACK
 
 # Add Post-Survey
 add_survey_section(survey['post'], is_pre=False)
 
-# Footer info
+# Footer info (Clean B&W)
 p_foot = doc.add_paragraph()
-p_foot.paragraph_format.space_before = DocxPt(2)
+p_foot.paragraph_format.space_before = DocxPt(4)
 p_foot.paragraph_format.space_after = DocxPt(0)
 p_foot.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 rf = p_foot.add_run("NextGen Celik Digital 2026  •  Borang Soal Selidik Rasmi 1 Muka Surat (A4)  •  UTM KL x ASDAF PERKIM")
 rf.font.name = "Arial"
-rf.font.size = DocxPt(6.5)
-rf.font.color.rgb = DocxRGBColor(148, 163, 184)
+rf.font.size = DocxPt(8)
+rf.font.italic = True
+rf.font.color.rgb = C_DARK
 
 # Save DOCX
 docx_path1 = 'docs/printables/Borang_Soal_Selidik_Pre_Post_Survey.docx'
 docx_path2 = 'Borang_Soal_Selidik_Pre_Post_Survey.docx'
-doc.save(docx_path1)
-doc.save(docx_path2)
-print(f"Saved DOCX successfully to:\n- {docx_path1}\n- {docx_path2}")
+
+try:
+    doc.save(docx_path1)
+    print(f"Saved DOCX successfully to:\n- {docx_path1}")
+except Exception as e:
+    print(f"Note: Could not save to {docx_path1}: {e}")
+
+try:
+    doc.save(docx_path2)
+    print(f"Saved DOCX successfully to:\n- {docx_path2}")
+except Exception as e:
+    print(f"Note: Could not save to {docx_path2} (file might be open in MS Word): {e}")
+
 
 print("\nAll presentation slides (PPTX) and survey forms (DOCX) generated successfully!")
