@@ -24,7 +24,7 @@ Selamat datang, AI Agent. Dokumen ini bertujuan untuk memberi panduan segera ten
 | **Senarai 13 Kru UTM & Skop Tanggungjawab** | `_data/crew.yml` | YAML |
 | **Senarai Semak Tindakan (Pra, Semasa, Pasca)** | `_data/checklist.yml` | YAML |
 | **Latar Belakang ASDAF, Demografi, Prinsip Pedagogi** | `_data/asdaf.yml` | YAML |
-| **Nombor Statistik Header (KPI 47 murid, 13 kru, dll.)** | `_data/stats.yml` | YAML |
+| **Nombor Statistik Header (KPI 46 murid, 13 kru, dll.)** | `_data/stats.yml` | YAML |
 | **Tajuk Tapak, Deskripsi, Base URL GitHub Pages** | `_config.yml` | YAML |
 | **Reka Bentuk / Komponen Liquid** | `_includes/*.html` | Liquid HTML |
 | **Sistem Reka Bentuk CSS / Gaya Dark Mode** | `assets/css/styles.css` | Vanilla CSS |
@@ -35,8 +35,8 @@ Selamat datang, AI Agent. Dokumen ini bertujuan untuk memberi panduan segera ten
 
 ## 3. Peraturan Wajib untuk AI
 1. **Kekalkan Formula Pax Rasmi:**
-   - Asas Bilik: $47\text{ Pelajar ASDAF} + 6\text{ Staf ASDAF} + 13\text{ Pelajar UTM} = \mathbf{66\text{ Pax Keseluruhan}}$.
-   - Makanan Jamuan: $66\text{ Pax Asas} + 5\text{ Pax Penampan (Buffer)} = \mathbf{71\text{ Pax}}$.
+   - Asas Bilik: $46\text{ Pelajar ASDAF} + 6\text{ Staf ASDAF} + 13\text{ Pelajar UTM} = \mathbf{65\text{ Pax Keseluruhan}}$.
+   - Makanan Jamuan: $65\text{ Pax Asas} + 5\text{ Pax Penampan (Buffer)} = \mathbf{70\text{ Pax}}$.
 2. **Kekalkan Prinsip Sifar Gajet (Zero-Device Requirement):**
    - Pelajar asrama tidak dibenarkan membawa telefon pintar peribadi. Kuiz mestilah dijalankan di layar skrin dewan dengan mekanik "3, 2, 1... Angkat Tangan!".
 3. **Inklusiviti Pendidikan Khas (PPKI):**

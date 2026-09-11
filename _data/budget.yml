@@ -23,12 +23,12 @@ variants:
     tag_color: "blue"
     status: "Alternatif Paling Jimat"
     balance: 510.00
-    description: "Fokus kepada modul penting, doorgift asas dan sarapan ringkas untuk 71 pax (66 Pax + 5 Lebihan) melalui opsyen Kantin / Luar. Sesuai jika makan tengah hari disediakan oleh pihak dewan makan ASDAF."
+    description: "Fokus kepada modul penting, doorgift asas dan sarapan ringkas untuk 70 pax (65 Pax + 5 Lebihan) melalui opsyen Kantin / Luar. Sesuai jika makan tengah hari disediakan oleh pihak dewan makan ASDAF."
     items:
-      - item: "Sarapan Ringkas (Roti Bun + Air Kotak) [66 Pax + 5 Lebihan = 71 Pax]"
-        qty: "71 pax"
+      - item: "Sarapan Ringkas (Roti Bun + Air Kotak) [65 Pax + 5 Lebihan = 70 Pax]"
+        qty: "70 pax"
         unit_price: 2.00
-        total: 142.00
+        total: 140.00
       - item: "Bahan Aktiviti 7 Meja (25 Mahjong, 25 Marker, 10 Sticky, Tape, Gunting)"
         qty: "1 set"
         unit_price: 45.00
@@ -43,8 +43,8 @@ variants:
         total: 35.00
       - item: "Kontingensi, Beg Sampah & Kecemasan"
         qty: "-"
-        unit_price: 18.00
-        total: 18.00
+        unit_price: 20.00
+        total: 20.00
 
   - id: 2
     name: "Varian 2: Bajet Semasa 7 Kumpulan (Disyorkan)"
@@ -84,16 +84,16 @@ variants:
     tag_color: "purple"
     status: "Had Maksimum RM 800"
     balance: 0.00
-    description: "Merangkumi penyediaan Sarapan Pagi dan Makan Tengah Hari Nasi Berlauk untuk 71 pax (66 Pax + 5 Lebihan) via Kantin/Katering, bahan aktiviti lengkap, sijil, cenderahati ASDAF, dan hadiah kuiz."
+    description: "Merangkumi penyediaan Sarapan Pagi dan Makan Tengah Hari Nasi Berlauk untuk 70 pax (65 Pax + 5 Lebihan) via Kantin/Katering, bahan aktiviti lengkap, sijil, cenderahati ASDAF, dan hadiah kuiz."
     items:
-      - item: "Sarapan Pagi (Roti Bun + Air Kotak 250ml) [66 Pax + 5 Lebihan = 71 Pax]"
-        qty: "71 pax"
+      - item: "Sarapan Pagi (Roti Bun + Air Kotak 250ml) [65 Pax + 5 Lebihan = 70 Pax]"
+        qty: "70 pax"
         unit_price: 2.00
-        total: 142.00
-      - item: "Makan Tengah Hari (Nasi Berlauk + Air Minum) [66 Pax + 5 Lebihan = 71 Pax]"
-        qty: "71 pek"
+        total: 140.00
+      - item: "Makan Tengah Hari (Nasi Berlauk + Air Minum) [65 Pax + 5 Lebihan = 70 Pax]"
+        qty: "70 pek"
         unit_price: 6.50
-        total: 461.50
+        total: 455.00
       - item: "Bahan Aktiviti Lengkap 7 Meja (25 Mahjong, 25 Marker, Sticky, Tape, Gunting)"
         qty: "7 meja"
         unit_price: 8.00
@@ -112,5 +112,5 @@ variants:
         total: 16.50
       - item: "Kontingensi & Logistik Kecemasan"
         qty: "-"
-        unit_price: 4.00
-        total: 4.00
+        unit_price: 12.50
+        total: 12.50

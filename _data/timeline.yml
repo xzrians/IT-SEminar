@@ -9,11 +9,11 @@
   tag: "Persediaan"
   tag_color: "blue"
   location: "Pintu Masuk Dewan & Meja Kluster"
-  desc: "Pendaftaran 47 pelajar ASDAF, pengagihan kad/pelekat nama mengikut 7 meja kluster, dan sambutan mesra oleh fasilitator UTM."
+  desc: "Pendaftaran 46 pelajar ASDAF, pengagihan kad/pelekat nama mengikut 7 meja kluster, dan sambutan mesra oleh fasilitator UTM."
   pic: "Semua Kru UTM & Staf ASDAF"
   fasi_action: "Sambut adik-adik di pintu masuk, agihkan kad nama mengikut meja, dan pastikan 4 murid PPKI diiringi ke Meja 1, 4, 5, 6 dalam keadaan selesa."
   materials:
-    - "47 Pelekat / Kad Nama"
+    - "46 Pelekat / Kad Nama"
     - "Lanyard & Senarai Nama"
 
 - id: "slot-0900"
@@ -82,11 +82,11 @@
   tag: "Rehat"
   tag_color: "amber"
   location: "Ruang Dewan Makan / Meja"
-  desc: "Rehat 15 minit. Kudapan pagi disediakan untuk 71 pax (47 pelajar ASDAF, 6 staf ASDAF, 13 kru UTM + 5 penampan buffer). Sesi bual santai mentor-pelajar."
+  desc: "Rehat 15 minit. Kudapan pagi disediakan untuk 70 pax (46 pelajar ASDAF, 6 staf ASDAF, 13 kru UTM + 5 penampan buffer). Sesi bual santai mentor-pelajar."
   pic: "AJK Jamuan & Logistik"
   fasi_action: "Pastikan semua adik-adik dapat makanan dan minuman. Santuni staf dan warden asrama bertugas."
   materials:
-    - "71 Pek Roti & Air Kotak"
+    - "70 Pek Roti & Air Kotak"
     - "Plastik Sampah Meja"
 
 - id: "slot-1015"
@@ -157,8 +157,8 @@
   location: "Pentas Utama"
   desc: "Ucapan penutup ringkas oleh wakil UTM & ASDAF, penyampaian sijil penyertaan, hadiah pemenang, plak penghargaan, dan sesi fotografi beramai-ramai."
   pic: "Pengarah Projek & Pengurus Hadiah"
-  fasi_action: "Susun barisan meja untuk sesi fotografi dewan. Agihkan beg cenderahati/doorgift kepada semua 47 pelajar dengan teratur."
+  fasi_action: "Susun barisan meja untuk sesi fotografi dewan. Agihkan beg cenderahati/doorgift kepada semua 46 pelajar dengan teratur."
   materials:
-    - "47 Sijil Penyertaan Rasmi"
+    - "46 Sijil Penyertaan Rasmi"
     - "1 Plak Penghargaan ASDAF"
-    - "47 Beg Cenderahati Murid"
+    - "46 Beg Cenderahati Murid"

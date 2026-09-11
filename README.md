@@ -10,11 +10,11 @@
 
 - **Nama Program:** NextGen Celik Digital 2026: Bengkel Santai AI & Keselamatan Siber Remaja
 - **Penganjur:** Kumpulan Mahasiswa Universiti Teknologi Malaysia (UTM)
-- **Sasaran Peserta:** **47 Murid ASDAF** (Asrama Darul Falah, Bukit Persekutuan, KL) + **6 Staf/Warden Pengiring**
-  - *Pecahan:* Tingkatan 1 (6), Tingkatan 2 (6), Tingkatan 3 (10), Tingkatan 4 (15), Tingkatan 5 (5), dan **4 Murid PPKI (Pendidikan Khas)**.
-  - *Jantina:* 18 Lelaki, 29 Perempuan.
+- **Sasaran Peserta:** **46 Murid ASDAF** (Asrama Darul Falah, Bukit Persekutuan, KL) + **6 Staf/Warden Pengiring**
+  - *Pecahan:* Tingkatan 1 (6), Tingkatan 2 (6), Tingkatan 3 (10), Tingkatan 4 (14), Tingkatan 5 (6), dan **4 Murid PPKI (Pendidikan Khas)**.
+  - *Jantina:* 18 Lelaki, 28 Perempuan.
 - **Krew Penganjur:** **13 Orang Mahasiswa UTM** (6 Urusetia Pusat/Pentas + 7 Fasilitator Meja Khusus).
-- **Jumlah Keseluruhan Dewan (Pax):** 47 murid + 6 staf ASDAF + 13 krew UTM = **66 Orang** (Tempahan snek: 66–70 pax).
+- **Jumlah Keseluruhan Dewan (Pax):** 46 murid + 6 staf ASDAF + 13 krew UTM = **65 Orang** (Tempahan snek: 65–70 pax).
 - **Tarikh & Masa:** 8:30 AM – 12:00 PM (3.5 Jam / Separuh Hari).
 - **Format Meja:** 7 Meja Kluster Bulat (6–7 murid semeja, campuran jantina & tingkatan).
 
@@ -173,7 +173,7 @@ Setiap fasilitator duduk bersama kumpulan masing-masing sepanjang program:
 ### C. 4 Aktiviti Praktikal Tanpa Gajet
 
 #### 1. Aktiviti 1: Ice-Breaking "Tech Bingo" (09:00 – 09:20 | 20 Minit)
-- **Bahan:** 47 Keping Lembaran Tech Bingo A5 + Pen/Pensel.
+- **Bahan:** 46 Keping Lembaran Tech Bingo A5 + Pen/Pensel.
 - **Mekanik:** Lembaran mengandungi 9 kotak kriteria (cth: *"Tahu maksud AI"*, *"Suka main Roblox/ML"*, *"Pernah dengar ChatGPT"*, *"Tahu hotline 997"*). Murid bergerak di meja atau menyapa kru UTM untuk mendapatkan tandatangan.
 - **Peranan Mentor:** Bantu mencairkan rasa malu murid junior dan bimbing 4 murid PPKI menanda kotak dengan ceria.
 
@@ -223,25 +223,25 @@ Setiap fasilitator duduk bersama kumpulan masing-masing sepanjang program:
 
 ## 8. Anggaran Bajet: 3 Varian (Siling Modal RM 800.00)
 
-> 👥 **Asas Pengiraan Pax Jamuan:** **66 Orang Pax Asas + 5 Pax Penampan (Buffer) = 71 Pax Jamuan**  
-> *(47 Pelajar ASDAF + 6 Staf ASDAF + 13 Pelajar UTM = 66 Pax + 5 Lebihan = 71 Pax)*
+> 👥 **Asas Pengiraan Pax Jamuan:** **65 Orang Pax Asas + 5 Pax Penampan (Buffer) = 70 Pax Jamuan**  
+> *(46 Pelajar ASDAF + 6 Staf ASDAF + 13 Pelajar UTM = 65 Pax + 5 Lebihan = 70 Pax)*
 
 | Perkara | Varian 1: Super-Lean | Varian 2: Seimbang (Disyorkan) ⭐ | Varian 3: Pakej Lengkap (+Makan T/Hari) |
 | :--- | :---: | :---: | :---: |
-| **Sarapan Pagi (71 Pax)** | **RM 142** (Roti bun + air kotak @ RM2) | **RM 177.50** (Roti sedap + air kotak @ RM2.50) | **RM 142** (Roti bun + air kotak @ RM2) |
-| **Makan Tengah Hari (71 Pax)** | *Tiada* | *Tiada* | **RM 461.50** (Nasi ayam/lauk 71 pek @ RM6.50) |
+| **Sarapan Pagi (70 Pax)** | **RM 140** (Roti bun + air kotak @ RM2) | **RM 175.00** (Roti sedap + air kotak @ RM2.50) | **RM 140** (Roti bun + air kotak @ RM2) |
+| **Makan Tengah Hari (70 Pax)** | *Tiada* | *Tiada* | **RM 455.00** (Nasi ayam/lauk 70 pek @ RM6.50) |
 | **Bahan Aktiviti 7 Meja** | **RM 45** (25 Mahjong, 25 Marker, Sticky) | **RM 70** (Pek lengkap 7 meja + gunting/gam) | **RM 56** (Mahjong, marker, sticky, tape) |
-| **Goodies Bag (47 Pelajar)** | *Tiada* | **RM 117.50** (Beg kraf, stylus, mini note, snek) | *Tiada* |
+| **Goodies Bag (46 Pelajar)** | *Tiada* | **RM 115.00** (Beg kraf, stylus, mini note, snek) | *Tiada* |
 | **Hadiah Kuiz Showdown** | **RM 50** (5 Token pemenang pantas) | **RM 75** (5 Hadiah berimpak: Flash Drive, LED, dll) | **RM 75** (5 Hadiah berimpak) |
 | **Plak Penghargaan ASDAF** | **RM 35** (Plak akrilik rasmi) | **RM 45** (Plak rasmi pengetua ASDAF) | **RM 45** (Plak rasmi pengetua ASDAF) |
 | **Sijil & Edaran Tak Hadir** | *E-Sijil percuma* | **RM 27.50** (55 Keping emboss berkualiti) | **RM 16.50** (55 Keping sijil rasmi) |
-| **Kontingensi, Beg Sampah & AV** | **RM 18** | **RM 7.50** | **RM 4.00** |
+| **Kontingensi, Beg Sampah & AV** | **RM 20** | **RM 10.00** | **RM 12.50** |
 | **JUMLAH KESELURUHAN** | **RM 290.00** | **RM 520.00** | **RM 800.00** |
 | **BAKI DANA SIMPANAN** | **+ RM 510.00** *(Simpanan)* | **+ RM 280.00** *(Simpanan)* | **RM 0.00** *(100% Dimanfaatkan)* |
 
 > 💡 **Syor Pasukan:**
-> - Jika ASDAF sediakan makan tengah hari dari dewan asrama: **Pilih Varian 2 (RM 520)** — Ada pek goodies untuk semua 47 pelajar, hadiah kuiz berkualiti, sijil rasmi emboss, dan simpanan tunai selamat RM 280.
-> - Jika ASDAF perlukan penyediaan makan tengah hari: **Pilih Varian 3 (RM 800)** — Menaja sepenuhnya sarapan dan makan tengah hari 71 orang (termasuk 5 pek lebihan).
+> - Jika ASDAF sediakan makan tengah hari dari dewan asrama: **Pilih Varian 2 (RM 520)** — Ada pek goodies untuk semua 46 pelajar, hadiah kuiz berkualiti, sijil rasmi emboss, dan simpanan tunai selamat RM 280.
+> - Jika ASDAF perlukan penyediaan makan tengah hari: **Pilih Varian 3 (RM 800)** — Menaja sepenuhnya sarapan dan makan tengah hari 70 orang (termasuk 5 pek lebihan).
 
 ---
 
@@ -262,25 +262,25 @@ Bagi memastikan pelajar yang tidak dapat hadir (sakit, kuarantin, urusan keluarg
 
 ---
 
-## 10. Logistik Makanan: Roti & Air Kotak (71 Pax)
+## 10. Logistik Makanan: Roti & Air Kotak (70 Pax)
 
-- **Formula Pax:** 66 Orang Pax (47 Murid + 6 Staf ASDAF + 13 Kru UTM) + **5 Pax Lebihan / Penampan** = **71 Pax Keseluruhan**.
+- **Formula Pax:** 65 Orang Pax (46 Murid + 6 Staf ASDAF + 13 Kru UTM) + **5 Pax Lebihan / Penampan** = **70 Pax Keseluruhan**.
 - **Menu Asas:** Roti Bun Manis/Inti Berkualiti + Air Kotak 250ml.
 - **Perbandingan Sumber Makanan:**
   - **Pilihan Utama (Kantin Sekolah / Asrama ASDAF):**  
     *Kelebihan:* Makanan sampai segar/panas, menyokong peniaga premis asrama, waktu hidangan fleksibel jam 10:20 AM, tiada risiko tersangkut kesesakan jalan raya.  
-    *Anggaran Kos:* RM 2.50 – RM 3.00/pax (Jumlah: RM 177.50 – RM 213.00).  
+    *Anggaran Kos:* RM 2.50 – RM 3.00/pax (Jumlah: RM 175.00 – RM 210.00).  
     *Tindakan:* AJK Jamuan menghubungi pengurusan ASDAF 3 hari sebelum program.
   - **Pilihan Alternatif (Pembekal Luar / Bakeri Borong):**  
     *Kelebihan:* Jenama roti terjamin (Gardenia/Mighty White) & air kotak berjenama (Dutch Lady/Yeo's), jangka hayat lebih tahan lama, boleh dibeli awal di pasar raya borong (Mydin/NSK).  
-    *Anggaran Kos:* RM 2.30 – RM 2.60/pax (Jumlah: RM 163.30 – RM 184.60).  
+    *Anggaran Kos:* RM 2.30 – RM 2.60/pax (Jumlah: RM 161.00 – RM 182.00).  
     *Tindakan:* AJK Logistik membeli pada hari H-1 dan mengangkut ke dewan pada jam 08:15 AM.
 
 ---
 
-## 11. Perincian Goodies 47 Pelajar & 5 Hadiah Kuiz Showdown
+## 11. Perincian Goodies 46 Pelajar & 5 Hadiah Kuiz Showdown
 
-### A. Pek Goodies untuk Semua Pelajar (Minimum 47 Orang + 3 Simpanan = 50 Pek)
+### A. Pek Goodies untuk Semua Pelajar (Minimum 46 Orang + 4 Simpanan = 50 Pek)
 - **Bekas:** Beg Doorgift Kertas Kraf Mesra Alam / Non-Woven Kemas.
 - **Kandungan Setiap Pek:**
   1. *Pen Stylus Telefon Dwifungsi* (pen dakwat hitam + hujung sesentuh skrin).

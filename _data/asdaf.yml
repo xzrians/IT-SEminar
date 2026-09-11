@@ -19,10 +19,10 @@ demographics:
       count: 10
       profile: "Fasa penentuan aliran akademik/vokasional menengah atas."
     - form: "Tingkatan 4"
-      count: 15
+      count: 14
       profile: "Kumpulan terbesar; mula memikirkan hala tuju SPM & kerjaya."
     - form: "Tingkatan 5"
-      count: 5
+      count: 6
       profile: "Calon SPM; memerlukan pendedahan laluan kerjaya digital, biasiswa & universiti."
     - form: "PPKI (Pendidikan Khas)"
       count: 4

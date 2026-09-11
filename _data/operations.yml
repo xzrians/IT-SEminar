@@ -20,7 +20,7 @@ documentation_distribution:
     - name: "Kad Panduan Pantas Keselamatan Siber (Pocket Card / Bookmark)"
       format: "Kad Mini Laminasi Berwarna"
       desc: "Panduan tips kata laluan kebal, senarai semak pautan palsu, dan nombor hotline kecemasan siber kebangsaan (NSRC 997)."
-      recipient: "Semua 47 pelajar & edaran tambahan"
+      recipient: "Semua 46 pelajar & edaran tambahan"
       pic: "AJK Dokumentasi UTM"
 
     - name: "Sijil Penyertaan Bertulis Nama (Pek Khas)"
@@ -43,8 +43,8 @@ documentation_distribution:
 
 food_logistics:
   title: "Logistik Makanan: Roti & Air Kotak (Semua Pax + 5 Lebihan)"
-  formula: "66 Pax Asas (47 Pelajar + 6 Staf + 13 Pelajar UTM) + 5 Pax Penampan (Buffer) = 71 Pax Keseluruhan"
-  target_pax: 71
+  formula: "65 Pax Asas (46 Pelajar + 6 Staf + 13 Pelajar UTM) + 5 Pax Penampan (Buffer) = 70 Pax Keseluruhan"
+  target_pax: 70
   menu: "Roti Bun Manis / Inti Berkualiti + Air Kotak 250ml"
   options:
     - option_name: "Pilihan Utama: Tempahan Kantin Sekolah / Asrama ASDAF"
@@ -52,7 +52,7 @@ food_logistics:
       pros: "Makanan dijamin panas/segar, tiada isu kelewatan trafik, menyokong peniaga premis asrama, waktu hidang fleksibel tepat jam 10:00 AM."
       cons: "Perlu pengesahan menu 3 hari awal bersama pengusaha kantin."
       est_cost_per_pax: "RM 2.50 - RM 3.00"
-      total_est: "RM 177.50 - RM 213.00 (71 Pax)"
+      total_est: "RM 175.00 - RM 210.00 (70 Pax)"
       pic: "AJK Jamuan UTM berhubung terus dengan Pengurusan ASDAF"
 
     - option_name: "Pilihan Alternatif: Pembelian Runcit Luar / Bakeri Borong"
@@ -60,14 +60,14 @@ food_logistics:
       pros: "Pilihan jenama terjamin (Gardenia / Mighty White + Air Kotak Dutch Lady/Yeo's 250ml), jangka hayat luput lebih lama, sedia awal sebelum hari kejadian."
       cons: "Perlu ruang logistik pengangkutan dalam kereta kru UTM ke Bukit Persekutuan pagi acara."
       est_cost_per_pax: "RM 2.30 - RM 2.60 (Roti RM1.10-RM1.30 + Air Kotak RM1.20-RM1.30)"
-      total_est: "RM 163.30 - RM 184.60 (71 Pax)"
+      total_est: "RM 161.00 - RM 182.00 (70 Pax)"
       pic: "AJK Logistik UTM (Beli di pasar raya borong H-1)"
 
 goodies_and_prizes:
   title: "Pek Goodies Pelajar & Hadiah Kuiz Showdown"
   goodies_all_students:
-    target: "Sekurang-kurangnya 47 Pelajar ASDAF (+ 3 pek simpanan = 50 Pek)"
-    budget_allocation: "RM 2.50 per pek (Total: RM 117.50 - RM 125.00)"
+    target: "Sekurang-kurangnya 46 Pelajar ASDAF (+ 4 pek simpanan = 50 Pek)"
+    budget_allocation: "RM 2.50 per pek (Total: RM 115.00 - RM 125.00)"
     bag_type: "Beg Doorgift Mesra Alam / Kertas Kraf Kemas"
     contents:
       - item: "Pen Gel Tech / Stylus Pen"
