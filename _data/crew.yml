@@ -7,10 +7,12 @@ central_leads:
     tag_color: "cyan"
 
   - id: 2
-    role: "Penceramah AI & Lead Trainer"
+    name: "Muhamad Arif bin Johar"
+    title: "DevOps Engineer & UTM Representative"
+    role: "Penceramah Utama (Main Speaker) & Lead Trainer AI"
     category: "Modul & Kandungan"
-    badge: "Speaker"
-    scope: "Menyampaikan Modul 1 & Modul 2, demonstrasi AI di layar besar, dan memimpin dinamika soalan kuiz."
+    badge: "Main Speaker"
+    scope: "Menyampaikan Pengenalan AI, Keselamatan Siber & Pembelajaran Interaktif. Demonstrasi langsung AI dan bimbingan modul."
     tag_color: "purple"
 
   - id: 3

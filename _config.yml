@@ -1,19 +1,29 @@
 # NextGen Celik Digital 2026 | Jekyll Configuration for GitHub Pages
-title: "NextGen Celik Digital 2026"
-tagline: "Seminar & Bengkel Celik IT Remaja Komuniti"
-description: "Hab Pengurusan Bengkel NextGen Celik Digital: UTM x ASDAF 2026 (47 Pelajar, 13 Kru UTM, Bajet RM 800)"
+title: "Bengkel Santai NextGen Celik Digital 2026"
+tagline: "Literasi Teknologi & AI • UTM KL x ASDAF PERKIM"
+description: "Bengkel Santai NextGen Celik Digital 2026: Literasi Teknologi & AI. Empowering students with practical AI knowledge, digital literacy and cyber-safety skills through fun, interactive learning (UTM KL x ASDAF PERKIM)."
 url: "https://xzrians.github.io"
 baseurl: "/seminar"
 
-# Event Metadata
+# Event Metadata (Based on Official Poster & Backdrop 2026)
 event:
-  title: "NextGen Celik Digital 2026"
-  theme: "Seminar & Bengkel Celik IT Remaja Komuniti"
-  host: "Fakulti Komputeran, Universiti Teknologi Malaysia (UTM)"
-  partner: "Asrama Darul Falah (ASDAF PERKIM), Bukit Persekutuan, KL"
-  students_count: 47
+  title: "Bengkel Santai NextGen Celik Digital 2026"
+  theme: "Literasi Teknologi & AI"
+  slogan: "Empowering students with practical AI knowledge, digital literacy and cyber-safety skills through fun, interactive learning."
+  quote: "Ilmu Teknologi Masa Depan"
+  motto_top: "Technology • People • A Brighter Tomorrow"
+  motto_bottom: "Learn | Connect | Grow — A Safer, Smarter Tomorrow"
+  date: "Sabtu, 12 September 2026"
+  time: "8:30 AM – 12:00 PM"
+  venue: "Asrama Darul Falah (ASDAF) PERKIM, Bukit Persekutuan, Kuala Lumpur"
+  host: "Universiti Teknologi Malaysia (UTM KL)"
+  partner: "Asrama Darul Falah (ASDAF) PERKIM, Bukit Persekutuan, Kuala Lumpur"
+  speaker_name: "Muhamad Arif bin Johar"
+  speaker_role: "DevOps Engineer"
+  speaker_affiliation: "UTM Representative"
+  students_count: 46
   students_male: 18
-  students_female: 29
+  students_female: 28
   crew_count: 13
   staff_count: 6
   tables_count: 7

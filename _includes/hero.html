@@ -1,29 +1,124 @@
-<!-- Hero Header Section -->
+<!-- Hero Header Section (Inspired by Official Backdrop & Poster 2026) -->
 <header class="hero-section">
   <div class="container hero-content">
+    
+    <!-- Top Motto Pill -->
     <div class="badge-pill">
       <span class="pulsing-dot"></span>
-      <span>Seminar Separuh Hari (08:30 – 12:00 Tengah Hari) &bull; Komuniti ASDAF</span>
+      <span>"{{ site.event.quote }}" &bull; {{ site.event.motto_top }}</span>
     </div>
     
+    <!-- Category & Main Title -->
+    <div class="hero-pretitle">BENGKEL SANTAI</div>
     <h1 class="hero-title">
-      NextGen Celik Digital <span class="gradient-text">2026</span>
+      <span style="color: #ffffff;">NEXTGEN</span> <span class="gradient-text">CELIK DIGITAL 2026</span>
     </h1>
+    <div class="hero-subtag">{{ site.event.theme }}</div>
     
+    <!-- Organizer Partnership Pill -->
+    <div class="hero-partner-pill">
+      <span class="pill-utm">UTM KL</span> &times; <span class="pill-asdaf">ASDAF PERKIM</span>
+    </div>
+    
+    <!-- Mission Statement from Poster -->
     <p class="hero-tagline">
-      Bengkel Santai Literasi Teknologi &amp; AI: Kolaborasi Mahasiswa Fakulti Komputeran Universiti Teknologi Malaysia (UTM) bersama 47 Remaja Asrama Darul Falah (ASDAF PERKIM), Bukit Persekutuan Kuala Lumpur.
+      "{{ site.event.slogan }}"
+    </p>
+    <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 740px; margin: 0 auto 24px auto;">
+      Kolaborasi berimpak tinggi antara Fakulti Komputeran Universiti Teknologi Malaysia (UTM) bersama 46 Remaja Asrama Darul Falah (ASDAF PERKIM), Bukit Persekutuan Kuala Lumpur.
     </p>
 
+    <!-- Event Quick Details Strip (From Backdrop) -->
+    <div class="hero-event-strip">
+      <div class="strip-item">
+        <div class="strip-icon">
+          <i data-lucide="calendar"></i>
+        </div>
+        <div class="strip-content">
+          <div class="strip-label">Tarikh</div>
+          <div class="strip-val">{{ site.event.date }}</div>
+        </div>
+      </div>
+      <div class="strip-item">
+        <div class="strip-icon">
+          <i data-lucide="clock"></i>
+        </div>
+        <div class="strip-content">
+          <div class="strip-label">Masa</div>
+          <div class="strip-val">{{ site.event.time }}</div>
+        </div>
+      </div>
+      <div class="strip-item">
+        <div class="strip-icon">
+          <i data-lucide="map-pin"></i>
+        </div>
+        <div class="strip-content">
+          <div class="strip-label">Lokasi</div>
+          <div class="strip-val">ASDAF Bukit Persekutuan, KL</div>
+        </div>
+      </div>
+      <div class="strip-item">
+        <div class="strip-icon">
+          <i data-lucide="users"></i>
+        </div>
+        <div class="strip-content">
+          <div class="strip-label">Sasaran</div>
+          <div class="strip-val">{{ site.event.students_count }} Pelajar ASDAF</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Speaker Showcase Card -->
+    <div class="speaker-hero-card">
+      <div class="speaker-avatar-wrap">
+        <div class="speaker-avatar-icon">
+          <i data-lucide="mic" style="width: 26px; height: 26px;"></i>
+        </div>
+      </div>
+      <div>
+        <span class="speaker-badge-gold">MAIN SPEAKER</span>
+        <div class="speaker-name">{{ site.event.speaker_name }}</div>
+        <div class="speaker-role">{{ site.event.speaker_role }} &bull; {{ site.event.speaker_affiliation }}</div>
+      </div>
+    </div>
+
+    <!-- Programme Highlights (3 Pillars from Posters) -->
+    <div class="highlights-header">
+      <div class="highlights-tag">PROGRAMME HIGHLIGHTS</div>
+    </div>
+    <div class="highlights-grid">
+      {% for highlight in site.data.curriculum.programme_highlights %}
+      <div class="highlight-card">
+        <div class="highlight-icon-circle">
+          <i data-lucide="{{ highlight.icon }}" style="width: 24px; height: 24px;"></i>
+        </div>
+        <div class="highlight-title">{{ highlight.title }}</div>
+        <div class="highlight-sub">{{ highlight.subtitle }}</div>
+        <ul class="highlight-list">
+          {% for pt in highlight.points %}
+          <li>{{ pt }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Call to Actions -->
     <div class="hero-cta-group">
-      <a href="#jadual" class="btn btn-primary">
-        <i data-lucide="calendar"></i> Jadual Minit-ke-Minit
-      </a>
-      <a href="#bajet" class="btn btn-secondary">
-        <i data-lucide="wallet"></i> 3 Varian Bajet (RM800)
-      </a>
-      <a href="#kuiz" class="btn btn-ghost">
-        <i data-lucide="zap"></i> Kuiz Sifar Gajet
+      <button type="button" onclick="switchHub('timeline')" class="btn btn-primary">
+        <i data-lucide="calendar-clock"></i> Jadual &amp; Modul Slaid
+      </button>
+      <button type="button" onclick="switchHub('people')" class="btn btn-secondary">
+        <i data-lucide="users"></i> 7 Meja &amp; 13 Kru UTM
+      </button>
+      <button type="button" onclick="switchHub('ops')" class="btn btn-secondary">
+        <i data-lucide="clipboard-check"></i> Borang Survey &amp; Ops
+      </button>
+      <a href="{{ '/survey-print/' | relative_url }}" target="_blank" class="btn btn-outline" style="border-color: var(--accent-gold); color: var(--accent-gold-light);">
+        <i data-lucide="printer"></i> Cetak Borang PDF
       </a>
     </div>
+
   </div>
 </header>
+

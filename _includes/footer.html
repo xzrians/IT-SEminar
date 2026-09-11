@@ -4,14 +4,20 @@
     <div class="footer-content">
       <div class="footer-brand">
         <h3>{{ site.event.title }}</h3>
-        <p>
-          {{ site.event.theme }} &bull; Anjuran {{ site.event.host }} bersama {{ site.event.partner }}.
+        <p style="color: var(--accent-gold); font-weight: 600; margin-bottom: 4px;">
+          {{ site.event.theme }} &bull; {{ site.event.motto_top }}
         </p>
+        <p style="font-size: 0.82rem; color: var(--text-muted);">
+          Anjuran {{ site.event.host }} bersama {{ site.event.partner }}.
+        </p>
+        <div style="font-size: 0.76rem; font-weight: 700; letter-spacing: 1px; color: var(--accent-gold-light); margin-top: 8px; text-transform: uppercase;">
+          {{ site.event.motto_bottom }}
+        </div>
       </div>
       <div class="footer-meta">
         <div>&copy; 2026 Fakulti Komputeran, Universiti Teknologi Malaysia (UTM)</div>
         <div style="margin-top: 6px; display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap;">
-          <a href="https://github.com/xzrians/seminar/blob/main/GUIDELINE.md" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-size: 0.82rem;">
+          <a href="https://github.com/xzrians/seminar/blob/main/GUIDELINE.md" target="_blank" style="color: var(--accent-gold); text-decoration: none; font-size: 0.82rem;">
             <i data-lucide="book-open" style="width: 14px; height: 14px; display: inline;"></i> Panduan Kemas Kini Wiki (AI Guide)
           </a>
           <span style="color: var(--text-muted);">&bull;</span>

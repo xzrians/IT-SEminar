@@ -1,4 +1,34 @@
-# NextGen Celik Digital 2026 | UTM x ASDAF PERKIM
+# NextGen Celik Digital 2026 | UTM KL x ASDAF PERKIM
+
+programme_highlights:
+  - id: "ai-tech"
+    title: "AI & Technology"
+    subtitle: "Pendedahan Asas & Demonstrasi Langsung"
+    icon: "cpu"
+    color: "maroon"
+    points:
+      - "Introduction to AI"
+      - "AI for Study & Creativity"
+      - "Live AI Demonstrations"
+  - id: "cyber-safety"
+    title: "Cyber Safety"
+    subtitle: "Keselamatan Siber & Privasi Akaun"
+    icon: "shield-check"
+    color: "navy"
+    points:
+      - "Scam & Phishing Awareness"
+      - "Password & Digital Security"
+      - "Digital Footprint & Responsible Social Media"
+  - id: "interactive-learning"
+    title: "Interactive Learning"
+    subtitle: "Aktiviti Interaktif & Gamifikasi Meja"
+    icon: "users"
+    color: "gold"
+    points:
+      - "Technology Quiz"
+      - "Tech Charades"
+      - "AI Innovation Challenge"
+      - "Group Pitching & Awards"
 
 modules:
   - id: 1
