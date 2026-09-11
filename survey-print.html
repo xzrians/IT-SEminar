@@ -1,0 +1,686 @@
+---
+layout: null
+title: "Cetak Borang Pre & Post Survey | NextGen Celik Digital 2026"
+permalink: /survey-print/
+---
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.data.survey.title }} | {{ site.title }}</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --primary: #4338ca;
+      --primary-light: #e0e7ff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-color: #cbd5e1;
+      --border-dark: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #090d16;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Screen UI Controls (Hidden on Print) */
+    .screen-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: #f8fafc;
+    }
+
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 7px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      transition: all 0.2s ease;
+    }
+
+    .btn-back:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+
+    .toolbar-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+
+    .toolbar-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(0, 242, 254, 0.15);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      color: #00f2fe;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+    }
+
+    .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-action-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+      color: #07090e;
+      border: none;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 9px 20px;
+      border-radius: 9999px;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(0, 242, 254, 0.4);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-action-print:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 22px rgba(0, 242, 254, 0.6);
+    }
+
+    .tips-callout {
+      background: #131b2e;
+      border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+      padding: 8px 20px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #94a3b8;
+    }
+
+    .tips-callout strong {
+      color: #38bdf8;
+    }
+
+    /* Print Canvas Screen Wrapper */
+    .preview-container {
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px 50px 16px;
+    }
+
+    /* The exact A4 Paper Sheet */
+    .a4-page {
+      width: 210mm;
+      min-height: 297mm;
+      max-height: 297mm;
+      height: 297mm;
+      background: #ffffff;
+      color: #0f172a;
+      padding: 7mm 11mm;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Survey Section (Half Sheet) */
+    .survey-half {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2mm 0;
+    }
+
+    /* Section Header */
+    .header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 4px;
+      margin-bottom: 4px;
+    }
+
+    .header-brand h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11pt;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .header-brand p {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: #475569;
+      line-height: 1.2;
+    }
+
+    .section-badge-box {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .section-badge-tag {
+      display: inline-block;
+      background: #0f172a;
+      color: #ffffff;
+      font-size: 8pt;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .section-timing {
+      font-size: 6.8pt;
+      color: #475569;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* Student Meta Details Strip */
+    .meta-fields-strip {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.2fr;
+      gap: 10px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 3px;
+      padding: 3.5px 8px;
+      margin-bottom: 4px;
+      font-size: 7.5pt;
+    }
+
+    .meta-field {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+
+    .meta-field label {
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .meta-field .meta-line {
+      flex: 1;
+      border-bottom: 1px dotted #64748b;
+      min-width: 40px;
+      height: 12px;
+    }
+
+    /* Instructions & Scale Reference */
+    .scale-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f1f5f9;
+      border-left: 3px solid #0f172a;
+      padding: 2.5px 7px;
+      margin-bottom: 4px;
+      font-size: 7pt;
+      line-height: 1.2;
+    }
+
+    .scale-instruction {
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .scale-legend {
+      display: flex;
+      gap: 8px;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .scale-legend span {
+      white-space: nowrap;
+    }
+
+    /* Survey Questions Table */
+    .survey-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.6pt;
+      margin-bottom: 3px;
+    }
+
+    .survey-table th, 
+    .survey-table td {
+      border: 1px solid #94a3b8;
+      padding: 3px 5px;
+      vertical-align: middle;
+    }
+
+    .survey-table th {
+      background: #e2e8f0;
+      font-weight: 800;
+      color: #0f172a;
+      text-align: center;
+      font-size: 7pt;
+    }
+
+    .survey-table th.col-q {
+      text-align: left;
+      padding-left: 6px;
+    }
+
+    .survey-table td.col-num {
+      text-align: center;
+      font-weight: 700;
+      width: 4%;
+      background: #f8fafc;
+    }
+
+    .survey-table td.col-statement {
+      width: 61%;
+      font-weight: 500;
+      color: #0f172a;
+      line-height: 1.22;
+    }
+
+    .survey-table td.col-rating {
+      width: 7%;
+      text-align: center;
+    }
+
+    .tick-box {
+      width: 12px;
+      height: 12px;
+      border: 1.2px solid #334155;
+      display: inline-block;
+      border-radius: 2px;
+      margin: 0 auto;
+      vertical-align: middle;
+    }
+
+    /* Open Question Strip */
+    .open-question-wrap {
+      margin-top: 2px;
+      font-size: 7.3pt;
+    }
+
+    .open-prompt {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 1px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .open-line {
+      width: 100%;
+      border-bottom: 1px dotted #64748b;
+      height: 12px;
+      margin-top: 1px;
+    }
+
+    /* Center Dividing Line (Cut / Fold Line) */
+    .divider-cut {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: 3.5mm 0;
+      padding: 2px 0;
+      user-select: none;
+    }
+
+    .divider-cut::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      border-top: 1.5px dashed #475569;
+      z-index: 1;
+    }
+
+    .divider-label {
+      position: relative;
+      z-index: 2;
+      background: #ffffff;
+      padding: 0 10px;
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #475569;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ==========================================================================
+       Print Media Query - Strict 1 Single Page A4 Guarantee
+       ========================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 6mm 8mm;
+    }
+
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .preview-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+
+      .a4-page {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 284mm !important;
+        max-height: 284mm !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+        overflow: hidden !important;
+      }
+
+      .survey-table th {
+        background: #f1f5f9 !important;
+        color: #000000 !important;
+      }
+
+      .meta-fields-strip {
+        background: #f8fafc !important;
+      }
+
+      .scale-bar {
+        background: #f1f5f9 !important;
+      }
+
+      .section-badge-tag {
+        background: #000000 !important;
+        color: #ffffff !important;
+      }
+
+      .divider-label {
+        background: #ffffff !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Floating Toolbar (Hidden during Print) -->
+  <header class="screen-toolbar no-print">
+    <div class="toolbar-left">
+      <a href="{{ '/' | relative_url }}#ops" class="btn-back">
+        <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i>
+        <span>Kembali ke Hab Ops</span>
+      </a>
+      <div>
+        <div class="toolbar-title">{{ site.data.survey.title }}</div>
+      </div>
+      <span class="toolbar-badge">
+        <i data-lucide="file-check-2" style="width: 12px; height: 12px;"></i>
+        1 Helaian A4 (Top & Bottom)
+      </span>
+    </div>
+
+    <div class="toolbar-right">
+      <button onclick="window.print()" class="btn-action-print" title="Cetak atau simpan borang ini sebagai fail PDF">
+        <i data-lucide="printer" style="width: 18px; height: 18px;"></i>
+        <span>Cetak / Simpan PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Screen Helper Tip -->
+  <div class="tips-callout no-print">
+    💡 <strong>Tip Cetakan:</strong> Dalam tetingkap cetakan browser, pilih <strong>Destination: Save as PDF</strong> atau pencetak anda. Tetapkan <strong>Paper size: A4</strong>, <strong>Layout: Portrait</strong>, dan <strong>Margins: Default / Minimum</strong>. Slaid Pre & Post dijamin muat tepat dalam 1 kertas tunggal.
+  </div>
+
+  <!-- Sheet Canvas Wrapper -->
+  <div class="preview-container">
+    <div class="a4-page" id="printableSheet">
+
+      <!-- ======================================================================
+           SEPARUH ATAS: PRE-SURVEY (SEBELUM PROGRAM)
+           ====================================================================== -->
+      <section class="survey-half survey-pre">
+        <!-- Header -->
+        <div class="header-row">
+          <div class="header-brand">
+            <h1>{{ site.data.survey.program }}</h1>
+            <p>{{ site.data.survey.pre.title }} &bull; Borang Penilaian Tahap Pengetahuan Pelajar</p>
+          </div>
+          <div class="section-badge-box">
+            <span class="section-badge-tag">{{ site.data.survey.pre.code }}</span>
+            <div class="section-timing">{{ site.data.survey.pre.timing }}</div>
+          </div>
+        </div>
+
+        <!-- Student Meta Strip -->
+        <div class="meta-fields-strip">
+          {% for mf in site.data.survey.meta_fields %}
+          <div class="meta-field">
+            <label>{{ mf.label }}:</label>
+            <div class="meta-line"></div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Scale & Instruction Strip -->
+        <div class="scale-bar">
+          <div class="scale-instruction">{{ site.data.survey.pre.instruction }}</div>
+          <div class="scale-legend">
+            {% for sc in site.data.survey.scale %}
+            <span><strong>{{ sc.value }}</strong>={{ sc.short }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Question Table -->
+        <table class="survey-table">
+          <thead>
+            <tr>
+              <th class="col-num">Bil</th>
+              <th class="col-q">Pernyataan Soalan (Sebelum Sesi Bermula)</th>
+              {% for sc in site.data.survey.scale %}
+              <th class="col-rating" title="{{ sc.label }}">
+                <div>{{ sc.value }}</div>
+                <div style="font-size: 5.5pt; font-weight: normal;">{{ sc.short }}</div>
+              </th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for q in site.data.survey.pre.questions %}
+            <tr>
+              <td class="col-num">{{ q.id }}</td>
+              <td class="col-statement">{{ q.text }}</td>
+              {% for sc in site.data.survey.scale %}
+              <td class="col-rating">
+                <div class="tick-box"></div>
+              </td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <!-- Open Ended Question -->
+        <div class="open-question-wrap">
+          <div class="open-prompt">
+            <span><strong>Soalan Ringkas:</strong> {{ site.data.survey.pre.open_prompt }}</span>
+          </div>
+          <div class="open-line"></div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           GARISAN PEMISAH / POTONG (CUT OR FOLD LINE)
+           ====================================================================== -->
+      <div class="divider-cut" title="Potong atau lipat dua helaian ini">
+        <span class="divider-label">
+          ✂ &nbsp; {{ site.data.survey.divider_text }} &nbsp; ✂
+        </span>
+      </div>
+
+      <!-- ======================================================================
+           SEPARUH BAWAH: POST-SURVEY (SELEPAS PROGRAM)
+           ====================================================================== -->
+      <section class="survey-half survey-post">
+        <!-- Header -->
+        <div class="header-row">
+          <div class="header-brand">
+            <h1>{{ site.data.survey.program }}</h1>
+            <p>{{ site.data.survey.post.title }} &bull; Penilaian Refleksi & Impak Sesi</p>
+          </div>
+          <div class="section-badge-box">
+            <span class="section-badge-tag">{{ site.data.survey.post.code }}</span>
+            <div class="section-timing">{{ site.data.survey.post.timing }}</div>
+          </div>
+        </div>
+
+        <!-- Student Meta Strip -->
+        <div class="meta-fields-strip">
+          {% for mf in site.data.survey.meta_fields %}
+          <div class="meta-field">
+            <label>{{ mf.label }}:</label>
+            <div class="meta-line"></div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Scale & Instruction Strip -->
+        <div class="scale-bar">
+          <div class="scale-instruction">{{ site.data.survey.post.instruction }}</div>
+          <div class="scale-legend">
+            {% for sc in site.data.survey.scale %}
+            <span><strong>{{ sc.value }}</strong>={{ sc.short }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Question Table -->
+        <table class="survey-table">
+          <thead>
+            <tr>
+              <th class="col-num">Bil</th>
+              <th class="col-q">Pernyataan Soalan (Selepas Program Selesai)</th>
+              {% for sc in site.data.survey.scale %}
+              <th class="col-rating" title="{{ sc.label }}">
+                <div>{{ sc.value }}</div>
+                <div style="font-size: 5.5pt; font-weight: normal;">{{ sc.short }}</div>
+              </th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for q in site.data.survey.post.questions %}
+            <tr>
+              <td class="col-num">{{ q.id }}</td>
+              <td class="col-statement">{{ q.text }}</td>
+              {% for sc in site.data.survey.scale %}
+              <td class="col-rating">
+                <div class="tick-box"></div>
+              </td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <!-- Open Ended Question -->
+        <div class="open-question-wrap">
+          <div class="open-prompt">
+            <span><strong>Refleksi & Penambahbaikan:</strong> {{ site.data.survey.post.open_prompt }}</span>
+          </div>
+          <div class="open-line"></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+
+    // Check for autoprint parameter in URL
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('autoprint') === '1') {
+        setTimeout(() => {
+          window.print();
+        }, 400);
+      }
+    });
+  </script>
+</body>
+</html>

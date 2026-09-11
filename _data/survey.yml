@@ -1,30 +1,70 @@
-title: "Borang Survey Pre & Post (Untuk Cetakan)"
-subtitle: "1 helai dua muka: muka depan pre-survey, muka belakang post-survey."
-print_note: "Cetak dua muka (duplex), hitam putih, A4."
-program: "Seminar NextGen Celik Digital (UTM x ASDAF)"
+title: "Borang Soal Selidik Pre & Post (1 Helaian A4: Atas & Bawah)"
+subtitle: "1 Keping Kertas A4: Separuh Atas = Pre-Survey, Separuh Bawah = Post-Survey (Format Jimat Kertas & Mudah Edar)"
+print_note: "Cetak 1 muka (Single-sided), saiz A4, hitam putih. Boleh digunting atau dilipat di garisan tengah (✂)."
+program: "Seminar NextGen Celik Digital (UTM x ASDAF 2026)"
+target_pax: "46 Pelajar ASDAF (+ 4 simpanan = 50 keping A4)"
+
 scale:
-  - "1 = Sangat Tidak Setuju"
-  - "2 = Tidak Setuju"
-  - "3 = Neutral"
-  - "4 = Setuju"
-  - "5 = Sangat Setuju"
+  - value: 1
+    label: "Sangat Tidak Setuju"
+    short: "STS"
+  - value: 2
+    label: "Tidak Setuju"
+    short: "TS"
+  - value: 3
+    label: "Neutral"
+    short: "N"
+  - value: 4
+    label: "Setuju"
+    short: "S"
+  - value: 5
+    label: "Sangat Setuju"
+    short: "SS"
+
+meta_fields:
+  - label: "Nama / Kod Pelajar"
+    placeholder: "____________________________________"
+  - label: "No. Meja"
+    placeholder: "Meja 1 – 7"
+  - label: "Tingkatan"
+    placeholder: "T1 / T2 / T3 / T4 / T5 / PPKI"
 
 pre:
-  title: "Muka Depan: Pre-Survey (Sebelum Program)"
+  tag: "BAHAGIAN ATAS"
+  code: "PRE-SURVEY"
+  title: "Soal Selidik Pra-Program (Sebelum Seminar)"
+  timing: "Diisi sebelum sesi taklimat & pembentangan bermula (08:45 AM)"
+  instruction: "Tandakan (✓) pada satu nombor bagi setiap kenyataan mengikut tahap persetujuan anda:"
   questions:
-    - "Saya faham apa itu AI (Artificial Intelligence)."
-    - "Saya tahu cara kenal pasti scam / phishing dalam talian."
-    - "Saya tahu kepentingan jejak digital (digital footprint)."
-    - "Saya yakin menggunakan internet dengan lebih selamat."
-    - "Saya berminat untuk belajar tentang kerjaya digital/IT."
-  open_question: "Apa yang anda paling ingin belajar hari ini?"
+    - id: 1
+      text: "Saya faham apa itu AI (Kecerdasan Buatan) dan fungsinya dalam kehidupan harian."
+    - id: 2
+      text: "Saya tahu cara mengenal pasti scam, pancingan data (phishing), dan pautan palsu."
+    - id: 3
+      text: "Saya sedar apa itu jejak digital (digital footprint) dan kesannya terhadap masa depan."
+    - id: 4
+      text: "Saya berasa yakin menggunakan internet dan media sosial secara selamat."
+    - id: 5
+      text: "Saya berminat untuk meneroka bidang teknologi maklumat dan kerjaya digital."
+  open_prompt: "Apa yang anda paling harapkan atau ingin pelajari hari ini?"
+
+divider_text: "POTONG / LIPAT DI SINI (SELEPAS PRE-SURVEY DIKUMPUL / DILIPAT)"
 
 post:
-  title: "Muka Belakang: Post-Survey (Selepas Program)"
+  tag: "BAHAGIAN BAWAH"
+  code: "POST-SURVEY"
+  title: "Soal Selidik Pasca-Program (Selepas Seminar)"
+  timing: "Diisi selepas tamat semua modul sebelum jamuan makan & bersurai (12:45 PM)"
+  instruction: "Tandakan (✓) pada satu nombor bagi setiap kenyataan mengikut pengalaman anda hari ini:"
   questions:
-    - "Selepas program, saya lebih faham apa itu AI."
-    - "Selepas program, saya lebih tahu cara elak scam / phishing."
-    - "Saya lebih faham kesan jejak digital terhadap masa depan saya."
-    - "Saya lebih yakin untuk amalkan keselamatan siber asas."
-    - "Program ini membantu minat saya terhadap teknologi/kerjaya digital."
-  improve_question: "Apa yang boleh ditambah baik untuk program ini?"
+    - id: 1
+      text: "Selepas program ini, saya lebih faham cara AI berfungsi dan aplikasinya."
+    - id: 2
+      text: "Selepas program ini, saya lebih berwaspada dan tahu cara mengelak scam/phishing."
+    - id: 3
+      text: "Saya lebih prihatin untuk menjaga reputasi dan keselamatan jejak digital saya."
+    - id: 4
+      text: "Saya kini yakin untuk mengamalkan langkah keselamatan akaun & kata laluan kukuh."
+    - id: 5
+      text: "Program ini meningkatkan minat saya untuk mendalami kemahiran & kerjaya digital."
+  open_prompt: "Cadangan penambahbaikan / Perkara paling berharga yang anda pelajari hari ini:"

@@ -35,16 +35,10 @@ documentation_distribution:
       recipient: "Pengurusan & Warden ASDAF"
       pic: "Lead Teknikal UTM"
 
-    - name: "Borang Survey Pra Program (Pre)"
-      format: "Bercetak (1 Helaian A4 Ringkas)"
-      desc: "Soalan: (1) Saya tahu apa itu AI. (2) Saya tahu risiko scam/phishing. (3) Saya yakin bercakap tentang kerjaya digital. (4) Saya tahu cara lindungi akaun online. Skala 1-5 + 1 soalan terbuka: 'Apa yang saya mahu belajar hari ini?'."
-      recipient: "46 Pelajar ASDAF + simpanan cetakan"
-      pic: "AJK Dokumentasi UTM"
-
-    - name: "Borang Survey Pasca Program (Post)"
-      format: "Bercetak (1 Helaian A4 Ringkas)"
-      desc: "Soalan sama seperti borang pre untuk banding impak: (1) Faham AI. (2) Faham scam/phishing. (3) Yakin kerjaya digital. (4) Tahu lindungi akaun online. Skala 1-5 + 1 soalan terbuka: 'Perkara paling berguna yang saya belajar hari ini?'."
-      recipient: "46 Pelajar ASDAF + simpanan cetakan"
+    - name: "Borang Survey Gabungan Pre & Post (1 Helaian A4 Top & Bottom)"
+      format: "Bercetak 1 Muka (A4 Single-Sheet: Separuh Atas & Separuh Bawah)"
+      desc: "Format jimat kertas: Bahagian Atas = Pre-Survey (08:45 AM), Bahagian Bawah = Post-Survey (12:45 PM) dengan garisan potong/lipat tengah (✂). Mengukur impak pemahaman AI, celik scam, jejak digital, keselamatan siber, dan minat kerjaya (Skala 1-5 + soalan terbuka)."
+      recipient: "46 Pelajar ASDAF + 4 simpanan (Jumlah: 50 keping A4)"
       pic: "AJK Dokumentasi UTM"
 
 food_logistics:

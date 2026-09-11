@@ -7,45 +7,154 @@
       <p class="section-subtitle">{{ site.data.survey.subtitle }}</p>
     </div>
 
-    <div class="glass-card" style="margin-bottom: 20px;">
-      <div class="demo-pills" style="margin: 0;">
-        <span class="pill"><i data-lucide="file-text"></i> {{ site.data.survey.program }}</span>
-        <span class="pill highlight"><i data-lucide="printer"></i> {{ site.data.survey.print_note }}</span>
+    <!-- Metadata Banner & Direct Print CTA -->
+    <div class="glass-card" style="margin-bottom: 24px; padding: 22px;">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+        <div class="demo-pills" style="margin: 0;">
+          <span class="pill"><i data-lucide="file-text"></i> {{ site.data.survey.program }}</span>
+          <span class="pill highlight"><i data-lucide="printer"></i> {{ site.data.survey.print_note }}</span>
+          <span class="pill"><i data-lucide="users"></i> {{ site.data.survey.target_pax }}</span>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <a href="{{ '/survey-print/' | relative_url }}" target="_blank" class="btn-install-pwa" style="text-decoration: none; padding: 9px 18px; font-size: 0.88rem; background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); color: #07090e; font-weight: 700; box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);">
+            <i data-lucide="printer" style="width: 16px; height: 16px;"></i>
+            <span>Buka & Cetak PDF (1 Kertas A4)</span>
+          </a>
+          <a href="{{ '/survey-print/?autoprint=1' | relative_url }}" target="_blank" class="btn-update-prompt" style="text-decoration: none; padding: 8px 16px; font-size: 0.84rem;">
+            <i data-lucide="zap" style="width: 15px; height: 15px; color: var(--accent-cyan);"></i>
+            <span>Cetak Serta-Merta</span>
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="tables-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-      <div class="glass-card">
-        <h3 style="font-family: var(--font-heading); margin-bottom: 10px;">{{ site.data.survey.pre.title }}</h3>
-        <p style="margin-bottom: 8px; color: var(--text-secondary);"><strong>Skala Tick (✓):</strong></p>
-        <ul class="clean-list" style="margin-bottom: 14px;">
-          {% for s in site.data.survey.scale %}
-          <li><i data-lucide="check-circle-2" class="text-cyan"></i> <span>{{ s }}</span></li>
-          {% endfor %}
-        </ul>
-        <ol style="padding-left: 18px; color: var(--text-secondary); line-height: 1.7;">
-          {% for q in site.data.survey.pre.questions %}
-          <li>{{ q }}</li>
-          {% endfor %}
-        </ol>
-        <p style="margin-top: 12px; color: var(--text-secondary);"><strong>Soalan terbuka:</strong> {{ site.data.survey.pre.open_question }}</p>
+    <!-- Top & Bottom Single-Sheet Visual Preview -->
+    <div class="glass-card" style="padding: 28px; max-width: 900px; margin: 0 auto; border: 1px solid rgba(0, 242, 254, 0.25); background: rgba(13, 18, 31, 0.75);">
+      <div style="text-align: center; margin-bottom: 20px;">
+        <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; color: var(--accent-cyan); background: rgba(0, 242, 254, 0.1); padding: 4px 12px; border-radius: var(--radius-full); border: 1px solid rgba(0, 242, 254, 0.3);">
+          Pratonton Susunan Cetakan (Top & Bottom Single-Sheet)
+        </span>
       </div>
 
-      <div class="glass-card">
-        <h3 style="font-family: var(--font-heading); margin-bottom: 10px;">{{ site.data.survey.post.title }}</h3>
-        <p style="margin-bottom: 8px; color: var(--text-secondary);"><strong>Skala Tick (✓):</strong></p>
-        <ul class="clean-list" style="margin-bottom: 14px;">
-          {% for s in site.data.survey.scale %}
-          <li><i data-lucide="check-circle-2" class="text-emerald"></i> <span>{{ s }}</span></li>
+      <!-- SEPARUH ATAS: PRE-SURVEY -->
+      <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); border-radius: var(--radius-md); padding: 20px; margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; border-bottom: 1px solid var(--border-glass); padding-bottom: 10px;">
+          <div>
+            <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase;">{{ site.data.survey.pre.tag }}</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.15rem; margin: 2px 0;">{{ site.data.survey.pre.title }}</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);"><i data-lucide="clock" style="width: 13px; height: 13px; display: inline-block; vertical-align: middle;"></i> {{ site.data.survey.pre.timing }}</span>
+          </div>
+          <span class="pill" style="font-weight: 700; background: rgba(0, 242, 254, 0.15); color: #38bdf8;">{{ site.data.survey.pre.code }}</span>
+        </div>
+
+        <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 10px;">
+          <strong>Arahan:</strong> {{ site.data.survey.pre.instruction }}
+        </p>
+
+        <!-- Likert Scale Badges -->
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;">
+          {% for sc in site.data.survey.scale %}
+          <span style="font-size: 0.75rem; background: rgba(255, 255, 255, 0.06); padding: 3px 9px; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.08); color: var(--text-secondary);">
+            <strong style="color: #fff;">{{ sc.value }}</strong> = {{ sc.label }} ({{ sc.short }})
+          </span>
           {% endfor %}
-        </ul>
-        <ol style="padding-left: 18px; color: var(--text-secondary); line-height: 1.7;">
-          {% for q in site.data.survey.post.questions %}
-          <li>{{ q }}</li>
+        </div>
+
+        <!-- Question List Table Preview -->
+        <div style="overflow-x: auto; margin-bottom: 14px;">
+          <table class="cost-table" style="font-size: 0.85rem;">
+            <thead>
+              <tr>
+                <th style="width: 40px; text-align: center;">Bil</th>
+                <th>Pernyataan Pra-Program</th>
+                <th style="width: 120px; text-align: center;">Skala 1 – 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for q in site.data.survey.pre.questions %}
+              <tr>
+                <td style="text-align: center; font-weight: 700; color: var(--accent-cyan);">{{ q.id }}</td>
+                <td style="color: var(--text-primary);">{{ q.text }}</td>
+                <td style="text-align: center; color: var(--text-muted); font-size: 0.78rem;">[1] [2] [3] [4] [5]</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.02); padding: 10px 14px; border-radius: var(--radius-sm); border-left: 3px solid var(--accent-cyan); font-size: 0.85rem;">
+          <strong style="color: var(--accent-cyan);">Soalan Ringkas:</strong> {{ site.data.survey.pre.open_prompt }}
+        </div>
+      </div>
+
+      <!-- GARISAN PEMISAH POTONG / LIPAT -->
+      <div style="position: relative; text-align: center; margin: 28px 0; user-select: none;">
+        <div style="border-top: 2px dashed rgba(255, 255, 255, 0.2); position: absolute; top: 50%; left: 0; right: 0;"></div>
+        <span style="position: relative; z-index: 2; background: #0d121f; padding: 4px 16px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; color: var(--accent-amber); border: 1px solid rgba(245, 158, 11, 0.3);">
+          ✂ &nbsp; {{ site.data.survey.divider_text }} &nbsp; ✂
+        </span>
+      </div>
+
+      <!-- SEPARUH BAWAH: POST-SURVEY -->
+      <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-glass); border-radius: var(--radius-md); padding: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; border-bottom: 1px solid var(--border-glass); padding-bottom: 10px;">
+          <div>
+            <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-emerald); text-transform: uppercase;">{{ site.data.survey.post.tag }}</span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.15rem; margin: 2px 0;">{{ site.data.survey.post.title }}</h3>
+            <span style="font-size: 0.8rem; color: var(--text-muted);"><i data-lucide="clock" style="width: 13px; height: 13px; display: inline-block; vertical-align: middle;"></i> {{ site.data.survey.post.timing }}</span>
+          </div>
+          <span class="pill" style="font-weight: 700; background: rgba(16, 185, 129, 0.15); color: #6ee7b7;">{{ site.data.survey.post.code }}</span>
+        </div>
+
+        <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 10px;">
+          <strong>Arahan:</strong> {{ site.data.survey.post.instruction }}
+        </p>
+
+        <!-- Likert Scale Badges -->
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;">
+          {% for sc in site.data.survey.scale %}
+          <span style="font-size: 0.75rem; background: rgba(255, 255, 255, 0.06); padding: 3px 9px; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.08); color: var(--text-secondary);">
+            <strong style="color: #fff;">{{ sc.value }}</strong> = {{ sc.label }} ({{ sc.short }})
+          </span>
           {% endfor %}
-        </ol>
-        <p style="margin-top: 12px; color: var(--text-secondary);"><strong>Penambahbaikan:</strong> {{ site.data.survey.post.improve_question }}</p>
+        </div>
+
+        <!-- Question List Table Preview -->
+        <div style="overflow-x: auto; margin-bottom: 14px;">
+          <table class="cost-table" style="font-size: 0.85rem;">
+            <thead>
+              <tr>
+                <th style="width: 40px; text-align: center;">Bil</th>
+                <th>Pernyataan Pasca-Program</th>
+                <th style="width: 120px; text-align: center;">Skala 1 – 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for q in site.data.survey.post.questions %}
+              <tr>
+                <td style="text-align: center; font-weight: 700; color: var(--accent-emerald);">{{ q.id }}</td>
+                <td style="color: var(--text-primary);">{{ q.text }}</td>
+                <td style="text-align: center; color: var(--text-muted); font-size: 0.78rem;">[1] [2] [3] [4] [5]</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.02); padding: 10px 14px; border-radius: var(--radius-sm); border-left: 3px solid var(--accent-emerald); font-size: 0.85rem;">
+          <strong style="color: var(--accent-emerald);">Refleksi & Penambahbaikan:</strong> {{ site.data.survey.post.open_prompt }}
+        </div>
+      </div>
+
+      <!-- Bottom Print Footer Button -->
+      <div style="text-align: center; margin-top: 24px;">
+        <a href="{{ '/survey-print/' | relative_url }}" target="_blank" class="btn-install-pwa" style="text-decoration: none; padding: 10px 24px; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px;">
+          <i data-lucide="printer"></i>
+          <span>Buka Paparan Cetak A4 Rasmi</span>
+        </a>
       </div>
     </div>
   </div>
 </section>
+

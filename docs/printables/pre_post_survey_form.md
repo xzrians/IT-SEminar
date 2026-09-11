@@ -1,76 +1,54 @@
-# BORANG SURVEY RINGKAS (CETAK 1 HELAIAN DUA MUKA)
+# BORANG SOAL SELIDIK RINGKAS (1 HELAIAN A4: ATAS & BAWAH)
 
-> **Arahan cetakan:** Muka depan = **PRE-SURVEY**, Muka belakang = **POST-SURVEY**.
-
----
-
-## MUKA DEPAN: PRE-SURVEY (SEBELUM PROGRAM)
-
-**Program:** Seminar NextGen Celik Digital (UTM x ASDAF)  
-**Tarikh:** ____________________  
-**Kumpulan/Meja:** ____________________
-
-**Arahan:** Tanda (✓) satu pilihan bagi setiap soalan.
-
-Skala:
-- [ ] 1 = Sangat Tidak Setuju
-- [ ] 2 = Tidak Setuju
-- [ ] 3 = Neutral
-- [ ] 4 = Setuju
-- [ ] 5 = Sangat Setuju
-
-### A. Pengetahuan Asas
-
-1) Saya faham apa itu AI (Artificial Intelligence).  
-[ ] 1  [ ] 2  [ ] 3  [ ] 4  [ ] 5
-
-2) Saya tahu cara kenal pasti scam / phishing dalam talian.  
-[ ] 1  [ ] 2  [ ] 3  [ ] 4  [ ] 5
-
-3) Saya tahu kepentingan jejak digital (digital footprint).  
-[ ] 1  [ ] 2  [ ] 3  [ ] 4  [ ] 5
-
-4) Saya yakin menggunakan internet dengan lebih selamat.  
-[ ] 1  [ ] 2  [ ] 3  [ ] 4  [ ] 5
-
-5) Saya berminat untuk belajar tentang kerjaya digital/IT.  
-[ ] 1  [ ] 2  [ ] 3  [ ] 4  [ ] 5
-
-**Soalan ringkas:**  
-Apa yang anda paling ingin belajar hari ini?  
-____________________________________________________________________  
-____________________________________________________________________
+> **Panduan Cetakan:** Cetak 1 muka (Single-sided) atas kertas saiz **A4**.  
+> **Susun Atur:** **Separuh Atas = PRE-SURVEY**, **Separuh Bawah = POST-SURVEY**.  
+> *Nota: Borang boleh dilipat dua atau dipotong pada garisan putus-putus (✂) untuk memudahkan agihan.*
 
 ---
 
-## MUKA BELAKANG: POST-SURVEY (SELEPAS PROGRAM)
+## 🔼 BAHAGIAN ATAS: PRE-SURVEY (SEBELUM PROGRAM)
+**Program:** Seminar NextGen Celik Digital (UTM x ASDAF 2026)  
+**Masa Edaran:** 08:45 AM (Sebelum Sesi Taklimat)  
+**Nama / Kod Pelajar:** ____________________________________ &nbsp;&nbsp;&nbsp;&nbsp; **No. Meja:** Meja [ &nbsp; ] &nbsp;&nbsp;&nbsp;&nbsp; **Tingkatan:** ______
 
-**Program:** Seminar NextGen Celik Digital (UTM x ASDAF)  
-**Tarikh:** ____________________  
-**Kumpulan/Meja:** ____________________
+**Skala Pilihan:** `[1] Sangat Tidak Setuju` | `[2] Tidak Setuju` | `[3] Neutral` | `[4] Setuju` | `[5] Sangat Setuju`
 
-**Arahan:** Tanda (✓) satu pilihan bagi setiap soalan.
+| Bil | Kenyataan / Pernyataan | 1 (STS) | 2 (TS) | 3 (N) | 4 (S) | 5 (SS) |
+|:---:|:---|:---:|:---:|:---:|:---:|:---:|
+| 1 | Saya faham apa itu AI (Kecerdasan Buatan) dan fungsinya dalam kehidupan harian. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
+| 2 | Saya tahu cara mengenal pasti scam, pancingan data (phishing), dan pautan palsu. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
+| 3 | Saya sedar apa itu jejak digital (digital footprint) dan kesannya terhadap masa depan. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
+| 4 | Saya berasa yakin menggunakan internet dan media sosial secara selamat. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
+| 5 | Saya berminat untuk meneroka bidang teknologi maklumat dan kerjaya digital. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
 
-### A. Refleksi Selepas Program
+**Soalan Terbuka:**  
+Apa yang anda paling harapkan atau ingin pelajari hari ini?  
+`____________________________________________________________________________________________________`
 
-1) Selepas program, saya lebih faham apa itu AI.  
-[ ] 1  [ ] 2  [ ] 3  [ ] 4  [ ] 5
+<br>
 
-2) Selepas program, saya lebih tahu cara elak scam / phishing.  
-[ ] 1  [ ] 2  [ ] 3  [ ] 4  [ ] 5
+------------------------------------------------------------------------------------------------------------------
+✂ - - - - - - - - - - - - - - - - - **POTONG / LIPAT DI SINI (SELEPAS PRE-SURVEY)** - - - - - - - - - - - - - - - - - ✂
+------------------------------------------------------------------------------------------------------------------
 
-3) Saya lebih faham kesan jejak digital terhadap masa depan saya.  
-[ ] 1  [ ] 2  [ ] 3  [ ] 4  [ ] 5
+<br>
 
-4) Saya lebih yakin untuk amalkan keselamatan siber asas.  
-[ ] 1  [ ] 2  [ ] 3  [ ] 4  [ ] 5
+## 🔽 BAHAGIAN BAWAH: POST-SURVEY (SELEPAS PROGRAM)
+**Program:** Seminar NextGen Celik Digital (UTM x ASDAF 2026)  
+**Masa Edaran:** 12:45 PM (Selepas Tamat Semua Sesi)  
+**Nama / Kod Pelajar:** ____________________________________ &nbsp;&nbsp;&nbsp;&nbsp; **No. Meja:** Meja [ &nbsp; ] &nbsp;&nbsp;&nbsp;&nbsp; **Tingkatan:** ______
 
-5) Program ini membantu minat saya terhadap teknologi/kerjaya digital.  
-[ ] 1  [ ] 2  [ ] 3  [ ] 4  [ ] 5
+**Skala Pilihan:** `[1] Sangat Tidak Setuju` | `[2] Tidak Setuju` | `[3] Neutral` | `[4] Setuju` | `[5] Sangat Setuju`
 
-### B. Penambahbaikan
+| Bil | Kenyataan / Pernyataan | 1 (STS) | 2 (TS) | 3 (N) | 4 (S) | 5 (SS) |
+|:---:|:---|:---:|:---:|:---:|:---:|:---:|
+| 1 | Selepas program ini, saya lebih faham cara AI berfungsi dan aplikasinya. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
+| 2 | Selepas program ini, saya lebih berwaspada dan tahu cara mengelak scam/phishing. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
+| 3 | Saya lebih prihatin untuk menjaga reputasi dan keselamatan jejak digital saya. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
+| 4 | Saya kini yakin untuk mengamalkan langkah keselamatan akaun & kata laluan kukuh. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
+| 5 | Program ini meningkatkan minat saya untuk mendalami kemahiran & kerjaya digital. | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] | [ &nbsp; ] |
 
-Apa yang boleh ditambah baik untuk program ini?  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________
+**Soalan Terbuka:**  
+Cadangan penambahbaikan / Perkara paling berharga yang anda pelajari hari ini:  
+`____________________________________________________________________________________________________`
+
