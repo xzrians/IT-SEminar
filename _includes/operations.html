@@ -192,7 +192,16 @@
               <tbody>
                 {% for itm in cat.items %}
                 <tr>
-                  <td><strong>{{ itm.name }}</strong></td>
+                  <td>
+                    <strong>{{ itm.name }}</strong>
+                    {% if itm.status %}
+                    <div style="margin-top: 4px;">
+                      <span class="badge {% if itm.status contains 'Selesai' %}badge-emerald{% else %}badge-blue{% endif %}" style="font-size: 0.7rem; padding: 2px 8px;">
+                        <i data-lucide="check" style="width: 12px; height: 12px; display: inline;"></i> {{ itm.status }}
+                      </span>
+                    </div>
+                    {% endif %}
+                  </td>
                   <td><span class="badge badge-blue" style="font-size: 0.75rem;">{{ itm.qty }}</span></td>
                   <td style="color: var(--text-secondary);">{{ itm.purpose }}</td>
                 </tr>

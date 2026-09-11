@@ -28,6 +28,59 @@
       </div>
     </div>
 
+    <!-- Actual Expenditure & Receipt Verification Card -->
+    {% if site.data.budget.actual_receipts %}
+    <div class="glass-card" style="padding: 20px 24px; margin-bottom: 28px; border-color: rgba(16, 185, 129, 0.4); background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(15, 23, 42, 0.6) 100%);">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="brand-icon" style="width: 42px; height: 42px; background: rgba(16, 185, 129, 0.2); color: var(--accent-emerald); font-size: 1.2rem; flex-shrink: 0;">
+            <i data-lucide="receipt-check"></i>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.15rem; margin: 0; color: #fff;">Pengesahan Perbelanjaan Sebenar Alat Tulis</h3>
+              <span class="badge badge-emerald" style="font-size: 0.75rem;"><i data-lucide="shield-check" style="width: 12px; height: 12px; display: inline;"></i> {{ site.data.budget.actual_receipts.status }} ({{ site.data.budget.actual_receipts.date }})</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px; margin-bottom: 0;">
+              Kaedah Bayaran: <strong>{{ site.data.budget.actual_receipts.payment_method }}</strong> &bull; Resit Rasmi: <code>{{ site.data.budget.actual_receipts.receipt_file }}</code>
+            </p>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <div style="text-align: right;">
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Jumlah Sebenar Dibelanjakan</div>
+            <div style="font-size: 1.4rem; font-weight: 800; color: var(--accent-cyan); font-family: var(--font-heading);">RM {{ site.data.budget.actual_receipts.total_spent | round: 2 }}</div>
+          </div>
+          <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 12px; text-align: right;">
+            <div style="font-size: 0.75rem; color: var(--accent-emerald); text-transform: uppercase; font-weight: 700;">Penjimatan Bersih</div>
+            <div style="font-size: 1.1rem; font-weight: 700; color: var(--accent-emerald);">+ RM {{ site.data.budget.actual_receipts.savings | round: 2 }} ({{ site.data.budget.actual_receipts.savings_pct }})</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vendor Cards Grid -->
+      <div class="crew-split-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+        {% for vendor in site.data.budget.actual_receipts.vendors %}
+        <div style="background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-sm); padding: 14px;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+            <div>
+              <strong style="font-size: 0.92rem; color: #fff; display: block;">{{ vendor.name }}</strong>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">No. Invois: {{ vendor.invoice }} &bull; {{ vendor.time }}</span>
+            </div>
+            <span class="badge badge-cyan" style="font-weight: 700; font-size: 0.85rem;">RM {{ vendor.total | round: 2 }}</span>
+          </div>
+          <ul style="margin: 0; padding-left: 16px; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5;">
+            {% for itm in vendor.items %}
+            <li>{{ itm }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
     <!-- 3 Tabs -->
     <div class="variant-tabs">
       {% for v in site.data.budget.variants %}

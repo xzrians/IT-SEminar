@@ -15,6 +15,39 @@ food_sources:
   primary: "Kantin Sekolah / Asrama ASDAF (Makanan segar, tiada caj hantar, sokong asrama)"
   alternative: "Pembekal Luar / Bakeri Borong (Roti jenama Gardenia/Mighty White + Air Kotak Dutch Lady/Yeo's)"
 
+actual_receipts:
+  status: "Disahkan Lengkap"
+  date: "11 September 2026"
+  total_spent: 74.20
+  original_budget: 139.00
+  savings: 64.80
+  savings_pct: "46.6%"
+  payment_method: "VISA Contactless (Kad •••• 4354)"
+  receipt_file: "Receipt_Alat_Tulis.pdf"
+  vendors:
+    - name: "MR D.I.Y. (Kuchai) Sdn Bhd (Taman Sri Serdang)"
+      invoice: "B060-T1-449042-20260911"
+      time: "12:46 PM"
+      total: 18.80
+      items:
+        - "Sticky Note Set 76x50mm (4 set x RM2.20 = RM8.80)"
+        - "Glue Stick 3S (3 pek x RM2.10 = 9 botol = RM6.30)"
+        - "Remax Garbage Bag 75x90cm 10's (1 pek = RM3.70)"
+    - name: "Becon Enterprise Sdn Bhd (Taman Sri Serdang)"
+      invoice: "B05701202609110034"
+      time: "12:50 PM"
+      total: 11.20
+      items:
+        - "Mahjong Paper 31x31in 60gsm (4 pek x 5's = 20 keping = RM11.20)"
+    - name: "Eco-Shop Marketing Berhad (Cawangan BSS)"
+      invoice: "97810260911130233"
+      time: "1:02 PM"
+      total: 44.20
+      items:
+        - "Kreati 5.5 Gunting (7 bilah x RM2.60 = RM18.20)"
+        - "Kreati Click Pen Varian 316/317/318 (9 batang x RM2.60 = RM23.40)"
+        - "Kreati Tape 3in (1 unit x RM2.60 = RM2.60)"
+
 variants:
   - id: 1
     name: "Varian 1: Super-Lean"
@@ -47,20 +80,20 @@ variants:
         total: 20.00
 
   - id: 2
-    name: "Varian 2: Bajet Semasa 7 Kumpulan (Disyorkan)"
-    total: 799.00
-    tag: "Paling Disyorkan"
+    name: "Varian 2: Bajet Semasa + Resit Sebenar (Disyorkan)"
+    total: 789.20
+    tag: "Resit Sebenar Disahkan"
     tag_color: "emerald"
-    status: "Selari Dengan Kiraan Terkini"
-    balance: 1.00
+    status: "Selari Resit Pembelian 11 Sept"
+    balance: 10.80
     recommended: true
-    description: "Pecahan bajet semasa berdasarkan 46 pelajar, 7 kumpulan, serta jumlah sarapan dan makan tengah hari yang dikemas kini."
+    description: "Pecahan bajet semasa berdasarkan 46 pelajar, 7 kumpulan, serta perbelanjaan sebenar alat tulis (3 resit: RM74.20) dengan penjimatan RM64.80 dialihkan ke hadiah kuiz."
     items:
-      - item: "Sarapan: Roti"
+      - item: "Sarapan: Roti Bun"
         qty: "RM1.20/pax x 50 pax"
         unit_price: 1.20
         total: 60.00
-      - item: "Sarapan: Air Kotak"
+      - item: "Sarapan: Air Kotak 250ml"
         qty: "RM20/karton x 3 karton"
         unit_price: 20.00
         total: 60.00
@@ -68,14 +101,18 @@ variants:
         qty: "RM10/pax x 52 pax"
         unit_price: 10.00
         total: 520.00
-      - item: "Alat Tulis 7 Kumpulan (Kertas Mahjong 18, Marker 18, Sticky Notes 10, Tape 2, Gunting 7, Gam 7)"
-        qty: "7 kumpulan"
-        unit_price: 19.86
-        total: 139.00
-      - item: "Cetakan Survey Ringkas Pre & Post"
-        qty: "100 helaian (50 pre + 50 post)"
+      - item: "Alat Tulis 7 Kumpulan [Resit Sebenar Disahkan: 20 Mahjong, 7 Gunting, 9 Gam, 9 Pen, 4 Sticky Notes, 1 Tape, 10 Beg Sampah]"
+        qty: "3 Resit (DIY + Becon + Eco-Shop)"
+        unit_price: 74.20
+        total: 74.20
+      - item: "Cetakan Borang Survey Pre & Post (1 Helaian A4 Penuh)"
+        qty: "50 keping x RM0.20"
         unit_price: 0.20
-        total: 20.00
+        total: 10.00
+      - item: "Hadiah Kuiz Showdown (5 Pemenang)"
+        qty: "5 set x RM13.00"
+        unit_price: 13.00
+        total: 65.00
 
   - id: 3
     name: "Varian 3: Pakej Lengkap + Makan Tengah Hari"
