@@ -65,10 +65,13 @@
             <span style="color: var(--text-secondary); font-size: 0.88rem;">Jumlah Paparan: {{ site.data.curriculum.presentation_slides.total_slides }} Slaid Pembentangan Utama</span>
           </div>
           <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-            <a href="{{ '/slides/' | relative_url }}" target="_blank" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 8px 16px; border-radius: var(--radius-sm); font-size: 0.88rem; font-weight: 600; background: linear-gradient(135deg, var(--accent-indigo), #a855f7); color: #fff;">
-              <i data-lucide="play-circle"></i> <span>Lancarkan Slaid Skrin Penuh (16:9)</span>
+            <a href="{{ '/slides/' | relative_url }}" target="_blank" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 8px 16px; border-radius: var(--radius-sm); font-size: 0.88rem; font-weight: 600; background: linear-gradient(135deg, var(--accent-maroon), var(--accent-maroon-light)); color: #fff;">
+              <i data-lucide="play-circle"></i> <span>Lancarkan Slaid Web (16:9)</span>
             </a>
-            <span class="badge badge-purple"><i data-lucide="monitor"></i> Skrin Projektor Dewan</span>
+            <a href="{{ '/docs/presentation/Bengkel_Santai_NextGen_Celik_Digital_2026.pptx' | relative_url }}" class="btn-update-prompt" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 8px 16px; border-radius: var(--radius-sm); font-size: 0.88rem; font-weight: 600;" download>
+              <i data-lucide="download" style="width: 15px; height: 15px; color: var(--accent-gold);"></i> <span>Muat Turun PowerPoint (.pptx)</span>
+            </a>
+            <span class="badge badge-maroon"><i data-lucide="monitor"></i> Skrin Projektor Dewan</span>
           </div>
         </div>
 
